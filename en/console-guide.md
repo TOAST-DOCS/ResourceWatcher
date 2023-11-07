@@ -169,7 +169,7 @@ Target Resource for notification can be set using resource groups or resource ta
 Therefore, you must create resource groups or resource tags before creating notifications.
 When selecting notification targets, if Resource is added after notification is created by re-tagging a resource group or resource tag that was already used for another notifications, it is automatically included in notifications once the corresponding Resource is included in a resource group or resource tag that have set when the notification was created.
 
-알림을 생성할 때 이벤트를 선택하고 대상 리소스를 지정하면, 해당 리소스에서 해당하는 이벤트가 발생했을 때 사용자에게 알림을 전송합니다.
+알림을 생성할 때 이벤트를 선택하고 대상 리소스를 지정하면 해당 리소스에서 해당하는 이벤트가 발생했을 때 사용자에게 알림을 전송합니다.
 이때 선택하는 이벤트는 CloudTrail 서비스에서 제공하는 이벤트 목록과 동일합니다. 
 
 #### Search Notifications

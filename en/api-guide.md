@@ -1,13 +1,13 @@
 ## Governance & Audit > Resource Watcher > API 가이드
 
-> ResourceWatcher에 RESTful API를 호출해, 이벤트 및 리소스들의 상태변경에 따른 알림 설정을 할 수 있습니다.
+> Resource Watcher에 RESTful API를 호출해 이벤트 및 리소스들의 상태 변경에 따른 알림을 설정할 수 있습니다.
 
-## UserAccessKey & SecretAccessKey
+## User Access Key & Secret Access Key
 
-REST API 를 사용하려면 먼저 `User Access Key` 와 `Secret Access Key` 를 발급받아야 합니다.<br/>
-[CONSOLE] 의 우측 상단에서 [아이디] 클릭 시 나오는 메뉴 중 `[API 보안 설정]` 에서 발급할 수 있습니다.<br/>
-`User Access Key ID 생성` 버튼을 통해 User Access Key 및 Secret Access Key 를 생성할 수 있습니다.<br/>
-보안을 위해 User Access Key 와 Secret Access Key 모두 생성하는 것을 권장합니다.
+REST API를 사용하려면 먼저 User Access Key와 Secret Access Key를 발급 받아야 합니다.<br/>
+User Access Key와 Secret Access Key는 **API 보안 설정**에서 발급할 수 있습니다.<br/>
+콘솔 우측 상단의 계정에 마우스 포인터를 올리면 표시되는 드롭다운 메뉴에서 **API 보안 설정**을 선택한 뒤 **User Access Key ID 생성**을 클릭합니다.<br/>
+보안을 위해 User Access Key와 Secret Access Key를 모두 생성하는 것을 권장합니다.
 
 ![[그림 1] API 보안 설정 위치](http://static.toastoven.net/prod_resource_watcher/img46_EN.png)
 <center>[그림 1] API 보안 설정 위치</center>
@@ -18,31 +18,31 @@ REST API 를 사용하려면 먼저 `User Access Key` 와 `Secret Access Key` �
 ![[그림 3] UserAccessKey와 SecretAccessKey 생성](http://static.toastoven.net/prod_resource_watcher/img48_EN.png)
 <center>[그림 3] User Access Key와 Secret Access Key 생성</center>
 
-## Public API URL & AppKey 확인
-RESTful API를 사용하려면 AppKey가 필요합니다.<br/>
-[CONSOLE]의 우측 상단에서 발급된 Key 정보를 확인할 수 있습니다.
-![[그림 4] Public API URL & AppKey](http://static.toastoven.net/prod_resource_watcher/img49_EN.png)
-<center>[그림 4] URL & AppKey</center>
+## Public API URL & Appkey 확인
+RESTful API를 사용하려면 Appkey가 필요합니다.<br/>
+콘솔 우측의 URL & Appkey를 클릭해 발급된 key 정보를 확인할 수 있습니다.
+![[그림 4] Public API URL & Appkey](http://static.toastoven.net/prod_resource_watcher/img49_EN.png)
+<center>[그림 4] URL & Appkey</center>
 
 ## REST API 가이드
 
 <a id="common-response-body"></a>
 ### Common Response Body
 
-모든 API 요청에 대해 HTTP 응답 코드는 200 으로 응답합니다.<br/>
-자세한 응답 결과는 Response Body 의 header 항목을 참고합니다.
+모든 API 요청에 대해 HTTP 응답 코드는 200으로 응답합니다.<br/>
+자세한 응답 결과는 Response Body의 header 항목을 참고합니다.
 
-| Key     | Type                              | Description    |
-|---------|-----------------------------------|----------------|
-| header  | [Header](#common-response-header) | 응답헤더           |
+| Key     | Type                              | Description |
+|---------|-----------------------------------|-------------|
+| header  | [Header](#common-response-header) | 응답 헤더       |
 
 - Header <a id="common-response-header"></a>
 
-| Key           | 	Type    | 	Description                           |
-|---------------|----------|----------------------------------------|
-| isSuccessful  | 	boolean | 	성공 여부 (true, false)                   |
-| resultCode    | 	int     | 	응답 코드. 성공 시 0, 실패 시 에러코드 반환           |
-| resultMessage | 	String  | 	응답 메시지. 성공 시 "SUCCESS", 실패 시 에러메시지 반환 |
+| Key           | 	Type    | 	Description                             |
+|---------------|----------|------------------------------------------|
+| isSuccessful  | 	boolean | 	성공 여부(true, false)                      |
+| resultCode    | 	int     | 	응답 코드. 성공 시 0, 실패 시 오류 코드 반환            |
+| resultMessage | 	String  | 	응답 메시지. 성공 시 "SUCCESS", 실패 시 오류 메시지 반환  |
 
 ```json
 {
@@ -71,54 +71,54 @@ RESTful API를 사용하려면 AppKey가 필요합니다.<br/>
 리소스에서 발생하는 이벤트에 대한 알림을 설정할 수 있습니다. <br/>
 
 
-- 설정할 이벤트 정보는 [3.1. Event 목록 조회 API](#list-event-response-event)  의 응답결과를 참고하시면 됩니다.<br/>
-- 알람 대상은 멤버, 알림 수신 그룹, 역할, WebHook 의 타입을 제공하고 있으며, 각 타입 별로 대상을 설정할 수 있습니다.
-- 리소스 대상에는 `리소스 그룹/태그` 를 설정할 수 있습니다.
-- `이벤트 전체` 로 설정하면, 특정 리소스에서 발생하는 모든 이벤트에 대해서 알림을 수신할 수 있도록 설정할 수 있습니다.
-- `리소스 전체` 로 설정하면, 리소스 관계없이 특정 이벤트에 대한 알림을 수신할 수 있도록 설정할 수 있습니다.
-- 하지만, `이벤트 전체` 와 `리소스 전체` 를 동시에 설정할 수 없습니다.
+- 설정할 이벤트 정보는 [3.1. Event 목록 조회 API](#list-event-response-event)의 응답 결과를 참고하십시오.<br/>
+- 알람 대상에는 멤버, 알림 수신 그룹, 역할, WebHook 타입이 있으며, 각 타입별로 대상을 설정할 수 있습니다
+- 리소스 대상에는 `리소스 그룹/태그`를 설정할 수 있습니다.
+- `이벤트 전체`로 설정하면 특정 리소스에서 발생하는 모든 이벤트에 대해 알림을 수신하도록 설정할 수 있습니다.
+- `리소스 전체`로 설정하면 리소스에 관계없이 특정 이벤트에 대한 알림을 수신하도록 설정할 수 있습니다.
+- `이벤트 전체`와 `리소스 전체`는 동시에 설정할 수 없습니다.
 
 **[Request Header]**
 
-| Key                        | 	Value                             |
-|----------------------------|------------------------------------|
-| X-TC-AUTHENTICATION-ID     | 	[CONSOLE] 에서 발급받은 UserAccessKey   |
-| X-TC-AUTHENTICATION-SECRET | 	[CONSOLE] 에서 발급받은 SecretAccessKey |
+| Key                        | 	Value                           |
+|----------------------------|----------------------------------|
+| X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key      |
+| X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key    |
 
 **[Path Variable]**
 
-| Key    | 	Value                       |
-|--------|------------------------------|
-| appKey | 	[CONSOLE] 에서 발급받은 상품 AppKey |
+| Key    | 	Value                  |
+|--------|-------------------------|
+| appKey | 	콘솔에서 발급 받은 상품 Appkey   |
 
 
 <a id="post-alarm-request"></a>
 **[Request Body]**
 
-| Key                         | 	Type                                             | 	Required | 	Description                                          |
-|-----------------------------|---------------------------------------------------|-----------|-------------------------------------------------------|
-| alarm                       | [Alarm](#post-alarm-request-alarm)                | Yes       | 알림 정보                                                 |
-| alarmTargets                | [AlarmTarget[]](#post-alarm-request-alarm-target) | Yes       | 알림 수신 대상 정보                                           |
-| events                      | [Event[]](#post-alarm-request-event)              | No        | 알림 대상 이벤트 목록<br/> 발생하는 모든 이벤트에 대해 수신을 원할 경우, 설정하지 않음. |
-| target                      | [Target](#post-alarm-request-target)              | No        | 대상 리소스 정보<br/> 리소스 관계없이 이벤트를 수신할 경우, 설정하지 않음.         |
+| Key                         | 	Type                                             | 	Required | 	Description                                         |
+|-----------------------------|---------------------------------------------------|-----------|------------------------------------------------------|
+| alarm                       | [Alarm](#post-alarm-request-alarm)                | Yes       | 알림 정보                                                |
+| alarmTargets                | [AlarmTarget[]](#post-alarm-request-alarm-target) | Yes       | 알림 수신 대상 정보                                          |
+| events                      | [Event[]](#post-alarm-request-event)              | No        | 알림 대상 이벤트 목록<br/> 발생하는 모든 이벤트에 대해 수신을 원할 경우 설정하지 않음. |
+| target                      | [Target](#post-alarm-request-target)              | No        | 대상 리소스 정보<br/> 리소스 관계없이 이벤트를 수신할 경우 설정하지 않음.         |
 
 - Alarm <a id="post-alarm-request-alarm"></a>
 
 | Key               | 	Type     | 	Required | 	Description                     |
 |-------------------|-----------|-----------|----------------------------------|
-| alarmName   | 	String   | 	Yes      | 	알림 이름 <br/> 최대 255글자까지 등록 가능    |
-| description | 	String   | 	No       | 	알림 설명 <br/> 최대 1000글자까지 등록 가능   |
+| alarmName   | 	String   | 	Yes      | 	알림 이름 <br/> 최대 255 글자까지 등록 가능   |
+| description | 	String   | 	No       | 	알림 설명 <br/> 최대 1,000 글자까지 등록 가능 |
 
 - AlarmTarget <a id="post-alarm-request-alarm-target"></a>
 
-| Key                 | 	Type     | 	Required | 	Description                                                                                                                                                                                  |
-|---------------------|-----------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| alarmTargetTypeCode | 	String   | 	Yes      | 알림 대상 타입 <br/>1. `UUID` : 단일 조직 멤버 대상(NHN CLOUD, IAM)<br/>2. `ROLE` : 역할 대상 (조직 역할, 프로젝트 역할 그룹, 프로젝트 역할)<br/>3. `ALARM_KEY` : 알림 수신 그룹 대상 (조직 알림 수신 그룹, 프로젝트 알림 수신 그룹)<br/>4. `WEBHOOK` : 웹훅 |
-| alarmTarget         | 	String   | 	No       | 	알림 대상 정보<br/> <타입 별 설정 값><br/> 1. UUID : `멤버 UUID` <br/>2. ROLE : `역할 ID` (ex. ADMIN)<br/>3. ALARM\_KEY : `알림 수신 그룹 ID`<br/>4. WEBHOOK : `입력하지 않음`                                           |
-| emailAlarm          | 	String   | 	No       | 	이메일 수신 여부<br/>1. `Y` : 이메일 수신<br/>2. `N` : 이메일 수신하지 않음<br/>WEBHOOK, ALARM\_KEY 는 입력하지 않음.                                                                                                    |
-| smsAlarm            | 	String   | 	No       | 	SMS 수신 여부<br/>1. `Y` : SMS 수신<br/>2. `N` : SMS 수신하지 않음<br/>WEBHOOK, ALARM\_KEY 는 입력하지 않음.                                                                                                    |
-| webhookUrl          | 	String   | 	No       | 	Webhook URL 주소<br/>http:// 또는 https:// 로 시작해야 함<br/> 알림 대상 타입 `WEBHOOK` 설정 시 입력                                                                                                              |
-| webhookSecret       | 	String   | 	No       | 	Webhook 비밀키<br/> 알림 대상 타입 `WEBHOOK` 설정 시 입력                                                                                                                                                  |
+| Key                 | 	Type     | 	Required | 	Description                                                                                                                                                                                 |
+|---------------------|-----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| alarmTargetTypeCode | 	String   | 	Yes      | 알림 대상 타입 <br/>1. `UUID`: 단일 조직 멤버 대상(NHN cloud 회원, IAM 멤버)<br/>2. `ROLE`: 역할 대상(조직 역할, 프로젝트 역할 그룹, 프로젝트 역할)<br/>3. `ALARM_KEY`: 알림 수신 그룹 대상(조직 알림 수신 그룹, 프로젝트 알림 수신 그룹)<br/>4. `WEBHOOK`: 웹훅 |
+| alarmTarget         | 	String   | 	No       | 	알림 대상 정보<br/><타입별 설정 값><br/> 1. UUID: `멤버 UUID` <br/>2. ROLE: `역할 ID`(ex. ADMIN)<br/>3. ALARM\_KEY: `알림 수신 그룹 ID`<br/>4. WEBHOOK: `입력하지 않음`                                                 |
+| emailAlarm          | 	String   | 	No       | 	이메일 수신 여부<br/>1. `Y`: 이메일 수신<br/>2. `N`: 이메일 수신하지 않음<br/>WEBHOOK, ALARM\_KEY는 입력하지 않음.                                                                                                      |
+| smsAlarm            | 	String   | 	No       | 	SMS 수신 여부<br/>1. `Y`: SMS 수신<br/>2. `N`: SMS 수신하지 않음<br/>WEBHOOK, ALARM\_KEY는 입력하지 않음.                                                                                                      |
+| webhookUrl          | 	String   | 	No       | 	Webhook URL 주소<br/>http:// 또는 https://로 시작해야 함<br/> 알림 대상 타입 `WEBHOOK` 설정 시 입력                                                                                                              |
+| webhookSecret       | 	String   | 	No       | 	Webhook 비밀 키<br/> 알림 대상 타입 `WEBHOOK` 설정 시 입력                                                                                                                                                |
 
 - Event <a id="post-alarm-request-event"></a>
 
@@ -127,7 +127,7 @@ RESTful API를 사용하려면 AppKey가 필요합니다.<br/>
 | productId  | 	String  | 	Yes      | 	서비스 ID      |
 | eventId    | 	String  | 	Yes      | 	이벤트 ID      |
 
-productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-event-response-event) 을 참고하시면 됩니다.
+productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-event-response-event) 을 참고하십시오.
 
 - Target <a id="post-alarm-request-target"></a>
 
@@ -185,36 +185,36 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 - Alarm <a id="post-alarm-response-alarm"></a>
 
-| Key                  | 	Type                                        | 	Description                                                                         |
-|----------------------|----------------------------------------------|--------------------------------------------------------------------------------------|
-| alarmId              | String                                       | 알림 ID                                                                                |
-| alarmName            | String                                       | 알림 이름                                                                                |
-| alarmRule            | [AlarmRule](#post-alarm-response-alarm-rule) | 알림 규칙 상세정보                                                                           |
-| alarmStatusCode      | String                                       | 알림 상태 코드<br/><br/><종류><br/>1. STABLE : 활성화<br/>2. DISABLED : 비활성화<br/>3. CLOSED : 삭제 |
-| appKey               | String                                       | AppKey 정보                                                                            |
-| cabAlarmKey          | String                                       | 알림 수신 그룹 ID                                                                          |
-| delDatetime          | Date                                         | 삭제일시                                                                                 |
-| description          | String                                       | 알림 설명                                                                                |
-| modDatetime          | Date                                         | 수정일시                                                                                 |
-| operatorUuid         | String                                       | 최종 수정한 사용자 Uuid                                                                      |
-| regDatetime          | Date                                         | 등록일시                                                                                 |
+| Key                  | 	Type                                        | 	Description                                                                      |
+|----------------------|----------------------------------------------|-----------------------------------------------------------------------------------|
+| alarmId              | String                                       | 알림 ID                                                                             |
+| alarmName            | String                                       | 알림 이름                                                                             |
+| alarmRule            | [AlarmRule](#post-alarm-response-alarm-rule) | 알림 규칙 상세 정보                                                                       |
+| alarmStatusCode      | String                                       | 알림 상태 코드<br/><br/><종류><br/>1. STABLE: 활성화<br/>2. DISABLED: 비활성화<br/>3. CLOSED: 삭제 |
+| appKey               | String                                       | Appkey 정보                                                                         |
+| cabAlarmKey          | String                                       | 알림 수신 그룹 ID                                                                       |
+| delDatetime          | Date                                         | 삭제 일시                                                                             |
+| description          | String                                       | 알림 설명                                                                             |
+| modDatetime          | Date                                         | 수정 일시                                                                             |
+| operatorUuid         | String                                       | 최종 수정한 사용자 UUID                                                                   |
+| regDatetime          | Date                                         | 등록 일시                                                                             |
 
 - AlarmRule <a id="post-alarm-response-alarm-rule"></a>
 
-| Key                     | 	Type    | 	Description                                                                            |
-|-------------------------|----------|-----------------------------------------------------------------------------------------|
-| alarmRuleId             | String   | 알림 규칙 ID                                                                                |
-| alarmRuleStatusCode     | String   | 알림 규칙 상태 코드<br/><br/><종류><br/>1. STABLE : 활성화<br/>2. DISABLED : 비활성화<br/>3. CLOSED : 삭제 |
-| alarmRuleName           | String   | 알림 규칙 이름                                                                                |
-| alarmRuleDescription    | String   | 알림 규칙 설명                                                                                |
-| resourceTypes           | String[] | 알림 규칙이 적용하는 대상 리소스 타입 코드 목록<br/>빈 값이면 전체 리소스 타입을 대상으로 함<br/>String 타입 리스트               |
+| Key                     | 	Type    | 	Description                                                                           |
+|-------------------------|----------|----------------------------------------------------------------------------------------|
+| alarmRuleId             | String   | 알림 규칙 ID                                                                               |
+| alarmRuleStatusCode     | String   | 알림 규칙 상태 코드<br/><br/><종류><br/>1. STABLE: 활성화<br/>2. DISABLED: 비활성화<br/>3. CLOSED: 삭제 |
+| alarmRuleName           | String   | 알림 규칙 이름                                                                               |
+| alarmRuleDescription    | String   | 알림 규칙 설명                                                                               |
+| resourceTypes           | String[] | 알림 규칙이 적용하는 대상 리소스 타입 코드 목록<br/>빈 값이면 전체 리소스 타입을 대상으로 함<br/>String 타입 리스트              |
 
 - AlarmTargetAlarmKey <a id="post-alarm-response-alarm-target-alarm-key"></a>
 
 | Key            | 	Type      | 	Description   |
 |----------------|------------|----------------|
 | alarmKey       | String     | 알람 키           |
-| alarmGroupName | String     | 알림 수신 그룹 명     |
+| alarmGroupName | String     | 알림 수신 그룹명     |
 | alarmGroupDesc | String     | 알림 수신 그룹 설명    |
 
 
@@ -235,19 +235,19 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 |---------------|------------|--------------|
 | type          | String     | 역할 타입        |
 | roleId        | String     | 역할 ID        |
-| roleName      | String     | 역할 명         |
+| roleName      | String     | 역할명          |
 | description   | String     | 역할 설명        |
 
 - AlarmTarget <a id="post-alarm-response-alarm-target"></a>
 
-| Key                     | 	Type        | 	Description                                                                                                                                                             |
-|-------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| alarmTargetTypeCode     | String       | 알림 대상 타입 코드<br/><br/><종류><br/>1. UUID : 조직 멤버 NHN CLOUD, IAM<br/>2. ROLE : 조직 역할, 프로젝트 역할 그룹, 프로젝트 역할<br/>3. ALARM\_KEY : 조직 알림 수신 그룹, 프로젝트 알림 수신 그룹<br/>4. WEBHOOK : 웹훅 |
-| alarmTarget             | String       | 알림 대상 정보                                                                                                                                                                 |
-| emailAlarm              | String       | 이메일 수신 여부 (Y, N)                                                                                                                                                         |
-| smsAlarm                | string       | SMS 수신 여부 (Y, N)                                                                                                                                                         |
-| webhookUrl              | string       | Webhook URL 주소                                                                                                                                                           |
-| webhookSecret           | string       | Webhook 비밀키                                                                                                                                                              |
+| Key                     | 	Type        | 	Description                                                                                                                                                         |
+|-------------------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| alarmTargetTypeCode     | String       | 알림 대상 타입 코드<br/><br/><종류><br/>1. UUID: 조직 멤버 NHN CLOUD, IAM<br/>2. ROLE: 조직 역할, 프로젝트 역할 그룹, 프로젝트 역할<br/>3. ALARM\_KEY: 조직 알림 수신 그룹, 프로젝트 알림 수신 그룹<br/>4. WEBHOOK: 웹훅 |
+| alarmTarget             | String       | 알림 대상 정보                                                                                                                                                             |
+| emailAlarm              | String       | 이메일 수신 여부(Y, N)                                                                                                                                                      |
+| smsAlarm                | string       | SMS 수신 여부(Y, N)                                                                                                                                                      |
+| webhookUrl              | string       | Webhook URL 주소                                                                                                                                                       |
+| webhookSecret           | string       | Webhook 비밀 키                                                                                                                                                         |
 
 - Event <a id="post-alarm-response-event"></a>
 
@@ -383,17 +383,17 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 **[Request Header]**
 
-| Key                        | 	Value                             |
-|----------------------------|------------------------------------|
-| X-TC-AUTHENTICATION-ID     | 	[CONSOLE] 에서 발급받은 UserAccessKey   |
-| X-TC-AUTHENTICATION-SECRET | 	[CONSOLE] 에서 발급받은 SecretAccessKey |
+| Key                        | 	Value                        |
+|----------------------------|-------------------------------|
+| X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
+| X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
 **[Path Variable]**
 
-| Key     | 	Value                    |
-|---------|---------------------------|
-| appKey  | 	[CONSOLE] 에서 발급받은 AppKey |
-| alarmId | 	조회하고 싶은 알림의 ID           |
+| Key     | 	Value             |
+|---------|--------------------|
+| appKey  | 	콘솔에서 발급 받은 Appkey |
+| alarmId | 	조회할 알림의 ID        |
 
 **[Response Body]**
 
@@ -404,9 +404,9 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 **[기본 정보]**
 
-| Method | 	URI                                                           |
-|--------|----------------------------------------------------------------|
-| POST   | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms/search   |
+| Method | 	URI                                                         |
+|--------|--------------------------------------------------------------|
+| POST   | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms/search |
 
 | 권한                             | 	
 |--------------------------------|
@@ -418,39 +418,39 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 **[Request Header]**
 
-| Key                        | 	Value                             |
-|----------------------------|------------------------------------|
-| X-TC-AUTHENTICATION-ID     | 	[CONSOLE] 에서 발급받은 UserAccessKey   |
-| X-TC-AUTHENTICATION-SECRET | 	[CONSOLE] 에서 발급받은 SecretAccessKey |
+| Key                        | 	Value                        |
+|----------------------------|-------------------------------|
+| X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
+| X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
 **[Path Variable]**
 
-| Key    | 	Value                    |
-|--------|---------------------------|
-| appKey | 	[CONSOLE] 에서 발급받은 AppKey |
+| Key    | 	Value             |
+|--------|--------------------|
+| appKey | 	콘솔에서 발급 받은 Appkey |
 
 
 **[Query Parameter]**
 
 | Key  | 	Value                                      | Required |
 |------|---------------------------------------------|----------|
-| page | 	조회하고 싶은 페이지 번호<br/>Default 값 : 0           | No       |
-| size | 	조회하고 싶은 알림 개수<br/>Default 값 : 10           | No       |
-| sort | 정렬대상과 정렬방식<br/>Default 값 : modDatetime,DESC | No       |
+| page | 	조회할 페이지 번호<br/>Default 값: 0                | No       |
+| size | 	조회할 알림 개수<br/>Default 값: 10                | No       |
+| sort | 정렬 대상 및 방식<br/>Default 값: modDatetime, DESC | No       |
 
 **[Request Body]**
 
-| Key                | 	Type    | Required | 	Description                                                                                                                         |
-|--------------------|----------|----------|--------------------------------------------------------------------------------------------------------------------------------------|
-| alarmIds           | String[] | No       | 알림 ID 목록<br/>String 타입 리스트                                                                                                           |
-| alarmNameAnyLike   | String   | No       | 알림 이름 (입력값을 포함하는 모든 알림 검색)                                                                                                           |
-| alarmRuleIds       | String[] | No       | 알림 규칙 ID 목록<br/>String 타입 리스트                                                                                                        |
-| alarmStatusCodes   | String[] | No       | 알림 상태<br/>String 타입 리스트<br/>Default 값 : STABLE, DISABLED<br/><br/><종류><br/>1. STABLE : 활성화<br/>2. DISABLED : 비활성화<br/>3. CLOSED : 삭제 |
-| descriptionAnyLike | String   | No       | 알림 설명 (입력값을 포함하는 모든 알림 검색)                                                                                                           |
-| modDateFrom        | Date     | No       | 마지막 수정일시 시작                                                                                                                          |
-| modDateTo          | Date     | No       | 마지막 수정일시 종료                                                                                                                          |
-| operatorUuids      | String[] | No       | 마지막 수정자 UUID 목록<br/>String 타입 리스트                                                                                                    |
-| resourceGroupIds   | String[] | No       | 리소스 그룹 목록<br/>String 타입 리스트                                                                                                          |
+| Key                | 	Type    | Required | 	Description                                                                                                                     |
+|--------------------|----------|----------|----------------------------------------------------------------------------------------------------------------------------------|
+| alarmIds           | String[] | No       | 알림 ID 목록<br/>String 타입 리스트                                                                                                       |
+| alarmNameAnyLike   | String   | No       | 알림 이름(입력값을 포함하는 모든 알림 검색)                                                                                                        |
+| alarmRuleIds       | String[] | No       | 알림 규칙 ID 목록<br/>String 타입 리스트                                                                                                    |
+| alarmStatusCodes   | String[] | No       | 알림 상태<br/>String 타입 리스트<br/>Default 값: STABLE, DISABLED<br/><br/><종류><br/>1. STABLE: 활성화<br/>2. DISABLED: 비활성화<br/>3. CLOSED: 삭제 |
+| descriptionAnyLike | String   | No       | 알림 설명(입력값을 포함하는 모든 알림 검색)                                                                                                        |
+| modDateFrom        | Date     | No       | 마지막 수정 일시 시작                                                                                                                     |
+| modDateTo          | Date     | No       | 마지막 수정 일시 종료                                                                                                                     |
+| operatorUuids      | String[] | No       | 마지막 수정자 UUID 목록<br/>String 타입 리스트                                                                                                |
+| resourceGroupIds   | String[] | No       | 리소스 그룹 목록<br/>String 타입 리스트                                                                                                      |
 
 ```json
 {
@@ -487,29 +487,29 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 - Alarm <a id="list-alarm-response-alarm"></a>
 
-| Key             | 	Type                                        | 	Description                                                                         |
-|-----------------|----------------------------------------------|--------------------------------------------------------------------------------------|
-| alarmId         | String                                       | 알림 ID                                                                                |
-| alarmName       | String                                       | 알림 이름                                                                                |
-| alarmRule       | [AlarmRule](#list-alarm-response-alarm-rule) | 알림 규칙 상세정보                                                                           |
-| alarmStatusCode | String                                       | 알림 상태 코드<br/><br/><종류><br/>1. STABLE : 활성화<br/>2. DISABLED : 비활성화<br/>3. CLOSED : 삭제 |
-| appKey          | String                                       | AppKey 정보                                                                            |
-| cabAlarmKey     | String                                       | 알림 수신 그룹 ID                                                                          |
-| description     | String                                       | 알림 설명                                                                                |
-| operatorUuid    | String                                       | 최종 수정한 사용자 Uuid                                                                      |
-| delDatetime     | Date                                         | 삭제일시                                                                                 |
-| modDatetime     | Date                                         | 수정일시                                                                                 |
-| regDatetime     | Date                                         | 등록일시                                                                                 |
+| Key             | 	Type                                        | 	Description                                                                      |
+|-----------------|----------------------------------------------|-----------------------------------------------------------------------------------|
+| alarmId         | String                                       | 알림 ID                                                                             |
+| alarmName       | String                                       | 알림 이름                                                                             |
+| alarmRule       | [AlarmRule](#list-alarm-response-alarm-rule) | 알림 규칙 상세 정보                                                                       |
+| alarmStatusCode | String                                       | 알림 상태 코드<br/><br/><종류><br/>1. STABLE: 활성화<br/>2. DISABLED: 비활성화<br/>3. CLOSED: 삭제 |
+| appKey          | String                                       | Appkey 정보                                                                         |
+| cabAlarmKey     | String                                       | 알림 수신 그룹 ID                                                                       |
+| description     | String                                       | 알림 설명                                                                             |
+| operatorUuid    | String                                       | 최종 수정한 사용자 UUID                                                                   |
+| delDatetime     | Date                                         | 삭제 일시                                                                             |
+| modDatetime     | Date                                         | 수정 일시                                                                             |
+| regDatetime     | Date                                         | 등록 일시                                                                             |
 
 - AlarmRule <a id ="list_alarm_response_alarm_rule"></a>
 
-| Key                  | 	Type    | 	Description                                                                            |
-|----------------------|----------|-----------------------------------------------------------------------------------------|
-| alarmRuleId          | String   | 알림 규칙 ID                                                                                |
-| alarmRuleStatusCode  | String   | 알림 규칙 상태 코드<br/><br/><종류><br/>1. STABLE : 활성화<br/>2. DISABLED : 비활성화<br/>3. CLOSED : 삭제 |
-| alarmRuleName        | String   | 알림 규칙 이름                                                                                |
-| alarmRuleDescription | String   | 알림 규칙 설명                                                                                |
-| resourceTypes        | String[] | 알림 규칙이 적용하는 대상 리소스 타입 코드 목록<br/>빈 값이면 전체 리소스 타입을 대상으로 함<br/>String 타입 리스트               |
+| Key                  | 	Type    | 	Description                                                                           |
+|----------------------|----------|----------------------------------------------------------------------------------------|
+| alarmRuleId          | String   | 알림 규칙 ID                                                                               |
+| alarmRuleStatusCode  | String   | 알림 규칙 상태 코드<br/><br/><종류><br/>1. STABLE: 활성화<br/>2. DISABLED: 비활성화<br/>3. CLOSED: 삭제 |
+| alarmRuleName        | String   | 알림 규칙 이름                                                                               |
+| alarmRuleDescription | String   | 알림 규칙 설명                                                                               |
+| resourceTypes        | String[] | 알림 규칙이 적용하는 대상 리소스 타입 코드 목록<br/>빈 값이면 전체 리소스 타입을 대상으로 함<br/>String 타입 리스트              |
 
 - 예제)
 
@@ -564,35 +564,30 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 **[Request Header]**
 
-| Key                        | 	Value                             |
-|----------------------------|------------------------------------|
-| X-TC-AUTHENTICATION-ID     | 	[CONSOLE] 에서 발급받은 UserAccessKey   |
-| X-TC-AUTHENTICATION-SECRET | 	[CONSOLE] 에서 발급받은 SecretAccessKey |
+| Key                        | 	Value                        |
+|----------------------------|-------------------------------|
+| X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
+| X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
 **[Path Variable]**
 
-| Key     | Value                    |
-|---------|--------------------------|
-| appKey  | [CONSOLE] 에서 발급받은 AppKey |
-| alarmId | 수정하고 싶은 알림의 ID           |
+| Key     | Value             |
+|---------|-------------------|
+| appKey  | 콘솔에서 발급 받은 Appkey |
+| alarmId | 수정할 알림의 ID        |
 
 
 **[Request Body]**
 
 * ``참고`` : 1.1) 이벤트 알림 생성의 [Request Body](#post-alarm-request)과 동일합니다.
 
-**[Response Body]**
-
-* ``참고`` : 1.1) 이벤트 알림 생성의 [Response Body](#post-alarm-response)과 동일합니다.
-
-
 #### 1.5. Event Alarm 삭제
 
 **[기본 정보]**
 
-| Method | 	URI                                                             |
-|--------|------------------------------------------------------------------|
-| DELETE | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms/{alarmId}  |
+| Method | 	URI                                                         |
+|--------|--------------------------------------------------------------|
+| DELETE | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms/{alarmId} |
 
 | 권한                             | 	
 |--------------------------------|
@@ -602,17 +597,17 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 **[Request Header]**
 
-| Key                        | 	Value                             |
-|----------------------------|------------------------------------|
-| X-TC-AUTHENTICATION-ID     | 	[CONSOLE] 에서 발급받은 UserAccessKey   |
-| X-TC-AUTHENTICATION-SECRET | 	[CONSOLE] 에서 발급받은 SecretAccessKey |
+| Key                        | 	Value                        |
+|----------------------------|-------------------------------|
+| X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
+| X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
 **[Path Variable]**
 
-| Key     | Value                    |
-|---------|--------------------------|
-| appKey  | [CONSOLE] 에서 발급받은 AppKey |
-| alarmId | 식제하려는 알림의 ID             |
+| Key     | Value               |
+|---------|---------------------|
+| appKey  | 콘솔에서 발급 받은 Appkey   |
+| alarmId | 삭제할 알림의 ID          |
 
 
 **[Response Body]**
@@ -637,23 +632,23 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 **[Request Header]**
 
-| Key                        | 	Value                             |
-|----------------------------|------------------------------------|
-| X-TC-AUTHENTICATION-ID     | 	[CONSOLE] 에서 발급받은 UserAccessKey   |
-| X-TC-AUTHENTICATION-SECRET | 	[CONSOLE] 에서 발급받은 SecretAccessKey |
+| Key                        | 	Value                        |
+|----------------------------|-------------------------------|
+| X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
+| X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
 **[Path Variable]**
 
-| Key     | Value                    |
-|---------|--------------------------|
-| appKey  | [CONSOLE] 에서 발급받은 AppKey |
+| Key     | Value             |
+|---------|-------------------|
+| appKey  | 콘솔에서 발급 받은 Appkey |
 
 
 **[Query Parameter]**
 
-| Key      | Value                                          | Required |
-|----------|------------------------------------------------|----------|
-| alarmIds | 삭제하고 싶은 알림 ID의 리스트<br/>반드시 1개 이상의 값이 입력되어야만 한다 | Yes      |
+| Key      | Value                                     | Required |
+|----------|-------------------------------------------|----------|
+| alarmIds | 삭제할 알림 ID의 목록<br/>반드시 1개 이상의 값을 입력해야 합니다. | Yes      |
 
 **[Response Body]**
 
@@ -678,18 +673,18 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 **[Request Header]**
 
-| Key                        | 	Value                             |
-|----------------------------|------------------------------------|
-| X-TC-AUTHENTICATION-ID     | 	[CONSOLE] 에서 발급받은 UserAccessKey   |
-| X-TC-AUTHENTICATION-SECRET | 	[CONSOLE] 에서 발급받은 SecretAccessKey |
+| Key                        | 	Value                        |
+|----------------------------|-------------------------------|
+| X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
+| X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
 **[Path Variable]**
 
-| Key            | Value                    |
-|----------------|--------------------------|
-| appKey         | [CONSOLE] 에서 발급받은 AppKey |
-| alarmId        | 	히스토리를 조회할 알림의 ID        |
-| alarmHistoryId | 	조회하려는 알림 이력의 ID         |
+| Key     | Value             |
+|---------|-------------------|
+| appKey  | 콘솔에서 발급 받은 Appkey |
+| alarmId        | 	히스토리를 조회할 알림의 ID |
+| alarmHistoryId | 	조회할 알림 이력의 ID    |
 
 
 **[Response Body]**
@@ -711,12 +706,12 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 - AlarmHistory <a id="get-alarm-history-response-alarm-history"></a>
 
-| Key                     | Type                                             | 	Description                                                                         |
-|-------------------------|--------------------------------------------------|--------------------------------------------------------------------------------------|
-| alarmHistoryId          | String                                           | 	알람 이력 ID                                                                            |
-| resource                | [Resource](#get-alarm-history-response-resource) | 	리소스 정보                                                                              |
-| event                   | [Event](#get-alarm-history-response-event)       | 	이벤트 정보                                                                              |
-| alarmSendResultTypeCode | String                                           | 	알림 발송 결과<br/><br/><종류><br/>1. SUCCESS : 성공<br/>2. FAILURE : 실패<br/>3. SENDING : 전송중 |
+| Key                     | Type                                             | 	Description                                                                       |
+|-------------------------|--------------------------------------------------|------------------------------------------------------------------------------------|
+| alarmHistoryId          | String                                           | 	알람 이력 ID                                                                          |
+| resource                | [Resource](#get-alarm-history-response-resource) | 	리소스 정보                                                                            |
+| event                   | [Event](#get-alarm-history-response-event)       | 	이벤트 정보                                                                            |
+| alarmSendResultTypeCode | String                                           | 	알림 발송 결과<br/><br/><종류><br/>1. SUCCESS: 성공<br/>2. FAILURE: 실패<br/>3. SENDING: 전송 중 |
 
 - AlarmRule <a id="get-alarm-history-response-alarm-rule"></a>
 
@@ -728,28 +723,28 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 - Resource <a id="get-alarm-history-response-resource"></a>
 
-| Key                      | Type   | 	Description                                                       |
-|--------------------------|--------|--------------------------------------------------------------------|
-| appKey                   | String | 	앱키                                                                |
-| resourceKey              | String | 	리소스 식별키                                                           |
-| orgId                    | String | 	조직 ID                                                             |
-| projectId                | String | 	프로젝트 ID                                                           |
-| projectName              | String | 	프로젝트 이름                                                           |
-| productId                | String | 	상품 ID                                                             |
-| resourceAppKey           | String | 	리소스가 속한 상품의 앱키                                                    |
-| iaasTenantId             | String | 	IaaS 테넌트 ID                                                       |
-| regionCode               | String | 	리전 코드                                                             |
-| resourceId               | String | 	리소스 ID                                                            |
-| resourceName             | String | 	리소스 이름                                                            |
-| resourceTypeCode         | String | 	리소스 타입                                                            |
-| resourceCreationTypeCode | String | 	리소스 생성 타입<br/><br/><종류><br/>1. SYSTEM : 시스템 생성<br/>2.USER : 회원 생성 |
-| resourceStatusCode       | String | 	리소스 상태 코드<br/><br/><종류><br/>1. STABLE : 정상<br/>2.CLOSED : 삭제      |
-| description              | String | 	리소스 설명                                                            |
-| cloudResourceName        | String | 	리소스의 NHN Cloud Resource Name                                      |
-| createDatetime           | Date   | 	이벤트 발생 일시                                                         |
-| regDatetime              | Date   | 	등록 일시                                                             |
-| modDatetime              | Date   | 	수정 일시                                                             |
-| delDatetime              | Date   | 	삭제 일시                                                             |
+| Key                      | Type   | 	Description                                                      |
+|--------------------------|--------|-------------------------------------------------------------------|
+| appKey                   | String | 	앱키                                                               |
+| resourceKey              | String | 	리소스 식별 키                                                         |
+| orgId                    | String | 	조직 ID                                                            |
+| projectId                | String | 	프로젝트 ID                                                          |
+| projectName              | String | 	프로젝트 이름                                                          |
+| productId                | String | 	상품 ID                                                            |
+| resourceAppKey           | String | 	리소스가 속한 상품의 앱키                                                   |
+| iaasTenantId             | String | 	IaaS 테넌트 ID                                                      |
+| regionCode               | String | 	리전 코드                                                            |
+| resourceId               | String | 	리소스 ID                                                           |
+| resourceName             | String | 	리소스 이름                                                           |
+| resourceTypeCode         | String | 	리소스 타입                                                           |
+| resourceCreationTypeCode | String | 	리소스 생성 타입<br/><br/><종류><br/>1. SYSTEM: 시스템 생성<br/>2. USER: 회원 생성 |
+| resourceStatusCode       | String | 	리소스 상태 코드<br/><br/><종류><br/>1. STABLE: 정상<br/>2. CLOSED: 삭제      |
+| description              | String | 	리소스 설명                                                           |
+| cloudResourceName        | String | 	리소스의 NHN Cloud Resource Name                                     |
+| createDatetime           | Date   | 	이벤트 발생 일시                                                        |
+| regDatetime              | Date   | 	등록 일시                                                            |
+| modDatetime              | Date   | 	수정 일시                                                            |
+| delDatetime              | Date   | 	삭제 일시                                                            |
 
 - Event <a id="get-alarm-history-response-event"></a>
 
@@ -766,12 +761,12 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 - EventUser <a id="get-alarm-history-response-event-user"></a>
 
-| Key       | Type     | 	Description                                                                         |
-|-----------|----------|--------------------------------------------------------------------------------------|
-| userIdNo  | 	String  | 	이벤트를 발생시킨 회원의 uuid                                                                  |
-| userId    | 	String  | 	이벤트를 발생시킨 회원의 이름                                                                    |
-| userIp    | 	String  | 	이벤트를 발생시킨 회원의 IP                                                                    |
-| userAgent | 	String  | 	이벤트를 발생시킨 회원의 에이전트                                                                  |
+| Key       | Type     | 	Description        |
+|-----------|----------|---------------------|
+| userIdNo  | 	String  | 	이벤트를 발생시킨 회원의 UUID |
+| userId    | 	String  | 	이벤트를 발생시킨 회원의 이름   |
+| userIp    | 	String  | 	이벤트를 발생시킨 회원의 IP   |
+| userAgent | 	String  | 	이벤트를 발생시킨 회원의 에이전트 |
 
 - EventTarget <a id="get-alarm-history-response-event-target"></a>
 
@@ -784,9 +779,9 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 | Key          | Type   | 	Description                     |
 |--------------|--------|----------------------------------|
-| idNo         | String | 	발생한 이벤트의 대상 회원의 uuid            |
+| idNo         | String | 	발생한 이벤트의 대상 회원의 UUID            |
 | name         | String | 	발생한 이벤트의 대상 회원의 이름              |
-| userCode     | String | 	발생한 이벤트의 대상 회원의 ID (IAM 회원일 경우) |
+| userCode     | String | 	발생한 이벤트의 대상 회원의 ID(IAM 회원일 경우) |
 | emailAddress | String | 	발생한 이벤트의 대상 회원                  |
 
 ```json
@@ -866,9 +861,9 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 **[기본 정보]**
 
-| Method | 	URI                                                                       |
-|--------|----------------------------------------------------------------------------|
-| GET    | 	/resource-watcher/v1.0/appkeys/{appKey}/alarms/{alarmId}/alarm-history    |
+| Method | 	URI                                                                    |
+|--------|-------------------------------------------------------------------------|
+| GET    | 	/resource-watcher/v1.0/appkeys/{appKey}/alarms/{alarmId}/alarm-history |
 
 | 권한                             | 	
 |--------------------------------|
@@ -878,16 +873,16 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 **[Request Header]**
 
-| Key                        | 	Value                             |
-|----------------------------|------------------------------------|
-| X-TC-AUTHENTICATION-ID     | 	[CONSOLE] 에서 발급받은 UserAccessKey   |
-| X-TC-AUTHENTICATION-SECRET | 	[CONSOLE] 에서 발급받은 SecretAccessKey |
+| Key                        | 	Value                        |
+|----------------------------|-------------------------------|
+| X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
+| X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
 **[Path Variable]**
 
-| Key            | Value                    |
-|----------------|--------------------------|
-| appKey         | [CONSOLE] 에서 발급받은 AppKey |
+| Key     | Value                    |
+|---------|--------------------------|
+| appKey  | 콘솔에서 발급 받은 Appkey        |
 | alarmId        | 	히스토리를 조회할 알림의 ID        |
 
 
@@ -895,18 +890,18 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 | Key                      | Value                                                 | Required |
 |--------------------------|-------------------------------------------------------|----------|
-| resourceKeys             | 리소스 식별키 목록<br/>여러개 입력 가능                              | No       |
-| resourceNameAnyLike      | 리소스 식별키 목록                                            | No       |
-| eventIds                 | 이벤트 ID 목록<br/>여러개 입력 가능                               | No       |
-| eventSourceTypes         | 이벤트 소스 목록<br/>여러개 입력 가능                               | No       |
-| projectIds               | 프로젝트 ID 목록<br/>여러개 입력 가능                              | No       |
-| productIds               | 상품 ID 목록<br/>여러개 입력 가능                                | No       |
-| alarmSendResultTypeCodes | 알림 발송 결과 목록 (SENDING, SUCCESS, FAILURE)<br/>여러개 입력 가능 | No       |
-| regDateFrom              | 알림 발생 일시 시작<br/>yyyy-MM-ddTHH:mm:SS                   | No       |
-| regDateTo                | 알림 발생 일시 시작<br/>yyyy-MM-ddTHH:mm:SS                   | No       |
-| page                     | 조회하고 싶은 페이지 번호<br/>Default 값 : 0                      | No       |
-| size                     | 조회하고 싶은 알림 개수<br/>Default 값 : 10                      | No       |
-| sort                     | 정렬대상과 정렬방식                                            | No       |
+| resourceKeys             | 리소스 식별 키 목록<br/>여러 개 입력 가능                            | No       |
+| resourceNameAnyLike      | 리소스 식별 키 목록                                           | No       |
+| eventIds                 | 이벤트 ID 목록<br/>여러 개 입력 가능                              | No       |
+| eventSourceTypes         | 이벤트 소스 목록<br/>여러 개 입력 가능                              | No       |
+| projectIds               | 프로젝트 ID 목록<br/>여러 개 입력 가능                             | No       |
+| productIds               | 상품 ID 목록<br/>여러 개 입력 가능                               | No       |
+| alarmSendResultTypeCodes | 알림 발송 결과 목록(SENDING, SUCCESS, FAILURE)<br/>여러 개 입력 가능 | No       |
+| regDateFrom              | 조회할 기간의 시작 일시<br/>yyyy-MM-ddTHH:mm:SS                 | No       |
+| regDateTo                | 조회할 기간의 종료 일시<br/>yyyy-MM-ddTHH:mm:SS                 | No       |
+| page                     | 조회할 페이지 번호<br/>Default 값: 0                           | No       |
+| size                     | 조회할 알림 개수<br/>Default 값: 10                           | No       |
+| sort                     | 정렬 대상 및 방식                                            | No       |
 
 **[Response Body]**
 
@@ -917,37 +912,37 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 - AlarmHistory <a id="list-alarm-history-response-alarm-history"></a>
 
-| Key                     | Type                                              | 	Description                                                                         |
-|-------------------------|---------------------------------------------------|--------------------------------------------------------------------------------------|
-| alarmHistoriesId        | String                                            | 알람 이력 ID                                                                             |
-| resource                | [Resource](#list-alarm-history-response-resource) | 리소스 정보                                                                               |
-| event                   | [Event](#list-alarm-history-response-event)       | 이벤트 정보                                                                               |
-| alarmSendResultTypeCode | String                                            | 	알림 발송 결과<br/><br/><종류><br/>1. SUCCESS : 성공<br/>2. FAILURE : 실패<br/>3. SENDING : 전송중 |
+| Key                     | Type                                              | 	Description                                                                       |
+|-------------------------|---------------------------------------------------|------------------------------------------------------------------------------------|
+| alarmHistoriesId        | String                                            | 알람 이력 ID                                                                           |
+| resource                | [Resource](#list-alarm-history-response-resource) | 리소스 정보                                                                             |
+| event                   | [Event](#list-alarm-history-response-event)       | 이벤트 정보                                                                             |
+| alarmSendResultTypeCode | String                                            | 	알림 발송 결과<br/><br/><종류><br/>1. SUCCESS: 성공<br/>2. FAILURE: 실패<br/>3. SENDING: 전송 중 |
 
 - Resource <a id="list-alarm-history-response-resource"></a>
 
-| Key                      | Type   | 	Description                                                       |
-|--------------------------|--------|--------------------------------------------------------------------|
-| appKey                   | String | 	앱키                                                                |
-| resourceKey              | String | 	리소스 식별키                                                           |
-| orgId                    | String | 	조직 ID                                                             |
-| projectId                | String | 	프로젝트 ID                                                           |
-| projectName              | String | 	프로젝트 이름                                                           |
-| productId                | String | 	상품 ID                                                             |
-| resourceAppKey           | String | 	리소스가 속한 상품의 앱키                                                    |
-| iaasTenantId             | String | 	IaaS 테넌트 ID                                                       |
-| regionCode               | String | 	리전 코드                                                             |
-| resourceId               | String | 	리소스 ID                                                            |
-| resourceName             | String | 	리소스 이름                                                            |
-| resourceTypeCode         | String | 	리소스 타입                                                            |
-| resourceCreationTypeCode | String | 	리소스 생성 타입<br/><br/><종류><br/>1. SYSTEM : 시스템 생성<br/>2.USER : 회원 생성 |
-| resourceStatusCode       | String | 	리소스 상태 코드<br/><br/><종류><br/>1. STABLE : 정상<br/>2.CLOSED : 삭제      |
-| description              | String | 	리소스 설명                                                            |
-| cloudResourceName        | String | 	리소스의 NHN Cloud Resource Name                                      |
-| createDatetime           | Date   | 	이벤트 발생 일시                                                         |
-| regDatetime              | Date   | 	등록 일시                                                             |
-| modDatetime              | Date   | 	수정 일시                                                             |
-| delDatetime              | Date   | 	삭제 일시                                                             |
+| Key                      | Type   | 	Description                                                      |
+|--------------------------|--------|-------------------------------------------------------------------|
+| appKey                   | String | 	앱키                                                               |
+| resourceKey              | String | 	리소스 식별 키                                                         |
+| orgId                    | String | 	조직 ID                                                            |
+| projectId                | String | 	프로젝트 ID                                                          |
+| projectName              | String | 	프로젝트 이름                                                          |
+| productId                | String | 	상품 ID                                                            |
+| resourceAppKey           | String | 	리소스가 속한 상품의 앱키                                                   |
+| iaasTenantId             | String | 	IaaS 테넌트 ID                                                      |
+| regionCode               | String | 	리전 코드                                                            |
+| resourceId               | String | 	리소스 ID                                                           |
+| resourceName             | String | 	리소스 이름                                                           |
+| resourceTypeCode         | String | 	리소스 타입                                                           |
+| resourceCreationTypeCode | String | 	리소스 생성 타입<br/><br/><종류><br/>1. SYSTEM: 시스템 생성<br/>2. USER: 회원 생성 |
+| resourceStatusCode       | String | 	리소스 상태 코드<br/><br/><종류><br/>1. STABLE :정상<br/>2. CLOSED :삭제     |
+| description              | String | 	리소스 설명                                                           |
+| cloudResourceName        | String | 	리소스의 NHN Cloud Resource Name                                     |
+| createDatetime           | Date   | 	이벤트 발생 일시                                                        |
+| regDatetime              | Date   | 	등록 일시                                                            |
+| modDatetime              | Date   | 	수정 일시                                                            |
+| delDatetime              | Date   | 	삭제 일시                                                            |
 
 - Event <a id="list-alarm-history-response-event"></a>
 
@@ -966,7 +961,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 | Key                 | Type   | Description        |
 |---------------------|--------|--------------------|
-| userIdNo  | String | 이벤트를 발생시킨 회원의 uuid |
+| userIdNo  | String | 이벤트를 발생시킨 회원의 UUID |
 | userId    | String | 이벤트를 발생시킨 회원의 이름   |
 | userIp    | String | 이벤트를 발생시킨 회원의 IP   |
 | userAgent | String | 이벤트를 발생시킨 회원의 에이전트 |
@@ -980,12 +975,12 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 - TargetMember <a id="list-alarm-history-response-target-member"></a>
 
-| Key          | Type   | 	Description                     |
-|--------------|--------|----------------------------------|
-| idNo         | String | 	발생한 이벤트의 대상 회원의 uuid            |
-| name         | String | 	발생한 이벤트의 대상 회원의 이름              |
-| userCode     | String | 	발생한 이벤트의 대상 회원의 ID (IAM 회원일 경우) |
-| emailAddress | String | 	발생한 이벤트의 대상 회원                  |
+| Key          | Type   | 	Description                    |
+|--------------|--------|---------------------------------|
+| idNo         | String | 	발생한 이벤트의 대상 회원의 UUID           |
+| name         | String | 	발생한 이벤트의 대상 회원의 이름             |
+| userCode     | String | 	발생한 이벤트의 대상 회원의 ID(IAM 회원일 경우) |
+| emailAddress | String | 	발생한 이벤트의 대상 회원                 |
 
 ```json
 {
@@ -1066,34 +1061,33 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | O_OWNER, O_ADMIN, O_LOG_VIEWER |
 
 알림에 설정할 수 있는 이벤트 목록을 조회합니다.
-- 이벤트는 CloudTrail 에 등록된 이벤트 ID를 기반으로 합니다.
+- 이벤트는 CloudTrail에 등록된 이벤트 ID를 기반으로 합니다.
 - 이벤트에 대한 검색 기능을 제공합니다.
-- 이벤트 이름 또는 상품 이름으로 검색 시, lang 을 설정하여 설정된 값에 맞는 언어로 검색할 수 있습니다.
+- 이벤트 이름 또는 상품 이름으로 검색 시 lang을 설정하여 설정된 값에 맞는 언어로 검색할 수 있습니다.
 
 **[Request Header]**
 
-| Key                        | 	Value                                                                     |
-|----------------------------|----------------------------------------------------------------------------|
-| X-TC-AUTHENTICATION-ID     | 	[CONSOLE] 에서 발급받은 UserAccessKey                                           |
-| X-TC-AUTHENTICATION-SECRET | 	[CONSOLE] 에서 발급받은 SecretAccessKey                                         |
-| lang                       | 	언어 코드<br/>검색 조건 및 응답 값은 언어 코드에 해당하는 값 (ko, en, ja, zh)<br/>Default 값 : ko |
-
+| Key                        | 	Value                        |
+|----------------------------|-------------------------------|
+| X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
+| X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
+| lang                       | 	언어 코드<br/>검색 조건 및 응답 값은 언어 코드에 해당하는 값(ko, en, ja, zh)<br/>Default 값: ko |
 **[Path Variable]**
 
 | Key     | Value                    |
 |---------|--------------------------|
-| appKey  | [CONSOLE] 에서 발급받은 AppKey | 
+| appKey  | 콘솔에서 발급 받은 Appkey        | 
 
 **[Query Parameter]**
 
-| Key             | Value                                              | Required |
-|-----------------|----------------------------------------------------|----------|
-| productIdList   | 검색할 상품 목록 ID 리스트<br/>여러개 입력 가능                     | No       |
-| productNameLike | 검색할 상품 이름                                          | No       |
-| eventNameLike   | 검색할 이벤트 이름                                         | No       |
-| page            | 조회하고 싶은 페이지 번호<br/>Default 값 : 0                   | No       |
-| size            | 조회하고 싶은 알림 개수<br/>Default 값 : 10                   | No       |
-| sort            | 정렬대상과 정렬방식<br/>Default 값 : 상품 이름 오름차순, 이벤트 이름 오름차순 | No       |
+| Key             | Value                                                                | Required |
+|-----------------|----------------------------------------------------------------------|----------|
+| productIdList   | 검색할 상품 목록 ID 리스트<br/>여러 개 입력 가능                                      | No       |
+| productNameLike | 검색할 상품 이름                                                            | No       |
+| eventNameLike   | 검색할 이벤트 이름                                                           | No       |
+| page            | 조회할 페이지 번호<br/>Default 값: 0                                          | No       |
+| size            | 조회할 알림 개수<br/>Default 값: 10                                          | No       |
+| sort            | 정렬 대상 및 방식<br/>Default 값 : productName:ASC,eventName:ASC | No       |
 
 **[Response Body]**
 
