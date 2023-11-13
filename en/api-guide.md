@@ -1,28 +1,28 @@
-## Governance and Audit > Resource Watcher > API Guide
+## Governance & Audit > Resource Watcher > API Guide
 
 > You can call the RESTful API to Resource Watcher to set alarm for changes in the status of events and resources.
 
-## User Access Key and Secret Access Key
+## User Access Key & Secret Access Key
 
 To use REST API, you have to first obtain User Access Key and Secret Access Key.<br/>
 User Access Key and Secret Access Key can be issued from **API Security Settings**.<br/>
 Put the mouse pointer to an account in the top right of console, then select **API Security Settings** from the drop-down menu that appears and click on **Create User Access Key ID**.<br/>
 For security purposes, it is recommended to create both User Access Key and Secret Access Key.
 
-![[Figure 1] API Security Settings Location](http://static.toastoven.net/prod_resource_watcher/img46_1_KO.png)
+![[Figure 1] API Security Settings Location](http://static.toastoven.net/prod_resource_watcher/img46_1_EN.png)
 <center>[Figure 1] API Security Settings Location</center>
 
-![[Figure 2] API Security Settings Page](http://static.toastoven.net/prod_resource_watcher/img47_1_KO.png)
+![[Figure 2] API Security Settings Page](http://static.toastoven.net/prod_resource_watcher/img47_1_EN.png)
 <center>[Figure 2] API Security Settings Page</center>
 
-![[Figure 3] Create UserAccessKey and SecretAccessKey](http://static.toastoven.net/prod_resource_watcher/img48_1_KO.png)
+![[Figure 3] Create UserAccessKey and SecretAccessKey](http://static.toastoven.net/prod_resource_watcher/img48_1_EN.png)
 <center>[Figure 3] Create User Access Key and Secret Access Key</center>
 
-## Check Public API URL and Appkey
+## Check Public API URL & Appkey
 Appkey is required to use RESTful API.<br/>
 You can check the issued key information by clicking URL & Appkey on the right side of console. 
-![[ Figure 4] Public API URL & Appkey](http://static.toastoven.net/prod_resource_watcher/img49_1_KO.png)
-<center>[ Figure 4] URL and Appkey</center>
+![[ Figure 4] Public API URL & Appkey](http://static.toastoven.net/prod_resource_watcher/img49_1_EN.png)
+<center>[ Figure 4] URL & Appkey</center>
 
 ## REST API Guide
 
@@ -74,9 +74,9 @@ You can set alarms for events that occur in a resource. <br/>
 - Event information to set is [3.1. Refer to the response results from the Event List lookup API](#list-event-response-event).<br/>
 - Alarm targets include members, alarm receiving groups, roles, and WebHook types, and you can set targets for each type
 - Resource targets can be set to `resource group/tag`.
-- If set to `All events `, you can receive alarm for all events occurring in a particular resource.
+- If set to `All events`, you can receive alarm for all events occurring in a particular resource.
 - If set to `All resources`, you can receive alarm for specific events regardless of resources.
-- ` All events ` and ` All resources ` cannot be set together.
+- `All events` and `All resources` cannot be set together.
 
 **[Request Header]**
 
