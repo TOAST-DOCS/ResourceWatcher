@@ -4,10 +4,9 @@
 
 #### Feature Updates
 
-- 보안 강화를 위해 NCRN의 형식이 변경되었습니다.
-  - appKey 부분이 제거되었습니다.
-- IAM Cloud Console에서 사용할 수 없다는 제약 사항을 제거하였습니다.
-
+- Changed the NCRN format to enhance security.
+  - Removed the appKey information.
+- Removed the constraint that the service is not available in the IAM Cloud Console.
 
 
 ### February 27, 2024
