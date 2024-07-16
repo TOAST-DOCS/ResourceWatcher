@@ -62,11 +62,11 @@ RESTful API를 사용하려면 Appkey가 필요합니다.<br/>
 
 | Method | 	URI                                                  |
 |--------|-------------------------------------------------------|
-| POST   | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms |
+| POST   | 	/resource-watcher/v2.0/appkeys/{appKey}/event-alarms |
 
-| 권한                              | 	
+| 권한 | 	
 |---------------------------------|
-| ResourceWatcher:Alarms.Create  |
+| ResourceWatcher:Alarms.Create |
 
 리소스에서 발생하는 이벤트에 대한 알림을 설정할 수 있습니다. <br/>
 
@@ -170,8 +170,40 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 }
 ```
 
-<a id="post-alarm-response"></a>
 **[Response Body]**
+
+* ``참고`` : [Common Response Body](#common-response-body)와 동일합니다.
+
+#### 1.2 Event Alarm 조회
+
+**[기본 정보]**
+
+| Method | 	URI                                                            |
+|--------|-----------------------------------------------------------------|
+| GET    | 	/resource-watcher/v2.0/appkeys/{appKey}/event-alarms/{alarmId} |
+
+| 권한                             | 	
+|--------------------------------|
+| ResourceWatcher:Alarms.Get |
+
+등록된 알림에 대해 조회합니다.
+
+**[Request Header]**
+
+| Key                        | 	Value                        |
+|----------------------------|-------------------------------|
+| X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
+| X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
+
+**[Path Variable]**
+
+| Key     | 	Value             |
+|---------|--------------------|
+| appKey  | 	콘솔에서 발급 받은 Appkey |
+| alarmId | 	조회할 알림의 ID        |
+
+**[Response Body]**
+
 
 | Key                       | 	Type                                                                           | 	Description                 |
 |---------------------------|---------------------------------------------------------------------------------|------------------------------|
@@ -274,10 +306,26 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 - ResourceTag <a id="post-alarm-response-resource-tag"></a>
 
-| Key               | 	Type       | 	Description   |
-|-------------------|-------------|----------------|
-| tagId             | Long        | 리소스 태그 ID      |
-| tagName           | String      | 리소스 태그 이름      |  
+| Key        | 	Type                                                       | 	Description               |
+|------------|-------------------------------------------------------------|----------------------------|
+| tagId      | Long                                                        | 리소스 태그 ID                  |
+| tagGroupId | Long                                                        | 리소스 태그 그룹 ID               |
+| tagName    | String                                                      | 리소스 태그 이름                  |  
+| resourceTagTypeCode    | String                                                      | 리소스 태그 유형 코드(DEFAULT, NORMAL) |
+| regDatetime    | Date                                                        | 리소스 태그 등록 일시               |
+| modDatetime    | Date                                                        | 리소스 태그 수정 일시               |
+| resourceTagGroup    | [ResourceTagGroup](#post-alarm-response-resource-tag-group) | 리소스 태그 그룹                  |
+
+- ResourceTagGroup <a id="post-alarm-response-resource-tag-group"></a>
+
+| Key        | 	Type  | 	Description        |
+|------------|--------|---------------------|
+| tagGroupId      | Long   | 리소스 태그 그룹 ID        |
+| tagGroupKey | String | 리소스 태그 키            |
+| appKey    | String | 앱키                  |  
+| creationTypeCode    | String | 생성 유형(USER, SYSTEM) |
+| regDatetime    | Date   | 리소스 태그 그룹 등록 일시     |
+| modDatetime    | Date | 리소스 태그 그룹 수정 일시   |
 
 - 예제)
 
@@ -360,44 +408,24 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
     "resourceTags": [
       {
         "tagId": 0,
-        "tagName": ""
+        "tagGroupId" : 0,
+        "tagName": "",
+        "resourceTagTypeCode" : "",
+        "regDatetime": "yyyy-MM-ddTHH:mm:SS",
+        "modDatetime": "yyyy-MM-ddTHH:mm:SS",
+        "resourceTagGroup" : {
+            "tagGroupId": 0,
+            "tagGroupKey": "",
+            "appKey": "",
+            "creationTypeCode": "",
+            "regDatetime": "yyyy-MM-ddTHH:mm:SS",
+            "modDatetime": "yyyy-MM-ddTHH:mm:SS"
+        }
       }
     ]
   }
 }
 ```
-
-#### 1.2 Event Alarm 조회
-
-**[기본 정보]**
-
-| Method | 	URI                                                            |
-|--------|-----------------------------------------------------------------|
-| GET    | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms/{alarmId} |
-
-| 권한                             | 	
-|--------------------------------|
-| ResourceWatcher:Alarms.Get |
-
-등록된 알림에 대해 조회합니다.
-
-**[Request Header]**
-
-| Key                        | 	Value                        |
-|----------------------------|-------------------------------|
-| X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
-| X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
-
-**[Path Variable]**
-
-| Key     | 	Value             |
-|---------|--------------------|
-| appKey  | 	콘솔에서 발급 받은 Appkey |
-| alarmId | 	조회할 알림의 ID        |
-
-**[Response Body]**
-
-* ``참고`` : 1.1) 이벤트 알림 생성의 [응답](#post-alarm-response)과 동일합니다.
 
 
 #### 1.3 Event Alarm 리스트 조회
@@ -406,7 +434,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 | Method | 	URI                                                         |
 |--------|--------------------------------------------------------------|
-| POST   | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms/search |
+| POST   | 	/resource-watcher/v2.0/appkeys/{appKey}/event-alarms/search |
 
 | 권한                             | 	
 |--------------------------------|
@@ -579,15 +607,15 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 **[Request Body]**
 
-* ``참고`` : 1.1) 이벤트 알림 생성의 [Request Body](#post-alarm-request)와 동일합니다.
+* ``참고`` : [Common Response Body](#common-response-body)와 동일합니다.
 
 #### 1.5. Event Alarm 삭제
 
 **[기본 정보]**
 
-| Method | 	URI                                                         |
-|--------|--------------------------------------------------------------|
-| DELETE | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms/{alarmId} |
+| Method | 	URI                                                            |
+|--------|-----------------------------------------------------------------|
+| DELETE | 	/resource-watcher/v2.0/appkeys/{appKey}/event-alarms/{alarmId} |
 
 | 권한                             | 	
 |--------------------------------|
@@ -622,7 +650,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 | Method | 	URI                                                  |
 |--------|-------------------------------------------------------|
-| DELETE | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms |
+| DELETE | 	/resource-watcher/v2.0/appkeys/{appKey}/event-alarms |
 
 | 권한                             | 	
 |--------------------------------|
@@ -777,12 +805,12 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 - TargetMember <a id="get-alarm-history-response-target-member"></a>
 
-| Key          | Type   | 	Description                     |
-|--------------|--------|----------------------------------|
-| idNo         | String | 	발생한 이벤트의 대상 회원의 UUID            |
-| name         | String | 	발생한 이벤트의 대상 회원의 이름              |
+| Key          | Type   | 	Description                    |
+|--------------|--------|---------------------------------|
+| idNo         | String | 	발생한 이벤트의 대상 회원의 UUID           |
+| name         | String | 	발생한 이벤트의 대상 회원의 이름             |
 | userCode     | String | 	발생한 이벤트의 대상 회원의 ID(IAM 멤버일 경우) |
-| emailAddress | String | 	발생한 이벤트의 대상 회원                  |
+| emailAddress | String | 	발생한 이벤트의 대상 회원                 |
 
 ```json
 {
@@ -1056,6 +1084,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 |--------|-------------------------------------------------|
 | GET    | 	/resource-watcher/v1.0/appkeys/{appKey}/events |
 
+
 알림에 설정할 수 있는 이벤트 목록을 조회합니다.
 - 이벤트는 CloudTrail에 등록된 이벤트 ID를 기반으로 합니다.
 - 이벤트에 대한 검색 기능을 제공합니다.
@@ -1069,19 +1098,19 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 **[Path Variable]**
 
-| Key     | Value                    |
-|---------|--------------------------|
-| appKey  | 콘솔에서 발급 받은 Appkey        | 
+| Key     | Value             |
+|---------|-------------------|
+| appKey  | 콘솔에서 발급 받은 Appkey | 
 
 **[Query Parameter]**
 
-| Key             | Value                                                   | Required |
-|-----------------|---------------------------------------------------------|----------|
-| productIdList   | 검색할 상품 목록 ID 리스트<br/>여러 개 입력 가능                         | No       |
-| productNameLike | 검색할 상품 이름                                               | No       |
-| eventNameLike   | 검색할 이벤트 이름                                              | No       |
-| page            | 조회할 페이지 번호<br/>Default 값: 0                             | No       |
-| size            | 조회할 알림 개수<br/>Default 값: 10                             | No       |
+| Key             | Value                                                                | Required |
+|-----------------|----------------------------------------------------------------------|----------|
+| productIdList   | 검색할 상품 목록 ID 리스트<br/>여러 개 입력 가능                                      | No       |
+| productNameLike | 검색할 상품 이름                                                            | No       |
+| eventNameLike   | 검색할 이벤트 이름                                                           | No       |
+| page            | 조회할 페이지 번호<br/>Default 값: 0                                          | No       |
+| size            | 조회할 알림 개수<br/>Default 값: 10                                          | No       |
 | sort            | 정렬 대상 및 방식<br/>Default 값: productName:ASC,eventName:ASC | No       |
 
 **[Response Body]**
