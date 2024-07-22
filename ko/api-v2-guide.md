@@ -71,7 +71,7 @@ RESTful API를 사용하려면 Appkey가 필요합니다.<br/>
 리소스에서 발생하는 이벤트에 대한 알림을 설정할 수 있습니다. <br/>
 
 
-- 설정할 이벤트 정보는 **API 가이드 -> 3.1. Event 목록 조회 API**의 응답 결과를 참고하십시오.<br/>
+- 설정할 이벤트 정보는 **API 가이드 > 3.1. Event 목록 조회 API**의 응답 결과를 참고하십시오.<br/>
 - 알림 대상에는 멤버, 알림 수신 그룹, 역할, 웹훅 타입이 있으며, 각 타입별로 대상을 설정할 수 있습니다
   리소스 대상에는 **리소스 그룹/태그**를 설정할 수 있습니다.
 - **이벤트 전체**로 설정하면 특정 리소스에서 발생하는 모든 이벤트에 대해 알림을 수신하도록 설정할 수 있습니다.
@@ -127,7 +127,7 @@ RESTful API를 사용하려면 Appkey가 필요합니다.<br/>
 | productId  | 	String  | 	Yes      | 	서비스 ID      |
 | eventId    | 	String  | 	Yes      | 	이벤트 ID      |
 
-productId, eventId 값은 **API 가이드 -> 3.1 Event 목록 조회 API 응답 값**을 참고하세요.
+productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 값**을 참고하세요.
 
 - Target <a id="post-alarm-request-target"></a>
 
