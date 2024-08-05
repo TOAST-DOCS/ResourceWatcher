@@ -31,7 +31,7 @@ Resource tags can be created and set to resources by the user, and can also be s
 
 Search resource tag consists of as follows. 
 
-![resourcewatcher_11](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_tags_KO.png)
+![resourcewatcher_11](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_tags_EN.png)
 
 | Items                | Description                                                                                                                                        |
 |-------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,7 +44,7 @@ Search resource tag consists of as follows.
 
 Click **View Resource list by resource tag** to display a list of resources at the bottom of screen as follows
 
-![resourcewatcher_12](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_resources_of_tags_KO.png)
+![resourcewatcher_12](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_resources_of_tags_EN.png)
 
 | Items | Description |
 |---|---|
@@ -59,7 +59,7 @@ Click **View Resource list by resource tag** to display a list of resources at t
 
 To create resource tag, press **+ Create resource tag** on Search resource tag screen.
 
-![resourcewatcher_13](https://static.toastoven.net/prod_resource_watcher/img_20240723_post_tags_KO.png)
+![resourcewatcher_13](https://static.toastoven.net/prod_resource_watcher/img_20240723_post_tags_EN.png)
 
 In the Create Resource Tag screen, enter the tag key and tag value you want to add and press **Add** to create the resource tag.
 The names of resource tag keys cannot be duplicated, and resource tag values cannot be duplicated within a tag key.
@@ -68,7 +68,7 @@ The names of resource tag keys cannot be duplicated, and resource tag values can
 
 In resource tags list from Search resource tags screen, click **Modify Tag** for the item want to change.
 
-![resourcewatcher_13](https://static.toastoven.net/prod_resource_watcher/img_20240723_modify_tags_KO.png)
+![resourcewatcher_13](https://static.toastoven.net/prod_resource_watcher/img_20240723_modify_tags_EN.png)
 
 You can modify tag keys, and change the tag values that belong to them.
 
@@ -85,10 +85,10 @@ Precautions for deleting resource tags are as follows.
 - When creating notifications, if **Target Resource** is set to **Select resource tag** and the corresponding tag is set, the tag entry is also removed from the notification target.
 
 [Screen for deleting tags not set on a resource].
-![resourcewatcher_14](https://static.toastoven.net/prod_resource_watcher/img_20240723_delete_tags_KO.png)
+![resourcewatcher_14](https://static.toastoven.net/prod_resource_watcher/img_20240723_delete_tags_EN.png)
 
 [Screen for deleting tags set on a resource].
-![resourcewatcher_14](https://static.toastoven.net/prod_resource_watcher/img_20240723_delete_tags2_KO.png)
+![resourcewatcher_14](https://static.toastoven.net/prod_resource_watcher/img_20240723_delete_tags2_EN.png)
 
 
 
@@ -290,7 +290,7 @@ Resource consists of following information.
 
 Search Resource screen consists of as follows.
 
-![resourcewatcher_41](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_resources_KO.png)
+![resourcewatcher_41](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_resources_EN.png)
 
 | Items         | Description                                                                                                                                                                  |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -308,7 +308,7 @@ When creating a resource, it is exposed to the list, and when you delete the res
 
 Press **View** to display list of basic information and events for Resource at the bottom of screen as follows.
 
-![resourcewatcher_41](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_resources2_KO.png)
+![resourcewatcher_41](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_resources2_EN.png)
 
 | Items | Description |
 |---|---|
@@ -328,7 +328,7 @@ Click **Event Query** tab to display list of events that occurred in Resource at
 
 To set resource tags for Resource, click **Reset Resource Tag** on Search Resource screen.
 
-![resourcewatcher_45](https://static.toastoven.net/prod_resource_watcher/img_20240723_reset_resource_tags_KO.png)
+![resourcewatcher_45](https://static.toastoven.net/prod_resource_watcher/img_20240723_reset_resource_tags_EN.png)
 
 | Items           | Description                                                                       |
 |--------------|--------------------------------------------------------------------------|
@@ -346,7 +346,7 @@ Precautions for Resetting Resource Tags
 
 After viewing an individual resource, click **Settings** for the resource tag entry.
 
-![resourcewatcher_45](https://static.toastoven.net/prod_resource_watcher/img_20240723_set_resource_tags_KO.png)
+![resourcewatcher_45](https://static.toastoven.net/prod_resource_watcher/img_20240723_set_resource_tags_EN.png)
 
 | Items              | Description                                                                    |
 |-----------------|-----------------------------------------------------------------------|
