@@ -1,11 +1,11 @@
 ## Governance & Audit > Resource Watcher > リソースタイプリスト
 
-* Below are service resource types and relevant events
-* Event Types
-    * Create Resource: Event that occurs when a resource is created
-    * Modify Resource: Event that occurs when a resource is modified
-    * Delete Resource: Event that occurs when a resource is deleted
-    * -: Event not related to Create/Modify/Delete Resource
+* サービスリソースの種類及び関連するイベントのリストです。
+* イベントの種類
+  * リソース作成：リソースの作成時に発生するイベント
+  * リソース修正：リソースの修正時に発生するイベント
+  * リソース削除：リソースの削除時に発生するイベント
+  * -：リソース作成/修正/削除と関連ないイベント
 
 ### Secure Key Manager
 
@@ -13,9 +13,9 @@
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
-|event_id.skm.keystore.create|キー保存場所 作成|Create Resource|
-|event_id.skm.keystore.delete|キー保存場所 削除|Delete Resource|
-|event_id.skm.keystore.update|キー保存場所 変更|Modify Resource|
+|event_id.skm.keystore.create|キー保存場所 作成|リソース作成|
+|event_id.skm.keystore.delete|キー保存場所 削除|リソース削除|
+|event_id.skm.keystore.update|キー保存場所 変更|リソース修正|
 |event_id.skm.secret.create|機密データ 作成|-|
 |event_id.skm.secret.delete|機密データ 削除 -&gt; 機密データの即時削除|-|
 |event_id.skm.symmetric.create|対称鍵 作成|-|
@@ -53,11 +53,11 @@
 |event_id.iaas.cluster.k8s_api_not_working.resolved|K8S APISERVERのトラブルシューティング|-|
 |event_id.iaas.cluster.all_nodes_not_ready.detected|すべてのノード停止問題の検出|-|
 |event_id.iaas.cluster.all_nodes_not_ready.resolved|すべてのノード停止のトラブルシューティング|-|
-|event_id.iaas.cluster.create.start|クラスター作成起動|Create Resource|
+|event_id.iaas.cluster.create.start|クラスター作成起動|リソース作成|
 |event_id.iaas.cluster.create.end|クラスター作成完了|-|
-|event_id.iaas.cluster.create.failed|クラスター作成失敗|Delete Resource|
+|event_id.iaas.cluster.create.failed|クラスター作成失敗|リソース削除|
 |event_id.iaas.cluster.delete.start|クラスター削除起動|-|
-|event_id.iaas.cluster.delete.end|クラスター削除完了|Delete Resource|
+|event_id.iaas.cluster.delete.end|クラスター削除完了|リソース削除|
 |event_id.iaas.cluster.delete.failed|クラスター削除失敗|-|
 |event_id.iaas.cluster.suspend.start||-|
 |event_id.iaas.cluster.suspend.end||-|
@@ -109,47 +109,47 @@
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
-|event_id.iaas.volume.create_end|ブロックストレージ作成完了|Create Resource|
-|event_id.iaas.volume.transfer_accept||Create Resource|
-|event_id.iaas.volume.copy_end|ブロックストレージ複製完了|Create Resource|
-|event_id.iaas.volume.delete_end|ブロックストレージ削除完了|Delete Resource|
-|event_id.iaas.volume.transfer_create||Delete Resource|
-|event_id.iaas.volume.update_end|ブロックストレージ修正完了|Modify Resource|
+|event_id.iaas.volume.create_end|ブロックストレージ作成完了|リソース作成|
+|event_id.iaas.volume.transfer_accept||リソース作成|
+|event_id.iaas.volume.copy_end|ブロックストレージ複製完了|リソース作成|
+|event_id.iaas.volume.delete_end|ブロックストレージ削除完了|リソース削除|
+|event_id.iaas.volume.transfer_create||リソース削除|
+|event_id.iaas.volume.update_end|ブロックストレージ修正完了|リソース修正|
 
 #### イメージの (Infrastructure:IMAGE)
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
-|event_id.iaas.image.create_end|イメージ作成完了|Create Resource|
-|event_id.iaas.image.transfer_accept||Create Resource|
-|event_id.iaas.image.delete_end|イメージ削除完了|Delete Resource|
-|event_id.iaas.image.transfer_create||Delete Resource|
-|event_id.iaas.image.update_end|イメージ修正完了|Modify Resource|
+|event_id.iaas.image.create_end|イメージ作成完了|リソース作成|
+|event_id.iaas.image.transfer_accept||リソース作成|
+|event_id.iaas.image.delete_end|イメージ削除完了|リソース削除|
+|event_id.iaas.image.transfer_create||リソース削除|
+|event_id.iaas.image.update_end|イメージ修正完了|リソース修正|
 
 #### イメージテンプレート (Infrastructure:ImageTemplate)
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
-|event_id.iaas.image_template.create|イメージテンプレートの作成|Create Resource|
-|event_id.iaas.image_template.update|イメージテンプレートの修正|Modify Resource|
+|event_id.iaas.image_template.create|イメージテンプレートの作成|リソース作成|
+|event_id.iaas.image_template.update|イメージテンプレートの修正|リソース修正|
 |event_id.iaas.image_template.build|イメージビルド|-|
 |event_id.iaas.image_template.cancel_build|イメージビルドのキャンセル|-|
-|event_id.iaas.image_template.delete|イメージテンプレートの削除|Delete Resource|
+|event_id.iaas.image_template.delete|イメージテンプレートの削除|リソース削除|
 
 #### ブロックストレージスナップショット (Infrastructure:SNAPSHOT)
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
-|event_id.iaas.snapshot.create_end|ブロックストレージスナップショット作成完了|Create Resource|
-|event_id.iaas.snapshot.delete_end|ブロックストレージスナップショット削除完了|Delete Resource|
+|event_id.iaas.snapshot.create_end|ブロックストレージスナップショット作成完了|リソース作成|
+|event_id.iaas.snapshot.delete_end|ブロックストレージスナップショット削除完了|リソース削除|
 
 #### インスタンス (INSTANCE)
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
-|event_id.iaas.instance.create_end|インスタンスの作成完了|Create Resource|
-|event_id.iaas.instance.delete_end|インスタンスの削除完了|Delete Resource|
-|event_id.iaas.instance.update|インスタンス情報の変更|Modify Resource|
+|event_id.iaas.instance.create_end|インスタンスの作成完了|リソース作成|
+|event_id.iaas.instance.delete_end|インスタンスの削除完了|リソース削除|
+|event_id.iaas.instance.update|インスタンス情報の変更|リソース修正|
 |event_id.iaas.instance_action.reboot_end|インスタンスの再起動完了|-|
 |event_id.iaas.instance_action.resize_end|インスタンスタイプの変更完了|-|
 |event_id.iaas.instance_action.start_end|停止したインスタンスの起動完了|-|
@@ -162,7 +162,7 @@
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
-|event_id.dataquery.cluster_on|Trinoクラスタオン|Create Resource|
-|event_id.dataquery.cluster_off|Trinoクラスタオフ|Delete Resource|
+|event_id.dataquery.cluster_on|Trinoクラスタオン|リソース作成|
+|event_id.dataquery.cluster_off|Trinoクラスタオフ|リソース削除|
 
 
