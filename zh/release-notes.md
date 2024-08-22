@@ -1,5 +1,21 @@
 ## Governance & Audit > Resource Watcher > Release Notes
 
+### July 23, 2024
+
+#### Feature Updates
+
+- [Console] Improved the feature to view deleted resources on the Resource page
+- [Console] Changed the format of resource tags to {key:value}.
+  - Changed the settings screen (modal window) for creating and modifying resource tags to create and modify tags of the form {key:value}.
+  - Changed the settings screen (modal window) for setting resource tags to create and modify tags of the form {key:value}.
+  - Changed the area for selecting resource tags on the settings screen (modal window) for creating and modifying resource groups.
+  - Changed the area for selecting resource tags on the settings screen (modal window) for creating and modifying notifications.
+
+#### Added Features
+
+- [Console] Added the feature to view the change history of resource groups and resource tags assigned to a resource.
+- [Console] Added the feature to view the change history of resource tags.
+
 ### June 11, 2024
 
 #### Feature Updates
@@ -27,7 +43,6 @@
     - Fixed the event lookup period so that you can only select the last 3 months. If you selected a time period longer than 3 months, you could only see the last 3 months.
 - Improved to add recipients, events, and resources when creating notifications.
   - Select only the receive method to add the items. Previously, you needed to take two steps, selecting the receive method and clicking the add button.
-
 
 ### November 14, 2023.
 

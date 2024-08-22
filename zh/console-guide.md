@@ -31,43 +31,46 @@ Resource tags can be created and set to resources by the user, and can also be s
 
 Search resource tag consists of as follows.
 
-![resourcewatcher_11](https://static.toastoven.net/prod_resource_watcher/img11_EN.png)
+![resourcewatcher_11](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_tags_EN.png)
 
-| Items | Description |
-|---|---|
-| Resource Tag Search Conditions | You can search for list of appropriate resource tags by specifying the following search criteria:<li>Resource Tag Separation: USER (User Type), SYSTEM (System Type)</li><li>Resource Tag Key: Select resource tag that contains the name entered</li><li>Last Modified Date: Select resource tag for Last Modified Period |
-| Create and Delete Resource Tags | You can add new resource tag or select resource tag that appears in the list to delete it. |
-| Select Whole Resource Tag | Select or deselect all resource tags displayed on the screen. |
-| Display Resource Tag Item | Displays name, classification, and last modified date and time information of resource tag on screen. You can select and delete each resource tag. |
-| Query Resource list by resource tag | You can view list of Resources that sets resource tags. |
-| Modify  | You can change resource tag name.  |
+| Items                | Description                                                                                                                                        |
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| Resource Tag Search Conditions      | You can search for list of appropriate resource tags by specifying the following search criteria:<li>Resource Tag Separation: USER (User Type), SYSTEM (System Type)</li><li>Resource Tag Key: Select resource tag that contains the name entered</li> |
+| Create and Delete Resource Tags    | You can add new resource tag or select resource tag that appears in the list to delete it.                                                                                        |
+| Select Whole Resource Tag      | Select or deselect all resource tags displayed on the screen.                                                                                                      |
+| Display Resource Tag Item      | Displays name, classification, and last modified date and time information of resource tag on screen. You can select each resource tag to modify and delete.                                                                 |
+| Query Resource list by resource tag | You can view list of Resources that sets resource tags.                                                                                                       |
+| Modify Tag             | Change the name of a resource tag key or the value of a resource tag that belongs to the resource tag key.                                                                                        |
 
 Click **View Resource list by resource tag** to display a list of resources at the bottom of screen as follows
 
-![resourcewatcher_12](https://static.toastoven.net/prod_resource_watcher/img12_EN.png)
+![resourcewatcher_12](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_resources_of_tags_EN.png)
 
 | Items | Description |
 |---|---|
-| Tag Name | Display Selected Tag name.  |
 | Resource Search Condition | You can search for Resources list in resource tag with following search criteria<li>Project Name: Displays projects list that Resource was created.</li><li>Services: Displays list of service in use by the corresponding organization.</li><li>Resource Type: Displays list of Resource types provided by NHN Cloud service in use.</li><li>Region: Displays list of regions available to the corresponding organization.</li><li>Resource Name: Select Resource that contains the search term entered.</li><li>Resource creation date and time—Specifies the period the Resource was created. |
 | Resource List | Displays list of selected resource tag resources. |
 
 > Resource Tag Search screen only provides queries for the list of resources that have set up resource tag.
+> The resource tag key is retrieved, as well as a list of all resources with the resource tag value set that belong to the tag key.
 > Features to set tags to resources is provided from **Resource** menu.
 
 #### Create Resource Tag
 
 To create resource tag, press **+ Create resource tag** on Search resource tag screen.
 
-![resourcewatcher_13](https://static.toastoven.net/prod_resource_watcher/img13_EN.png)
+![resourcewatcher_13](https://static.toastoven.net/prod_resource_watcher/img_20240723_post_tags_EN.png)
 
-On Create resource tag screen, enter the tag name you want to add and press **Confirm** to create resource tag.
-If the same resource tag already existed, it will not be created additionally.
+In the Create Resource Tag screen, enter the tag key and tag value you want to add and press **Add** to create the resource tag.
+The names of resource tag keys cannot be duplicated, and resource tag values cannot be duplicated within a tag key.
 
 #### Modify Resource Tag
 
-In resource tags list from Search resource tags screen, , press **Modify** for the item want to change.
-Modify tag name and press **Confirm** to reflect the changes.
+In resource tags list from Search resource tags screen, click **Modify Tag** for the item want to change.
+
+![resourcewatcher_13](https://static.toastoven.net/prod_resource_watcher/img_20240723_modify_tags_EN.png)
+
+You can modify tag keys, and change the tag values that belong to them.
 
 > When modifying resource tag, tag settings for resource on which the corresponding tag is set are also to be changed.
 
@@ -81,7 +84,11 @@ Precautions for deleting resource tags are as follows.
 - If **Select Resource** is set as resource tag and the tag is set as Target item when creating a resource group, the tag entry is also removed from the resource group.
 - When creating notifications, if **Target Resource** is set to **Select resource tag** and the corresponding tag is set, the tag entry is also removed from the notification target.
 
-![resourcewatcher_14](https://static.toastoven.net/prod_resource_watcher/img14_EN.png)
+[Screen for deleting tags not set on a resource].
+![resourcewatcher_14](https://static.toastoven.net/prod_resource_watcher/img_20240723_delete_tags_EN.png)
+
+[Screen for deleting tags set on a resource].
+![resourcewatcher_14](https://static.toastoven.net/prod_resource_watcher/img_20240723_delete_tags2_EN.png)
 
 
 
@@ -169,8 +176,8 @@ Target Resource for notification can be set using resource groups or resource ta
 Therefore, you must create resource groups or resource tags before creating notifications.
 When selecting notification targets, if Resource is added after notification is created by re-tagging a resource group or resource tag that was already used for another notifications, it is automatically included in notifications once the corresponding Resource is included in a resource group or resource tag that have set when the notification was created.
 
-알림을 생성할 때 이벤트를 선택하고 대상 리소스를 지정하면 해당 리소스에서 해당하는 이벤트가 발생했을 때 사용자에게 알림을 전송합니다.
-이때 선택하는 이벤트는 CloudTrail 서비스에서 제공하는 이벤트 목록과 동일합니다.
+When creating a notification, you select an event and specify a target resource, and the user will be notified when the corresponding event occurs on that resource.
+The events you select are the same as the list of events provided by the CloudTrail service.
 
 #### Search Notifications
 
@@ -214,18 +221,18 @@ Click **View Resource List** tab to display list of Resources to be notified at 
 
 #### Create Notifications
 
-To Create notifications, press ** Create notifications** on Search Notifications screen.
+To Create notifications, press **Create notifications** on Search Notifications screen.
 
 ![resourcewatcher_35](https://static.toastoven.net/prod_resource_watcher/img35_EN.png)
 
-| Items                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Create notifications            | Press ** Create notifications ** to enter notifications information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Select Events                   | Specify Events that wants to get notified.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Target Resource                 | Specify Resources of interest that wants to get notified.<li>You can specify **Resource Group** and **Resource Tag**. Press **Add** to select it.</li><li>When multiple items are selected, all Resources set for each item are targeted.</li><li>Press [X] button on the right to remove the selected target.</li>                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Notifications Recipients Target | Set the recipient to forward email, SMS when sending notifications. Types of Notifications recipients are as follows.<li>Organization members: NHN Cloud membership, IAM membership can be selected by themselves.</li><li>Notifications Recipients Groups – Can select predefined recipients from the list of Notifications Recipients Groups in one’s organization. If multiple Notifications require the same notification recipient settings, we recommend that you register and use them in **Console**>**Organization**>** Notifications Recipients Groups Management**.</li><li>Role: Sends notifications to all members with the selected role. You can choose from organizational roles, project roles, project common role groups, and service roles.</li> |
-| WebHook                         | You can forward WebHook requests when sending notifications.<li>Supports https protocol. </li><li>For WebHook Payload Spec, refer to [Console Usage Guide].</li><li>When entered secret key, the HMAC credentials are sent to the header. Refer to [Console Usage Guide].</li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Confirm                         | Set all notifications rules, target resources, notifications recipients, or webhooks required to generate notifications, and press **OK** to generate notifications.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Items       | Description                                                                                                                                                                                                                                                                                                                                                               |
+|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Create notifications    | Press **Create notifications** to enter notifications information.                                                                                                                                                                                                                                                                                                                                |
+| Select Event   | Specify multiple events you want to be notified of.                                                                                                                                                                                                                                                                                                                                     |
+| Target Resource   | Specify Resources of interest that wants to get notified.<li>You can specify **Resource Group** and **Resource Tag**. Press **Add** to select it.</li><li>When multiple items are selected, all Resources set for each item are targeted.</li><li>Press [X] button on the right to remove the selected target.</li>                                                                                                                                                                              |
+| Notifications Recipients Target | Set the recipient to forward email, SMS when sending notifications. Types of Notifications recipients are as follows.<li>Organization members: You can directly select NHN Cloud members and IAM members.</li><li>Notifications Recipients Groups – Can select predefined recipients from the list of Notifications Recipients Groups in one’s organization. If multiple Notifications require the same notification recipient settings, we recommend that you register and use them in **Console** > **Organization** > **Notifications Recipients Groups Management**.</li><li>Role: Sends notifications to all members with the selected role. You can choose from organizational roles, project roles, project common role groups, and service roles.</li> |
+| WebHook       | You can forward WebHook requests when sending notifications.<li>Supports https protocol.</li><li>For WebHook Payload Spec, refer to [Console Usage Guide].</li><li>When entered secret key, the HMAC credentials are sent to the header. Refer to [Console Usage Guide].</li>                                                                                                                                                                                  |
+| Confirm       | Set all events, target resources, notifications recipients, or webhooks required to generate notifications, and press **OK** to generate notifications.                                                                                                                                                                                                                                                                                          |
 
 > If select type `role` for notification target, the notification is sent only to members whose roles you select are set up.  
 > For example, if select `ADMIN` role, members with `OWNER` role will not be notified.
@@ -235,7 +242,7 @@ To Create notifications, press ** Create notifications** on Search Notifications
 
 #### Modify Notifications
 
-You can change name, description, events, target resource of the notification, notification recipient, or the webhook settings.
+You can change name, description, event, and target resource of the notification, notification recipient, or the webhook settings.
 - Modify notification settings that have already been created in the list, and then click **Add** to reflect modified values.
   - Example: Select Email only and if the value is saved, select SMS from the list and press **Add** to update it.
 
@@ -266,43 +273,42 @@ Resources are managed as part of the following schemes.
 
 Resource consists of following information.
 
-| Items | Description                                                                                                                                                                                                                                                                                                                                    |
-|---|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Resource name | Name defined by user or automatically given by system.                                                                                                                                                                                                                                                                                         |
-| Resource ID | Identification information given when Resource was created.<br>As cope of uniqueness may vary from service to service, it is difficult to use as unique identification information                                                                                                                                                             |
+| Items | Description                                                                                                                                                                                                                                                                                                                                            |
+|---|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Resource name | Name defined by user or automatically given by system.                                                                                                                                                                                                                                                                                                 |
+| Resource ID | Identification information given when Resource was created.<br>As cope of uniqueness may vary from service to service, it is difficult to use as unique identification information                                                                                                                                                                     |
 | NCRN | NHN Cloud Resource Name (NCRN) is the only identification key information that can identify Resources across NHN Cloud services.<br>Display format: `Organization ID`:`Project ID`:`Resource Type`:`Region Code`:`Resource ID`<br>Example: `IU1gUaQki7fDv97V:5FlHkACb:INSTANCE:KR1:f75ad8ad-a97e-47b6-acec-8c09304290c5` |
-| Project | Name of the project where the resource was created.<br>Do not display information if it is organizational product resource.                                                                                                                                                                                                                    |
-| Service | Service information to which Resource belongs to.                                                                                                                                                                                                                                                                                              |
-| Resource Type | Service type information to which Resource belongs to.                                                                                                                                                                                                                                                                                         | 
-| Region | Region Information where the resource was created. <br>Do not display resources for services that do not distinguish regions.                                                                                                                                                                                                                  |
-| Resource Group List | Resource Group List including resources                                                                                                                                                                                                                                                                                                        |
-| Resource Tag List | Resource Tag List which was set in Resource                                                                                                                                                                                                                                                                                                    | 
+| Project | Name of the project where the resource was created.<br>Do not display information if it is organizational resource.                                                                            |
+| Service | Service information to which Resource belongs to.                                                                                                                                                                                                                                                                                                      |
+| Resource Type | Service type information to which Resource belongs to.                                                                                                                                                                                                                                                                                                 | 
+| Region | Region Information where the resource was created.<br>Do not display resources for services that do not distinguish regions.                                                                                                                                                                                                                           |
+| Resource Group List | Resource Group List including resources                                                                                                                                                                                                                                                                                                                |
+| Resource Tag List | Resource Tag List which was set in Resource                                                                                                                                                                                                                                                                                                            | 
 
 
 #### Search Resources
 
 Search Resource screen consists of as follows.
 
-![resourcewatcher_41](https://static.toastoven.net/prod_resource_watcher/img41_2_EN.png)
+![resourcewatcher_41](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_resources_EN.png)
 
-| Items | Description |
-|---|---|
-| Resource Search Condition | You can search for resources by specifying the following search criteria.<li>Project name</li><li>Service</li><li>Resource Type</li><li>Region</li><li>Resource Group</li><li>Resource Tag</li><li>Resource Name</li><li>Resource Creation date and time |
-| Resource Tag Settings | Sets resource tag for selected Resource. |
-| Select whole Resource | Select or deselect all Resources displayed on screen. |
-| Display Resource Items | Displays information of Searched Resource on screen. Click **View** to check Resource information in detail. |
-| Resource Group | Display one of the resource groups that contain the corresponding Resource and displays the number of other set resource groups. To view complete list of resource groups, click the location.  |
-| Resource Tag | Display one of the resource tags that contain the corresponding resource tags and displays the number of other set resource tags. To view complete list of resource tags, click the location. |
-| Hovering Menu | Display the full list of resource groups or resource tags. |
-| View in Detail | Query `basic information` and `events` for the corresponding resource. |
+| Items         | Description                                                                                                                                                                  |
+|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Resource Search Condition  | You can search for resources by specifying the following search criteria.<li>Project name</li><li>Service</li><li>Resource Type</li><li>Region</li><li>Resource Group</li><li>Resource Status</li><li>Resource Tag</li><li>Resource Name</li><li>Resource Creation date and time |
+| Reset Resource Tag | Sets resource tag for selected Resource.                                                                                                                                             |
+| Select All Resources  | Select or deselect all Resources displayed on screen.                                                                                                                                        |
+| Display Resource Items  | Displays information of Searched Resource on screen. Click **View** to check Resource information in detail.                                                                                                          |
+| Resource Group     | Display one of the resource groups that contain the corresponding Resource and displays the number of other set resource groups. To view complete list of resource groups, click the location.                                                                         |
+| Resource Tag     | Display one of the resource tags that contain the corresponding resource tags and displays the number of other set resource tags. To view complete list of resource tags, click the location.                                                                          |
+| Hovering Menu     | Display the full list of resource groups or resource tags.                                                                                                                                   |
+| View in Detail       | Confirm the **basic information** and **events** for the resource.                                                                                                                                   |
 
 > When create or delete each Resource from NHN Cloud service, Resource Watcher service automatically synchronizes and exposes Resource information.
-
 When creating a resource, it is exposed to the list, and when you delete the resource, it is removed from the list and not to be exposed. We will provide features to check deleted resources in the future.
 
 Press **View** to display list of basic information and events for Resource at the bottom of screen as follows.
 
-![resourcewatcher_42](https://static.toastoven.net/prod_resource_watcher/img42_EN.png)
+![resourcewatcher_41](https://static.toastoven.net/prod_resource_watcher/img_20240723_get_resources2_EN.png)
 
 | Items | Description |
 |---|---|
@@ -318,19 +324,34 @@ Click **Event Query** tab to display list of events that occurred in Resource at
 | Search Event Condition | You can search for list of events that occurred in Resource with following search criteria.<li>Events: Specifies list of possible events for that corresponding resource type.</li><li>Date and time of event occurrence: Specifies period that event occurred. |
 | Event List | Displays the list of events that occurred on that resource. |
 
+#### Reset Resource Tag
+
+To set resource tags for Resource, click **Reset Resource Tag** on Search Resource screen.
+
+![resourcewatcher_45](https://static.toastoven.net/prod_resource_watcher/img_20240723_reset_resource_tags_EN.png)
+
+| Items           | Description                                                                       |
+|--------------|--------------------------------------------------------------------------|
+| Select Resource       | Select check box for Resource for which want to set resource tag. Select check box to activate **Reset Resource Tag** button. |
+| Reset Resource Tag   | Press **Reset Resource Tag** to pop up Settings screen.                                        |
+| Tag key         | Retrieves a list of resource tag keys that can be set. Search to retrieve a list of tag keys to set.             |
+| Tag key: Tag value   | Gets a list of tag values belonging to the resource tag key that can be set. You can use search to get a list of tag values to set.    |
+| Display Selectable Items | Displays a list of all resource tags. Tag values with the same tag key on one resource cannot be set at the same time.         |
+| Confirm           | Reflect the content of the **Reset Resource Tag** screen.                                            |
+
+Precautions for Resetting Resource Tags
+> When resetting resource tags, the list of previously set resource tags is initialized and set as the newly specified resource tag.
+
 #### Resource Tag Setting
 
-To set resource tags for Resource, click **Set resource tags** on Search Resource screen.
+After viewing an individual resource, click **Settings** for the resource tag entry.
 
-![resourcewatcher_45](https://static.toastoven.net/prod_resource_watcher/img45_EN.png)
+![resourcewatcher_45](https://static.toastoven.net/prod_resource_watcher/img_20240723_set_resource_tags_EN.png)
 
-| Items | Description |
-|---|---|
-| Select Resource | Select check box for Resource for which want to set resource tag. Select check box to activate **Set resource tag** button. |
-| Resource Tag Setting | Press **Set resource tag** to pop up Settings screen. |
-| Select Resource Tag | Search list of target resource tags to set. View list of tags of which names partially match resource tags |
-| Display Selectable Items | Display list of all resource tags, and, if resource tag exists set for that Resource, enables check box for respective tag item. |
-| Confirm | Reflect the content of the **Resource Tag Settings** screen. |
-
-Precautions for Setting resource tags
-> When setting resource tags, the list of previously set resource tags is initialized and set as the newly specified resource tag.
+| Items              | Description                                                                    |
+|-----------------|-----------------------------------------------------------------------|
+| Tag key            | Retrieves a list of resource tag keys that can be set. Search to retrieve a list of tag keys to set.          |
+| Tag key: Tag value      | Gets a list of tag values belonging to the resource tag key that can be set. You can use search to get a list of tag values to set. |
+| Display Selectable Items    | Displays a list of all resource tags. Tag values with the same tag key on one resource cannot be set at the same time.      |
+| Selected tag key: Tag value  | Displays a list of existing selected resource tags on the resource.                                         |
+| Confirm              | Reflect the content of the **Resource Tag Settings** screen.                                         |

@@ -56,6 +56,8 @@ For detailed response results, refer to header item in Response Body.
 
 ### 1. Alarm
 
+> Alarm API v2 is recommended to use.
+
 #### 1.1 Register Alarm
 
 **[Basic Information]**
