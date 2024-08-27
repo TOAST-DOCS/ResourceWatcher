@@ -2,10 +2,10 @@
 
 * Below are service resource types and relevant events
 * Event Types
-    * Create Resource: Event that occurs when a resource is created
-    * Modify Resource: Event that occurs when a resource is modified
-    * Delete Resource: Event that occurs when a resource is deleted
-    * -: Event not related to Create/Modify/Delete Resource
+  * Create Resource: Event that occurs when a resource is created
+  * Modify Resource: Event that occurs when a resource is modified
+  * Delete Resource: Event that occurs when a resource is deleted
+  * -: Event not related to Create/Modify/Delete Resource
 
 ### Secure Key Manager
 
@@ -18,10 +18,10 @@
 |event_id.skm.keystore.update|Change Keystore Information|Modify Resource|
 |event_id.skm.secret.create|Create Confidential Data|-|
 |event_id.skm.secret.delete|Immediately Delete Confidential Data|-|
-|event_id.skm.symmetric.create|Create Symmectric Keys|-|
-|event_id.skm.symmetric.delete|Immediately Delete Symmetric Keys|-|
-|event_id.skm.asymmetric.create|Create Asymmetric Keys|-|
-|event_id.skm.asymmetric.delete|Immediately Delete Asymmetric Keys|-|
+|event_id.skm.symmetric.create|Create Symmectric Key|-|
+|event_id.skm.symmetric.delete|Immediately Delete Symmetric Key|-|
+|event_id.skm.asymmetric.create|Create Asymmetric Key|-|
+|event_id.skm.asymmetric.delete|Immediately Delete Asymmetric Key|-|
 |event_id.skm.api.secrets.get|Query Confidential Data|-|
 |event_id.skm.api.symmetric.encrypt|Encrypt with Symmetric Key|-|
 |event_id.skm.api.symmetric.decrypt|Decrypt with Symmetric Key|-|
@@ -32,14 +32,46 @@
 |event_id.skm.api.asymmetric.get.privateKey|Query Private Key|-|
 |event_id.skm.api.asymmetric.get.publicKey|Query Public Key|-|
 |event_id.skm.api.secrets.create|Create Confidential Data|-|
-|event_id.skm.api.symmetric.create|Create Symmectric Keys|-|
-|event_id.skm.api.asymmetric.create|Create Asymmetric Keys|-|
+|event_id.skm.api.symmetric.create|Create Symmectric Key|-|
+|event_id.skm.api.asymmetric.create|Create Asymmetric Key|-|
 |event_id.skm.api.secrets.delete|Immediately Delete Confidential Data|-|
-|event_id.skm.api.symmetric.delete|Immediately Delete Symmetric Keys|-|
-|event_id.skm.api.asymmetric.delete|Immediately Delete Asymmetric Keys|-|
+|event_id.skm.api.symmetric.delete|Immediately Delete Symmetric Key|-|
+|event_id.skm.api.asymmetric.delete|Immediately Delete Asymmetric Key|-|
 |event_id.skm.secrets.scheduled_delete|Auto Delete Confidential Data|-|
 |event_id.skm.symmetric.scheduled_delete|Auto Delete Symmetric Key|-|
 |event_id.skm.asymmetric.scheduled_delete|Auto Delete Asymmetric Key|-|
+
+
+### NHN Container Registry(NCR)
+
+#### CONTAINER REGISTRY (NHNContainerRegistry:ContainerRegistry)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.ncr.registry.create|Create Registry|Create Resource|
+|event_id.ncr.registry.delete|Delete Registry|Delete Resource|
+|event_id.ncr.registry.update|Modify Registry|-|
+|event_id.ncr.immutable_tag_rule.create|Add Image Protection Policy|-|
+|event_id.ncr.immutable_tag_rule.delete|Delete Image Protection Policy|-|
+|event_id.ncr.immutable_tag_rule.update|Modify Image Protection Policy|-|
+|event_id.ncr.retention_rule.create|Create Image Cleanup Policy|-|
+|event_id.ncr.retention_rule.delete|Delete Image Cleanup Policy|-|
+|event_id.ncr.retention_rule.execute|Run Image Cleanup Policy|-|
+|event_id.ncr.retention_rule.update|Modify Image Cleanup Policy|-|
+|event_id.ncr.webhook.create|Create Webhook|-|
+|event_id.ncr.webhook.delete|Delete Webhook|-|
+|event_id.ncr.webhook.update|Modify Webhook|-|
+
+
+### EasyCache
+
+####  (EasyCache:NodeInstance)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.easycache.node.create|Add Node|Create Resource|
+|event_id.easycache.node.update||Modify Resource|
+|event_id.easycache.node.delete|Delete Node|Delete Resource|
 
 
 ### Default Infrastructure Service
@@ -104,27 +136,15 @@
 |event_id.iaas.cluster.update_sgw.start|Change SGW Started|-|
 |event_id.iaas.cluster.update_sgw.end|Change SGW Completed|-|
 |event_id.iaas.cluster.update_sgw.failed|Change SGW Failed|-|
-
-#### Block Storage (Infrastructure:BLOCK_STORAGE)
-
-| Event ID | Event Name | Event Type |
-|--- |--- |--- |
-|event_id.iaas.volume.create_end|Create Block Storage Completed|Create Resource|
-|event_id.iaas.volume.transfer_accept||Create Resource|
-|event_id.iaas.volume.copy_end|Replicate Block Storage Completed|Create Resource|
-|event_id.iaas.volume.delete_end|Delete Block Storage Completed|Delete Resource|
-|event_id.iaas.volume.transfer_create||Delete Resource|
-|event_id.iaas.volume.update_end|Modify Block Storage Completed|Modify Resource|
-
-#### Image (Infrastructure:IMAGE)
-
-| Event ID | Event Name | Event Type |
-|--- |--- |--- |
-|event_id.iaas.image.create_end|Create Image Completed|Create Resource|
-|event_id.iaas.image.transfer_accept||Create Resource|
-|event_id.iaas.image.delete_end|Delete Image Completed|Delete Resource|
-|event_id.iaas.image.transfer_create||Delete Resource|
-|event_id.iaas.image.update_end|Modify Image Completed|Modify Resource|
+|event_id.iaas.nodegroup.update_extra_volume.end|Additional block storage update completed|-|
+|event_id.iaas.nodegroup.update_extra_volume.fail|Additional block storage update failed|-|
+|event_id.iaas.nodegroup.update_extra_volume.start|Additional block storage update started|-|
+|event_id.iaas.nodegroup.update_extra_security_group.end|Additional security group update completed|-|
+|event_id.iaas.nodegroup.update_extra_security_group.fail|Additional security group update failed|-|
+|event_id.iaas.nodegroup.update_extra_security_group.start|Additional security group update started|-|
+|event_id.iaas.cluster.update_nks_registry.end|NKS registry update completed|-|
+|event_id.iaas.cluster.update_nks_registry.fail|NKS registry update failed|-|
+|event_id.iaas.cluster.update_nks_registry.start|NKS registry update started|-|
 
 #### IMAGE TEMPLATE (Infrastructure:ImageTemplate)
 
@@ -135,13 +155,6 @@
 |event_id.iaas.image_template.build|Build Image|-|
 |event_id.iaas.image_template.cancel_build|Cancel Image Build|-|
 |event_id.iaas.image_template.delete|Delete Image Template|Delete Resource|
-
-#### Block Storage Snapshot (Infrastructure:SNAPSHOT)
-
-| Event ID | Event Name | Event Type |
-|--- |--- |--- |
-|event_id.iaas.snapshot.create_end|Create Block Storage Snapshot Completed|Create Resource|
-|event_id.iaas.snapshot.delete_end|Delete Block Storage Snapshot Completed|Delete Resource|
 
 #### INSTANCE (INSTANCE)
 
@@ -154,6 +167,31 @@
 |event_id.iaas.instance_action.resize_end|Change Instance Type Completed|-|
 |event_id.iaas.instance_action.start_end|Start Stopped Instance Completed|-|
 |event_id.iaas.instance_action.stop_end|Stop Instance Completed|-|
+
+#### WORKLOAD (NHNContainerService:Workload)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.ncs.workload_create.start|Create Workload Started|Create Resource|
+|event_id.iaas.ncs.workload_create.failed|Create Workload Failed|Delete Resource|
+|event_id.iaas.ncs.workload.delete|Delete Workload|Delete Resource|
+|event_id.iaas.ncs.workload.stop|Stop Workload|Modify Resource|
+|event_id.iaas.ncs.workload_restart.start|Restart Workload Started|Modify Resource|
+|event_id.iaas.ncs.workload_template_update.start|Change Workload Template Started|Modify Resource|
+|event_id.iaas.ncs.workload_desired_update.start|Change Number of Workload Task Requests Start|Modify Resource|
+|event_id.iaas.ncs.workload_schedule.update|Change Scheduled Run|Modify Resource|
+|event_id.iaas.ncs.workload_loadbalancer_update.start||Modify Resource|
+|event_id.iaas.ncs.workload_create.end|Create Workload Completed|-|
+|event_id.iaas.ncs.workload_restart.end|Restart Workload Completed|-|
+|event_id.iaas.ncs.workload_restart.failed|Restart Workload Failed|-|
+|event_id.iaas.ncs.workload_template_update.end|Change Workload Template Completed|-|
+|event_id.iaas.ncs.workload_template_update.failed|Change Workload Template Failed|-|
+|event_id.iaas.ncs.workload_desired_update.end|Change Number of Workload Task Requests Completed|-|
+|event_id.iaas.ncs.workload_desired_update.failed|Change Number of Workload Task Requests Failed|-|
+|event_id.iaas.ncs.workload_loadbalancer_update.end|Change Workload Load Balancer Failed|-|
+|event_id.iaas.ncs.workload_active_deadline.update|Change Schedule Termination|-|
+|event_id.iaas.ncs.workload_internal_loadbalancer.update|Change Workload Internal Load Balancer|-|
+|event_id.iaas.ncs.workload_description.update|Change Workload Description|-|
 
 
 ### DataQuery

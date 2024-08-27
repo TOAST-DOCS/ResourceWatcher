@@ -13,33 +13,65 @@
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
-|event_id.skm.keystore.create|キー保存場所 作成|リソース作成|
-|event_id.skm.keystore.delete|キー保存場所 削除|リソース削除|
-|event_id.skm.keystore.update|キー保存場所 変更|リソース修正|
-|event_id.skm.secret.create|機密データ 作成|-|
-|event_id.skm.secret.delete|機密データ 削除 -&gt; 機密データの即時削除|-|
-|event_id.skm.symmetric.create|対称鍵 作成|-|
-|event_id.skm.symmetric.delete|対称鍵 即時削除|-|
-|event_id.skm.asymmetric.create|非対称鍵 作成|-|
-|event_id.skm.asymmetric.delete|非対称鍵 即時削除|-|
-|event_id.skm.api.secrets.get|機密データ 照会|-|
+|event_id.skm.keystore.create|キーストアの作成|リソース作成|
+|event_id.skm.keystore.delete|キーストアの削除|リソース削除|
+|event_id.skm.keystore.update|キーストア情報の変更|リソース修正|
+|event_id.skm.secret.create|機密データの作成|-|
+|event_id.skm.secret.delete|機密データの即時削除|-|
+|event_id.skm.symmetric.create|対称鍵の作成|-|
+|event_id.skm.symmetric.delete|対称鍵の即時削除|-|
+|event_id.skm.asymmetric.create|非対称鍵の作成|-|
+|event_id.skm.asymmetric.delete|非対称鍵の即時削除|-|
+|event_id.skm.api.secrets.get|機密データの照会|-|
 |event_id.skm.api.symmetric.encrypt|対称鍵による暗号化|-|
-|event_id.skm.api.symmetric.decrypt|対称鍵による復号|-|
-|event_id.skm.api.symmetric.create_local_key|ローカルキーの作成|-|
-|event_id.skm.api.symmetric.get|機密データ 照会|-|
+|event_id.skm.api.symmetric.decrypt|対称による復号|-|
+|event_id.skm.api.symmetric.create_local_key|ローカルキー作成|-|
+|event_id.skm.api.symmetric.get|対称鍵の照会|-|
 |event_id.skm.api.asymmetric.sign|非対称鍵による署名|-|
 |event_id.skm.api.asymmetric.verify|非対称鍵による署名検証|-|
-|event_id.skm.api.asymmetric.get.privateKey|対称鍵 照会|-|
-|event_id.skm.api.asymmetric.get.publicKey|非対称鍵 照会|-|
-|event_id.skm.api.secrets.create|機密データ 作成|-|
-|event_id.skm.api.symmetric.create|対称鍵 作成|-|
-|event_id.skm.api.asymmetric.create|非対称鍵 作成|-|
-|event_id.skm.api.secrets.delete|機密データ 削除 -&gt; 機密データの即時削除|-|
-|event_id.skm.api.symmetric.delete|対称鍵 即時削除|-|
-|event_id.skm.api.asymmetric.delete|非対称鍵 即時削除|-|
+|event_id.skm.api.asymmetric.get.privateKey|秘密鍵の照会|-|
+|event_id.skm.api.asymmetric.get.publicKey|公開鍵の照会|-|
+|event_id.skm.api.secrets.create|機密データの作成|-|
+|event_id.skm.api.symmetric.create|対称鍵の作成|-|
+|event_id.skm.api.asymmetric.create|非対称鍵の作成|-|
+|event_id.skm.api.secrets.delete|機密データの即時削除|-|
+|event_id.skm.api.symmetric.delete|対称鍵の即時削除|-|
+|event_id.skm.api.asymmetric.delete|非対称鍵の即時削除|-|
 |event_id.skm.secrets.scheduled_delete|機密データの自動削除|-|
 |event_id.skm.symmetric.scheduled_delete|対称鍵の自動削除|-|
 |event_id.skm.asymmetric.scheduled_delete|非対称鍵の自動削除|-|
+
+
+### NHN Container Registry(NCR)
+
+#### コンテナレジストリ (NHNContainerRegistry:ContainerRegistry)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.ncr.registry.create|レジストリの作成|リソース作成|
+|event_id.ncr.registry.delete|レジストリの削除|リソース削除|
+|event_id.ncr.registry.update|レジストリの修正|-|
+|event_id.ncr.immutable_tag_rule.create|イメージ保護ポリシー追加|-|
+|event_id.ncr.immutable_tag_rule.delete|イメージ保護ポリシー削除|-|
+|event_id.ncr.immutable_tag_rule.update|イメージ保護ポリシー修正|-|
+|event_id.ncr.retention_rule.create|イメージ整理ポリシー追加|-|
+|event_id.ncr.retention_rule.delete|イメージ整理ポリシー削除|-|
+|event_id.ncr.retention_rule.execute|イメージ整理ポリシー実行|-|
+|event_id.ncr.retention_rule.update|イメージ整理ポリシー修正|-|
+|event_id.ncr.webhook.create|Webフック作成|-|
+|event_id.ncr.webhook.delete|Webフック削除|-|
+|event_id.ncr.webhook.update|Webフック修正|-|
+
+
+### EasyCache
+
+####  (EasyCache:NodeInstance)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.easycache.node.create|ノード追加|リソース作成|
+|event_id.easycache.node.update||リソース修正|
+|event_id.easycache.node.delete|ノード削除|リソース削除|
 
 
 ### 基本インフラサービス
@@ -104,27 +136,15 @@
 |event_id.iaas.cluster.update_sgw.start|SGW 変更|-|
 |event_id.iaas.cluster.update_sgw.end|SGW 変更完了|-|
 |event_id.iaas.cluster.update_sgw.failed|SGW 変更失敗|-|
-
-#### ブロックストレージ (Infrastructure:BLOCK_STORAGE)
-
-| イベント ID | イベント名検索 | イベントタイプ |
-|--- |--- |--- |
-|event_id.iaas.volume.create_end|ブロックストレージ作成完了|リソース作成|
-|event_id.iaas.volume.transfer_accept||リソース作成|
-|event_id.iaas.volume.copy_end|ブロックストレージ複製完了|リソース作成|
-|event_id.iaas.volume.delete_end|ブロックストレージ削除完了|リソース削除|
-|event_id.iaas.volume.transfer_create||リソース削除|
-|event_id.iaas.volume.update_end|ブロックストレージ修正完了|リソース修正|
-
-#### イメージの (Infrastructure:IMAGE)
-
-| イベント ID | イベント名検索 | イベントタイプ |
-|--- |--- |--- |
-|event_id.iaas.image.create_end|イメージ作成完了|リソース作成|
-|event_id.iaas.image.transfer_accept||リソース作成|
-|event_id.iaas.image.delete_end|イメージ削除完了|リソース削除|
-|event_id.iaas.image.transfer_create||リソース削除|
-|event_id.iaas.image.update_end|イメージ修正完了|リソース修正|
+|event_id.iaas.nodegroup.update_extra_volume.end|追加ブロックストレージアップデートの完了|-|
+|event_id.iaas.nodegroup.update_extra_volume.fail|追加ブロックストレージの更新に失敗しました|-|
+|event_id.iaas.nodegroup.update_extra_volume.start|追加ブロックストレージアップデートの開始|-|
+|event_id.iaas.nodegroup.update_extra_security_group.end|追加セキュリティグループの更新が完了しました|-|
+|event_id.iaas.nodegroup.update_extra_security_group.fail|追加のセキュリティグループの更新に失敗しました|-|
+|event_id.iaas.nodegroup.update_extra_security_group.start|追加のセキュリティグループの更新を開始|-|
+|event_id.iaas.cluster.update_nks_registry.end|NKSレジストリ更新の完了|-|
+|event_id.iaas.cluster.update_nks_registry.fail|NKSレジストリ更新に失敗しました|-|
+|event_id.iaas.cluster.update_nks_registry.start|NKSレジストリ更新の開始|-|
 
 #### イメージテンプレート (Infrastructure:ImageTemplate)
 
@@ -135,13 +155,6 @@
 |event_id.iaas.image_template.build|イメージビルド|-|
 |event_id.iaas.image_template.cancel_build|イメージビルドのキャンセル|-|
 |event_id.iaas.image_template.delete|イメージテンプレートの削除|リソース削除|
-
-#### ブロックストレージスナップショット (Infrastructure:SNAPSHOT)
-
-| イベント ID | イベント名検索 | イベントタイプ |
-|--- |--- |--- |
-|event_id.iaas.snapshot.create_end|ブロックストレージスナップショット作成完了|リソース作成|
-|event_id.iaas.snapshot.delete_end|ブロックストレージスナップショット削除完了|リソース削除|
 
 #### インスタンス (INSTANCE)
 
@@ -154,6 +167,31 @@
 |event_id.iaas.instance_action.resize_end|インスタンスタイプの変更完了|-|
 |event_id.iaas.instance_action.start_end|停止したインスタンスの起動完了|-|
 |event_id.iaas.instance_action.stop_end|インスタンスの停止完了|-|
+
+#### ワークロード (NHNContainerService:Workload)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.ncs.workload_create.start|ワークロードの作成|リソース作成|
+|event_id.iaas.ncs.workload_create.failed|ワークロードの作成失敗|リソース削除|
+|event_id.iaas.ncs.workload.delete|ワークロードの削除|リソース削除|
+|event_id.iaas.ncs.workload.stop|ワークロード停止|リソース修正|
+|event_id.iaas.ncs.workload_restart.start|ワークロード再起動|リソース修正|
+|event_id.iaas.ncs.workload_template_update.start|ワークロードのテンプレート変更|リソース修正|
+|event_id.iaas.ncs.workload_desired_update.start|ワークロード作業リクエスト数の変更|リソース修正|
+|event_id.iaas.ncs.workload_schedule.update|ワークロードの予約実行変更|リソース修正|
+|event_id.iaas.ncs.workload_loadbalancer_update.start||リソース修正|
+|event_id.iaas.ncs.workload_create.end|ワークロードの作成完|-|
+|event_id.iaas.ncs.workload_restart.end|ワークロード再起動完了|-|
+|event_id.iaas.ncs.workload_restart.failed|ワークロード再起動失敗|-|
+|event_id.iaas.ncs.workload_template_update.end|ワークロードのテンプレート変更完了|-|
+|event_id.iaas.ncs.workload_template_update.failed|ワークロードのテンプレート変更失敗|-|
+|event_id.iaas.ncs.workload_desired_update.end|ワークロード作業リクエスト数の変更完了|-|
+|event_id.iaas.ncs.workload_desired_update.failed|ワークロード作業リクエスト数の変更失敗|-|
+|event_id.iaas.ncs.workload_loadbalancer_update.end|ワークロードロードバランサーの変更完了|-|
+|event_id.iaas.ncs.workload_active_deadline.update|ワークロードの終了予約設定を変更|-|
+|event_id.iaas.ncs.workload_internal_loadbalancer.update|ワークロード内部ロードバランサーの変更|-|
+|event_id.iaas.ncs.workload_description.update|ワークロード説明の変更|-|
 
 
 ### DataQuery
