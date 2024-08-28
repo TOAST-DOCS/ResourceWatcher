@@ -202,5 +202,9 @@
 |--- |--- |--- |
 |event_id.dataquery.cluster_on|Trinoクラスタオン|リソース作成|
 |event_id.dataquery.cluster_off|Trinoクラスタオフ|リソース削除|
+|event_id.dataquery.kr3.cluster_on||リソース作成|
+|event_id.dataquery.kr3.cluster_off||リソース削除|
+|event_id.dataquery.pj1.cluster_on||リソース作成|
+|event_id.dataquery.pj1.cluster_off||リソース削除|
 
 
