@@ -202,5 +202,9 @@
 |--- |--- |--- |
 |event_id.dataquery.cluster_on|Trino Cluster On|Create Resource|
 |event_id.dataquery.cluster_off|Trino Cluster Off|Delete Resource|
+|event_id.dataquery.kr3.cluster_on||Create Resource|
+|event_id.dataquery.kr3.cluster_off||Delete Resource|
+|event_id.dataquery.pj1.cluster_on||Create Resource|
+|event_id.dataquery.pj1.cluster_off||Delete Resource|
 
 

@@ -1,4 +1,4 @@
-"## Governance & Audit > Resource Watcher > 리소스 유형 목록
+## Governance & Audit > Resource Watcher > 리소스 유형 목록
 
 * 서비스 리소스 유형 및 관련된 이벤트 목록입니다.
 * 이벤트 유형
@@ -203,6 +203,9 @@
 |--- |--- |--- |
 |event_id.dataquery.cluster_on|Trino 클러스터 켜짐|리소스 생성|
 |event_id.dataquery.cluster_off|Trino 클러스터 꺼짐|리소스 삭제|
+|event_id.dataquery.kr3.cluster_on||리소스 생성|
+|event_id.dataquery.kr3.cluster_off||리소스 삭제|
+|event_id.dataquery.pj1.cluster_on||리소스 생성|
+|event_id.dataquery.pj1.cluster_off||리소스 삭제|
 
 
-"
