@@ -147,5 +147,32 @@
 |event_id.iaas.instance_action.resize_end|인스턴스 타입 변경 완료|-|
 |event_id.iaas.instance_action.start_end|중지된 인스턴스 시작 완료|-|
 |event_id.iaas.instance_action.stop_end|인스턴스 중지 완료|-|
+|event_id.iaas.instance_action.shelve_end|인스턴스 종료 완료|-|
+|event_id.iaas.instance_action.unshelve_end|종료된 인스턴스 시작 완료|-|
+
+#### 워크로드 (NHNContainerService:Workload)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.ncs.workload_create.start|워크로드 생성 시작|리소스 생성|
+|event_id.iaas.ncs.workload_create.failed|워크로드 생성 실패|리소스 삭제|
+|event_id.iaas.ncs.workload.delete|워크로드 삭제|리소스 삭제|
+|event_id.iaas.ncs.workload.stop|워크로드 중지|리소스 수정|
+|event_id.iaas.ncs.workload_restart.start|워크로드 재시작 시작|리소스 수정|
+|event_id.iaas.ncs.workload_template_update.start|워크로드 템플릿 변경 시작|리소스 수정|
+|event_id.iaas.ncs.workload_desired_update.start|워크로드 작업 요청 수 변경 시작|리소스 수정|
+|event_id.iaas.ncs.workload_schedule.update|워크로드 예약 실행 변경|리소스 수정|
+|event_id.iaas.ncs.workload_loadbalancer_update.start||리소스 수정|
+|event_id.iaas.ncs.workload_create.end|워크로드 생성 완료|-|
+|event_id.iaas.ncs.workload_restart.end|워크로드 재시작 완료|-|
+|event_id.iaas.ncs.workload_restart.failed|워크로드 재시작 실패|-|
+|event_id.iaas.ncs.workload_template_update.end|워크로드 템플릿 변경 완료|-|
+|event_id.iaas.ncs.workload_template_update.failed|워크로드 템플릿 변경 실패|-|
+|event_id.iaas.ncs.workload_desired_update.end|워크로드 작업 요청 수 변경 완료|-|
+|event_id.iaas.ncs.workload_desired_update.failed|워크로드 작업 요청 수 변경 실패|-|
+|event_id.iaas.ncs.workload_loadbalancer_update.end|워크로드 로드 밸런서 설정 변경 완료|-|
+|event_id.iaas.ncs.workload_active_deadline.update|워크로드 종료 예약 변경|-|
+|event_id.iaas.ncs.workload_internal_loadbalancer.update|워크로드 내부 로드 밸런서 설정 변경|-|
+|event_id.iaas.ncs.workload_description.update|워크로드 설명 변경|-|
 
 

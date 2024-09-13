@@ -147,6 +147,27 @@
 |event_id.iaas.cluster.update_nks_registry.fail|NKS 레지스트리 업데이트 실패|-|
 |event_id.iaas.cluster.update_nks_registry.start|NKS 레지스트리 업데이트 시작|-|
 
+#### 블록 스토리지 (Infrastructure:BLOCK_STORAGE)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.volume.create_end|블록 스토리지 생성 완료|리소스 생성|
+|event_id.iaas.volume.transfer_accept||리소스 생성|
+|event_id.iaas.volume.copy_end|블록 스토리지 복제 완료|리소스 생성|
+|event_id.iaas.volume.delete_end|블록 스토리지 삭제 완료|리소스 삭제|
+|event_id.iaas.volume.transfer_create||리소스 삭제|
+|event_id.iaas.volume.update_end|블록 스토리지 수정 완료|리소스 수정|
+
+#### 이미지 (Infrastructure:IMAGE)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.image.create_end|이미지 생성 완료|리소스 생성|
+|event_id.iaas.image.transfer_accept||리소스 생성|
+|event_id.iaas.image.delete_end|이미지 삭제 완료|리소스 삭제|
+|event_id.iaas.image.transfer_create||리소스 삭제|
+|event_id.iaas.image.update_end|이미지 수정 완료|리소스 수정|
+
 #### 이미지 템플릿 (Infrastructure:ImageTemplate)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -156,6 +177,13 @@
 |event_id.iaas.image_template.build|이미지 빌드|-|
 |event_id.iaas.image_template.cancel_build|이미지 빌드 취소|-|
 |event_id.iaas.image_template.delete|이미지 템플릿 삭제|리소스 삭제|
+
+#### 블록 스토리지 스냅숏 (Infrastructure:SNAPSHOT)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.snapshot.create_end|블록 스토리지 스냅숏 생성 완료|리소스 생성|
+|event_id.iaas.snapshot.delete_end|블록 스토리지 스냅숏 삭제 완료|리소스 삭제|
 
 #### 인스턴스 (INSTANCE)
 
@@ -168,6 +196,8 @@
 |event_id.iaas.instance_action.resize_end|인스턴스 타입 변경 완료|-|
 |event_id.iaas.instance_action.start_end|중지된 인스턴스 시작 완료|-|
 |event_id.iaas.instance_action.stop_end|인스턴스 중지 완료|-|
+|event_id.iaas.instance_action.shelve_end|인스턴스 종료 완료|-|
+|event_id.iaas.instance_action.unshelve_end|종료된 인스턴스 시작 완료|-|
 
 #### 워크로드 (NHNContainerService:Workload)
 
