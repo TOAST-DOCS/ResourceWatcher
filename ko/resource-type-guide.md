@@ -152,10 +152,8 @@
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
 |--- |--- |--- |
 |event_id.iaas.volume.create_end|블록 스토리지 생성 완료|리소스 생성|
-|event_id.iaas.volume.transfer_accept||리소스 생성|
 |event_id.iaas.volume.copy_end|블록 스토리지 복제 완료|리소스 생성|
 |event_id.iaas.volume.delete_end|블록 스토리지 삭제 완료|리소스 삭제|
-|event_id.iaas.volume.transfer_create||리소스 삭제|
 |event_id.iaas.volume.update_end|블록 스토리지 수정 완료|리소스 수정|
 
 #### 이미지 (Infrastructure:IMAGE)
@@ -163,9 +161,7 @@
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
 |--- |--- |--- |
 |event_id.iaas.image.create_end|이미지 생성 완료|리소스 생성|
-|event_id.iaas.image.transfer_accept||리소스 생성|
 |event_id.iaas.image.delete_end|이미지 삭제 완료|리소스 삭제|
-|event_id.iaas.image.transfer_create||리소스 삭제|
 |event_id.iaas.image.update_end|이미지 수정 완료|리소스 수정|
 
 #### 이미지 템플릿 (Infrastructure:ImageTemplate)

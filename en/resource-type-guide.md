@@ -151,10 +151,8 @@
 | Event ID | Event Name | Event Type |
 |--- |--- |--- |
 |event_id.iaas.volume.create_end|Create Block Storage Completed|Create Resource|
-|event_id.iaas.volume.transfer_accept||Create Resource|
 |event_id.iaas.volume.copy_end|Replicate Block Storage Completed|Create Resource|
 |event_id.iaas.volume.delete_end|Delete Block Storage Completed|Delete Resource|
-|event_id.iaas.volume.transfer_create||Delete Resource|
 |event_id.iaas.volume.update_end|Modify Block Storage Completed|Modify Resource|
 
 #### Image (Infrastructure:IMAGE)
@@ -162,9 +160,7 @@
 | Event ID | Event Name | Event Type |
 |--- |--- |--- |
 |event_id.iaas.image.create_end|Create Image Completed|Create Resource|
-|event_id.iaas.image.transfer_accept||Create Resource|
 |event_id.iaas.image.delete_end|Delete Image Completed|Delete Resource|
-|event_id.iaas.image.transfer_create||Delete Resource|
 |event_id.iaas.image.update_end|Modify Image Completed|Modify Resource|
 
 #### IMAGE TEMPLATE (Infrastructure:ImageTemplate)

@@ -151,10 +151,8 @@
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
 |event_id.iaas.volume.create_end|ブロックストレージ作成完了|リソース作成|
-|event_id.iaas.volume.transfer_accept||リソース作成|
 |event_id.iaas.volume.copy_end|ブロックストレージ複製完了|リソース作成|
 |event_id.iaas.volume.delete_end|ブロックストレージ削除完了|リソース削除|
-|event_id.iaas.volume.transfer_create||リソース削除|
 |event_id.iaas.volume.update_end|ブロックストレージ修正完了|リソース修正|
 
 #### イメージの (Infrastructure:IMAGE)
@@ -162,9 +160,7 @@
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
 |event_id.iaas.image.create_end|イメージ作成完了|リソース作成|
-|event_id.iaas.image.transfer_accept||リソース作成|
 |event_id.iaas.image.delete_end|イメージ削除完了|リソース削除|
-|event_id.iaas.image.transfer_create||リソース削除|
 |event_id.iaas.image.update_end|イメージ修正完了|リソース修正|
 
 #### イメージテンプレート (Infrastructure:ImageTemplate)
