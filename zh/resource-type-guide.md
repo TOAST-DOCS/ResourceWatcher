@@ -146,6 +146,23 @@
 |event_id.iaas.cluster.update_nks_registry.fail|NKS registry update failed|-|
 |event_id.iaas.cluster.update_nks_registry.start|NKS registry update started|-|
 
+#### Block Storage (Infrastructure:BLOCK_STORAGE)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.volume.create_end|Create Block Storage Completed|Create Resource|
+|event_id.iaas.volume.copy_end|Replicate Block Storage Completed|Create Resource|
+|event_id.iaas.volume.delete_end|Delete Block Storage Completed|Delete Resource|
+|event_id.iaas.volume.update_end|Modify Block Storage Completed|Modify Resource|
+
+#### Image (Infrastructure:IMAGE)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.image.create_end|Create Image Completed|Create Resource|
+|event_id.iaas.image.delete_end|Delete Image Completed|Delete Resource|
+|event_id.iaas.image.update_end|Modify Image Completed|Modify Resource|
+
 #### IMAGE TEMPLATE (Infrastructure:ImageTemplate)
 
 | Event ID | Event Name | Event Type |
@@ -155,6 +172,13 @@
 |event_id.iaas.image_template.build|Build Image|-|
 |event_id.iaas.image_template.cancel_build|Cancel Image Build|-|
 |event_id.iaas.image_template.delete|Delete Image Template|Delete Resource|
+
+#### Block Storage Snapshot (Infrastructure:SNAPSHOT)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.snapshot.create_end|Create Block Storage Snapshot Completed|Create Resource|
+|event_id.iaas.snapshot.delete_end|Delete Block Storage Snapshot Completed|Delete Resource|
 
 #### INSTANCE (INSTANCE)
 
@@ -167,6 +191,8 @@
 |event_id.iaas.instance_action.resize_end|Change Instance Type Completed|-|
 |event_id.iaas.instance_action.start_end|Start Stopped Instance Completed|-|
 |event_id.iaas.instance_action.stop_end|Stop Instance Completed|-|
+|event_id.iaas.instance_action.shelve_end|Terminate Instance Completed|-|
+|event_id.iaas.instance_action.unshelve_end|Start Terminated Instance Completed|-|
 
 #### WORKLOAD (NHNContainerService:Workload)
 
@@ -188,7 +214,7 @@
 |event_id.iaas.ncs.workload_template_update.failed|Change Workload Template Failed|-|
 |event_id.iaas.ncs.workload_desired_update.end|Change Number of Workload Task Requests Completed|-|
 |event_id.iaas.ncs.workload_desired_update.failed|Change Number of Workload Task Requests Failed|-|
-|event_id.iaas.ncs.workload_loadbalancer_update.end|Change Workload Load Balancer Failed|-|
+|event_id.iaas.ncs.workload_loadbalancer_update.end|Change Workload Load Balancer Completed|-|
 |event_id.iaas.ncs.workload_active_deadline.update|Change Schedule Termination|-|
 |event_id.iaas.ncs.workload_internal_loadbalancer.update|Change Workload Internal Load Balancer|-|
 |event_id.iaas.ncs.workload_description.update|Change Workload Description|-|

@@ -43,6 +43,27 @@
 |event_id.skm.asymmetric.scheduled_delete|비대칭 키 자동 삭제|-|
 
 
+### NHN Container Registry(NCR)
+
+#### 컨테이너 레지스트리 (NHNContainerRegistry:ContainerRegistry)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.ncr.registry.create|레지스트리 생성|리소스 생성|
+|event_id.ncr.registry.delete|레지스트리 삭제|리소스 삭제|
+|event_id.ncr.registry.update|레지스트리 변경|-|
+|event_id.ncr.immutable_tag_rule.create|이미지 보호 정책 추가|-|
+|event_id.ncr.immutable_tag_rule.delete|이미지 보호 정책 삭제|-|
+|event_id.ncr.immutable_tag_rule.update|이미지 보호 정책 변경|-|
+|event_id.ncr.retention_rule.create|이미지 정리 정책 추가|-|
+|event_id.ncr.retention_rule.delete|이미지 정리 정책 삭제|-|
+|event_id.ncr.retention_rule.execute|이미지 정리 정책 실행|-|
+|event_id.ncr.retention_rule.update|이미지 정리 정책 변경|-|
+|event_id.ncr.webhook.create|웹훅 생성|-|
+|event_id.ncr.webhook.delete|웹훅 삭제|-|
+|event_id.ncr.webhook.update|웹훅 수정|-|
+
+
 ### EasyCache
 
 ####  (EasyCache:NodeInstance)
@@ -126,6 +147,27 @@
 |event_id.iaas.cluster.update_nks_registry.fail|NKS 레지스트리 업데이트 실패|-|
 |event_id.iaas.cluster.update_nks_registry.start|NKS 레지스트리 업데이트 시작|-|
 
+#### 블록 스토리지 (Infrastructure:BLOCK_STORAGE)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.volume.create_end|블록 스토리지 생성 완료|리소스 생성|
+|event_id.iaas.volume.transfer_accept||리소스 생성|
+|event_id.iaas.volume.copy_end|블록 스토리지 복제 완료|리소스 생성|
+|event_id.iaas.volume.delete_end|블록 스토리지 삭제 완료|리소스 삭제|
+|event_id.iaas.volume.transfer_create||리소스 삭제|
+|event_id.iaas.volume.update_end|블록 스토리지 수정 완료|리소스 수정|
+
+#### 이미지 (Infrastructure:IMAGE)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.image.create_end|이미지 생성 완료|리소스 생성|
+|event_id.iaas.image.transfer_accept||리소스 생성|
+|event_id.iaas.image.delete_end|이미지 삭제 완료|리소스 삭제|
+|event_id.iaas.image.transfer_create||리소스 삭제|
+|event_id.iaas.image.update_end|이미지 수정 완료|리소스 수정|
+
 #### 이미지 템플릿 (Infrastructure:ImageTemplate)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -135,6 +177,13 @@
 |event_id.iaas.image_template.build|이미지 빌드|-|
 |event_id.iaas.image_template.cancel_build|이미지 빌드 취소|-|
 |event_id.iaas.image_template.delete|이미지 템플릿 삭제|리소스 삭제|
+
+#### 블록 스토리지 스냅숏 (Infrastructure:SNAPSHOT)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.snapshot.create_end|블록 스토리지 스냅숏 생성 완료|리소스 생성|
+|event_id.iaas.snapshot.delete_end|블록 스토리지 스냅숏 삭제 완료|리소스 삭제|
 
 #### 인스턴스 (INSTANCE)
 
@@ -147,5 +196,32 @@
 |event_id.iaas.instance_action.resize_end|인스턴스 타입 변경 완료|-|
 |event_id.iaas.instance_action.start_end|중지된 인스턴스 시작 완료|-|
 |event_id.iaas.instance_action.stop_end|인스턴스 중지 완료|-|
+|event_id.iaas.instance_action.shelve_end|인스턴스 종료 완료|-|
+|event_id.iaas.instance_action.unshelve_end|종료된 인스턴스 시작 완료|-|
+
+#### 워크로드 (NHNContainerService:Workload)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.ncs.workload_create.start|워크로드 생성 시작|리소스 생성|
+|event_id.iaas.ncs.workload_create.failed|워크로드 생성 실패|리소스 삭제|
+|event_id.iaas.ncs.workload.delete|워크로드 삭제|리소스 삭제|
+|event_id.iaas.ncs.workload.stop|워크로드 중지|리소스 수정|
+|event_id.iaas.ncs.workload_restart.start|워크로드 재시작 시작|리소스 수정|
+|event_id.iaas.ncs.workload_template_update.start|워크로드 템플릿 변경 시작|리소스 수정|
+|event_id.iaas.ncs.workload_desired_update.start|워크로드 작업 요청 수 변경 시작|리소스 수정|
+|event_id.iaas.ncs.workload_schedule.update|워크로드 예약 실행 변경|리소스 수정|
+|event_id.iaas.ncs.workload_loadbalancer_update.start||리소스 수정|
+|event_id.iaas.ncs.workload_create.end|워크로드 생성 완료|-|
+|event_id.iaas.ncs.workload_restart.end|워크로드 재시작 완료|-|
+|event_id.iaas.ncs.workload_restart.failed|워크로드 재시작 실패|-|
+|event_id.iaas.ncs.workload_template_update.end|워크로드 템플릿 변경 완료|-|
+|event_id.iaas.ncs.workload_template_update.failed|워크로드 템플릿 변경 실패|-|
+|event_id.iaas.ncs.workload_desired_update.end|워크로드 작업 요청 수 변경 완료|-|
+|event_id.iaas.ncs.workload_desired_update.failed|워크로드 작업 요청 수 변경 실패|-|
+|event_id.iaas.ncs.workload_loadbalancer_update.end|워크로드 로드 밸런서 설정 변경 완료|-|
+|event_id.iaas.ncs.workload_active_deadline.update|워크로드 종료 예약 변경|-|
+|event_id.iaas.ncs.workload_internal_loadbalancer.update|워크로드 내부 로드 밸런서 설정 변경|-|
+|event_id.iaas.ncs.workload_description.update|워크로드 설명 변경|-|
 
 

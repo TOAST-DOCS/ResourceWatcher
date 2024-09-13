@@ -146,6 +146,23 @@
 |event_id.iaas.cluster.update_nks_registry.fail|NKSレジストリ更新に失敗しました|-|
 |event_id.iaas.cluster.update_nks_registry.start|NKSレジストリ更新の開始|-|
 
+#### ブロックストレージ (Infrastructure:BLOCK_STORAGE)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.volume.create_end|ブロックストレージ作成完了|リソース作成|
+|event_id.iaas.volume.copy_end|ブロックストレージ複製完了|リソース作成|
+|event_id.iaas.volume.delete_end|ブロックストレージ削除完了|リソース削除|
+|event_id.iaas.volume.update_end|ブロックストレージ修正完了|リソース修正|
+
+#### イメージの (Infrastructure:IMAGE)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.image.create_end|イメージ作成完了|リソース作成|
+|event_id.iaas.image.delete_end|イメージ削除完了|リソース削除|
+|event_id.iaas.image.update_end|イメージ修正完了|リソース修正|
+
 #### イメージテンプレート (Infrastructure:ImageTemplate)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -155,6 +172,13 @@
 |event_id.iaas.image_template.build|イメージビルド|-|
 |event_id.iaas.image_template.cancel_build|イメージビルドのキャンセル|-|
 |event_id.iaas.image_template.delete|イメージテンプレートの削除|リソース削除|
+
+#### ブロックストレージスナップショット (Infrastructure:SNAPSHOT)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.snapshot.create_end|ブロックストレージスナップショット作成完了|リソース作成|
+|event_id.iaas.snapshot.delete_end|ブロックストレージスナップショット削除完了|リソース削除|
 
 #### インスタンス (INSTANCE)
 
@@ -167,6 +191,8 @@
 |event_id.iaas.instance_action.resize_end|インスタンスタイプの変更完了|-|
 |event_id.iaas.instance_action.start_end|停止したインスタンスの起動完了|-|
 |event_id.iaas.instance_action.stop_end|インスタンスの停止完了|-|
+|event_id.iaas.instance_action.shelve_end|インスタンス終了完了|-|
+|event_id.iaas.instance_action.unshelve_end|終了したインスタンスの起動完了|-|
 
 #### ワークロード (NHNContainerService:Workload)
 
