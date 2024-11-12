@@ -2,10 +2,10 @@
 
 * サービスリソースの種類及び関連するイベントのリストです。
 * イベントの種類
-	* リソース作成：リソースの作成時に発生するイベント
-	* リソース修正：リソースの修正時に発生するイベント
-	* リソース削除：リソースの削除時に発生するイベント
-	* -：リソース作成/修正/削除と関連ないイベント
+    * リソース作成：リソースの作成時に発生するイベント
+    * リソース修正：リソースの修正時に発生するイベント
+    * リソース削除：リソースの削除時に発生するイベント
+    * -：リソース作成/修正/削除と関連ないイベント
 
 ### Secure Key Manager
 
@@ -65,7 +65,7 @@
 
 ### EasyCache
 
-####  (EasyCache:NodeInstance)
+#### ノードインスタンス (EasyCache:NodeInstance)
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
@@ -151,16 +151,36 @@
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
 |event_id.iaas.volume.create_end|ブロックストレージ作成完了|リソース作成|
+|event_id.iaas.volume.transfer_accept||リソース作成|
 |event_id.iaas.volume.copy_end|ブロックストレージ複製完了|リソース作成|
 |event_id.iaas.volume.delete_end|ブロックストレージ削除完了|リソース削除|
+|event_id.iaas.volume.transfer_create||リソース削除|
 |event_id.iaas.volume.update_end|ブロックストレージ修正完了|リソース修正|
+
+#### Floating IP (Infrastructure:FLOATING_IP)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.floating_ip.create_end|Floating IPの作成完了|リソース作成|
+|event_id.iaas.floating_ip.update_end|Floating IPの変更完了|リソース修正|
+|event_id.iaas.floating_ip.delete_end|Floating IPの削除完了|リソース削除|
+
+#### フローログロガー (Infrastructure:FLOW_LOG_LOGGER)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.flowlog_logger.create_end|フローログロガーの作成完了|リソース作成|
+|event_id.iaas.flowlog_logger.update_end|フローログロガーの修正完了|リソース修正|
+|event_id.iaas.flowlog_logger.delete_end|フローログロガーの削除完了|リソース削除|
 
 #### イメージの (Infrastructure:IMAGE)
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
 |event_id.iaas.image.create_end|イメージ作成完了|リソース作成|
+|event_id.iaas.image.transfer_accept||リソース作成|
 |event_id.iaas.image.delete_end|イメージ削除完了|リソース削除|
+|event_id.iaas.image.transfer_create||リソース削除|
 |event_id.iaas.image.update_end|イメージ修正完了|リソース修正|
 
 #### イメージテンプレート (Infrastructure:ImageTemplate)
@@ -173,12 +193,60 @@
 |event_id.iaas.image_template.cancel_build|イメージビルドのキャンセル|-|
 |event_id.iaas.image_template.delete|イメージテンプレートの削除|リソース削除|
 
+#### ロードバランサー (Infrastructure:LOAD_BALANCER)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.loadbalancer.create_end|ロードバランサーの作成完了|リソース作成|
+|event_id.iaas.loadbalancer.update_end|ロードバランサー情報の変更完了|リソース修正|
+|event_id.iaas.loadbalancer.delete_end|ロードバランサーの削除完了|リソース削除|
+
+#### NATゲートウェイ (Infrastructure:NAT_GATEWAY)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.nat_gateway.create_end|NATゲートウェイの作成完了|リソース作成|
+|event_id.iaas.nat_gateway.update_end|NATゲートウェイの変更完了|リソース修正|
+|event_id.iaas.nat_gateway.delete_end|NATゲートウェイの削除完了|リソース削除|
+
+#### Private DNS Zone (Infrastructure:PRIVATE_DNS_ZONE)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.private_dns.zone.create_end|Private DNS Zone作成完了|リソース作成|
+|event_id.iaas.private_dns.zone.update_end|Private DNS Zone修正完了|リソース修正|
+|event_id.iaas.private_dns.zone.delete_end|Private DNS Zone削除完了|リソース削除|
+
 #### ブロックストレージスナップショット (Infrastructure:SNAPSHOT)
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
 |event_id.iaas.snapshot.create_end|ブロックストレージスナップショット作成完了|リソース作成|
 |event_id.iaas.snapshot.delete_end|ブロックストレージスナップショット削除完了|リソース削除|
+
+#### トランジットハブ (Infrastructure:TRANSIT_HUB)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.transit_hub.create_end|トランジットハブの作成完了|リソース作成|
+|event_id.iaas.transit_hub.update_end|トランジットハブの変更完了|リソース修正|
+|event_id.iaas.transit_hub.delete_end|トランジットハブの削除完了|リソース削除|
+
+#### トランジットハブ接続 (Infrastructure:TRANSIT_HUB_ATTACHMENT)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.transit_hub_attachment.create_end|トランジットハブ接続の作成完了|リソース作成|
+|event_id.iaas.transit_hub_attachment.update_end|トランジットハブ接続の変更完了|リソース修正|
+|event_id.iaas.transit_hub_attachment.delete_end|トランジットハブ接続の削除完了|リソース削除|
+
+#### VPC (Infrastructure:VPC)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.vpc.create_end|VPCの作成完了|リソース作成|
+|event_id.iaas.vpc.update_end|VPCの情報変更完了|リソース修正|
+|event_id.iaas.vpc.delete_end|VPCの削除完了|リソース削除|
 
 #### インスタンス (INSTANCE)
 
@@ -206,7 +274,7 @@
 |event_id.iaas.ncs.workload_template_update.start|ワークロードのテンプレート変更|リソース修正|
 |event_id.iaas.ncs.workload_desired_update.start|ワークロード作業リクエスト数の変更|リソース修正|
 |event_id.iaas.ncs.workload_schedule.update|ワークロードの予約実行変更|リソース修正|
-|event_id.iaas.ncs.workload_loadbalancer_update.start||リソース修正|
+|event_id.iaas.ncs.workload_loadbalancer_update.start|ワークロードロードバランサーの変更|リソース修正|
 |event_id.iaas.ncs.workload_create.end|ワークロードの作成完|-|
 |event_id.iaas.ncs.workload_restart.end|ワークロード再起動完了|-|
 |event_id.iaas.ncs.workload_restart.failed|ワークロード再起動失敗|-|
@@ -220,14 +288,28 @@
 |event_id.iaas.ncs.workload_description.update|ワークロード説明の変更|-|
 
 
+### Object Storage
+
+#### コンテナ (ObjectStorage:Container)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.object_storage.container.create|コンテナの作成|リソース作成|
+|event_id.object_storage.container.delete|コンテナの削除|リソース削除|
+|event_id.object_storage.container.metadata.update|コンテナメタデータの登録/修正|-|
+|event_id.object_storage.container.sync.enable|コンテナ複製設定|-|
+|event_id.object_storage.container.sync.update|コンテナ複製設定の変更|-|
+|event_id.object_storage.container.sync.disable|コンテナ複製設定の解除|-|
+
+
 ### DataQuery
 
 #### クラスタオン (DataQuery:Cluster)
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
-|event_id.dataquery.cluster_on|Trinoクラスタオン|リソース作成|
-|event_id.dataquery.cluster_off|Trinoクラスタオフ|リソース削除|
+|event_id.dataquery.cluster_on|クラスタオン|リソース作成|
+|event_id.dataquery.cluster_off|クラスタオフ|リソース削除|
 |event_id.dataquery.kr3.cluster_on||リソース作成|
 |event_id.dataquery.kr3.cluster_off||リソース削除|
 |event_id.dataquery.pj1.cluster_on||リソース作成|
