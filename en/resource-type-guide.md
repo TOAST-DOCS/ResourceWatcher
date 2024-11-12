@@ -2,10 +2,10 @@
 
 * Below are service resource types and relevant events
 * Event Types
-  * Create Resource: Event that occurs when a resource is created
-  * Modify Resource: Event that occurs when a resource is modified
-  * Delete Resource: Event that occurs when a resource is deleted
-  * -: Event not related to Create/Modify/Delete Resource
+    * Create Resource: Event that occurs when a resource is created
+    * Modify Resource: Event that occurs when a resource is modified
+    * Delete Resource: Event that occurs when a resource is deleted
+    * -: Event not related to Create/Modify/Delete Resource
 
 ### Secure Key Manager
 
@@ -65,7 +65,7 @@
 
 ### EasyCache
 
-####  (EasyCache:NodeInstance)
+#### NODE INSTANCE (EasyCache:NodeInstance)
 
 | Event ID | Event Name | Event Type |
 |--- |--- |--- |
@@ -151,16 +151,36 @@
 | Event ID | Event Name | Event Type |
 |--- |--- |--- |
 |event_id.iaas.volume.create_end|Create Block Storage Completed|Create Resource|
+|event_id.iaas.volume.transfer_accept||Create Resource|
 |event_id.iaas.volume.copy_end|Replicate Block Storage Completed|Create Resource|
 |event_id.iaas.volume.delete_end|Delete Block Storage Completed|Delete Resource|
+|event_id.iaas.volume.transfer_create||Delete Resource|
 |event_id.iaas.volume.update_end|Modify Block Storage Completed|Modify Resource|
+
+#### Floating IP (Infrastructure:FLOATING_IP)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.floating_ip.create_end|Create Floating IP Completed|Create Resource|
+|event_id.iaas.floating_ip.update_end|Update Floating IP Completed|Modify Resource|
+|event_id.iaas.floating_ip.delete_end|Delete Floating IP Completed|Delete Resource|
+
+#### Flow Log Logger (Infrastructure:FLOW_LOG_LOGGER)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.flowlog_logger.create_end|Create Flow Log Logger Completed|Create Resource|
+|event_id.iaas.flowlog_logger.update_end|Modify Flow Log Logger Completed|Modify Resource|
+|event_id.iaas.flowlog_logger.delete_end|Delete Flow Log Logger Completed|Delete Resource|
 
 #### Image (Infrastructure:IMAGE)
 
 | Event ID | Event Name | Event Type |
 |--- |--- |--- |
 |event_id.iaas.image.create_end|Create Image Completed|Create Resource|
+|event_id.iaas.image.transfer_accept||Create Resource|
 |event_id.iaas.image.delete_end|Delete Image Completed|Delete Resource|
+|event_id.iaas.image.transfer_create||Delete Resource|
 |event_id.iaas.image.update_end|Modify Image Completed|Modify Resource|
 
 #### IMAGE TEMPLATE (Infrastructure:ImageTemplate)
@@ -173,12 +193,60 @@
 |event_id.iaas.image_template.cancel_build|Cancel Image Build|-|
 |event_id.iaas.image_template.delete|Delete Image Template|Delete Resource|
 
+#### Load Balancer (Infrastructure:LOAD_BALANCER)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.loadbalancer.create_end|Create Load Balancer Completed|Create Resource|
+|event_id.iaas.loadbalancer.update_end|Change Load Balancer Information Completed|Modify Resource|
+|event_id.iaas.loadbalancer.delete_end|Delete Load Balancer Completed|Delete Resource|
+
+#### NAT Gateway (Infrastructure:NAT_GATEWAY)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.nat_gateway.create_end|Create NAT Gateway Completed|Create Resource|
+|event_id.iaas.nat_gateway.update_end|Change NAT Gateway Completed|Modify Resource|
+|event_id.iaas.nat_gateway.delete_end|Delete NAT Gateway Completed|Delete Resource|
+
+#### Private DNS Zone (Infrastructure:PRIVATE_DNS_ZONE)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.private_dns.zone.create_end|Create Private DNS Zone Completed|Create Resource|
+|event_id.iaas.private_dns.zone.update_end|Modify Private DNS Zone Completed|Modify Resource|
+|event_id.iaas.private_dns.zone.delete_end|Delete Private DNS Zone Completed|Delete Resource|
+
 #### Block Storage Snapshot (Infrastructure:SNAPSHOT)
 
 | Event ID | Event Name | Event Type |
 |--- |--- |--- |
 |event_id.iaas.snapshot.create_end|Create Block Storage Snapshot Completed|Create Resource|
 |event_id.iaas.snapshot.delete_end|Delete Block Storage Snapshot Completed|Delete Resource|
+
+#### Transit Hub (Infrastructure:TRANSIT_HUB)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.transit_hub.create_end|Create Transit Hub Completed|Create Resource|
+|event_id.iaas.transit_hub.update_end|Modify Transit Hub Completed|Modify Resource|
+|event_id.iaas.transit_hub.delete_end|Delete Transit Hub Completed|Delete Resource|
+
+#### Transit Hub Attachment (Infrastructure:TRANSIT_HUB_ATTACHMENT)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.transit_hub_attachment.create_end|Create Transit Hub Attachment Completed|Create Resource|
+|event_id.iaas.transit_hub_attachment.update_end|Modify Transit Hub Attachment Completed|Modify Resource|
+|event_id.iaas.transit_hub_attachment.delete_end|Delete Transit Hub Attachment Completed|Delete Resource|
+
+#### VPC (Infrastructure:VPC)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.vpc.create_end|Create VPC Completed|Create Resource|
+|event_id.iaas.vpc.update_end|Change VPC Information Completed|Modify Resource|
+|event_id.iaas.vpc.delete_end|Delete VPC Completed|Delete Resource|
 
 #### INSTANCE (INSTANCE)
 
@@ -206,7 +274,7 @@
 |event_id.iaas.ncs.workload_template_update.start|Change Workload Template Started|Modify Resource|
 |event_id.iaas.ncs.workload_desired_update.start|Change Number of Workload Task Requests Start|Modify Resource|
 |event_id.iaas.ncs.workload_schedule.update|Change Scheduled Run|Modify Resource|
-|event_id.iaas.ncs.workload_loadbalancer_update.start||Modify Resource|
+|event_id.iaas.ncs.workload_loadbalancer_update.start|Change Workload Load Balancer Start|Modify Resource|
 |event_id.iaas.ncs.workload_create.end|Create Workload Completed|-|
 |event_id.iaas.ncs.workload_restart.end|Restart Workload Completed|-|
 |event_id.iaas.ncs.workload_restart.failed|Restart Workload Failed|-|
@@ -220,14 +288,28 @@
 |event_id.iaas.ncs.workload_description.update|Change Workload Description|-|
 
 
+### Object Storage
+
+#### CONTAINER (ObjectStorage:Container)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.object_storage.container.create|Create Containers|Create Resource|
+|event_id.object_storage.container.delete|Delete Containers|Delete Resource|
+|event_id.object_storage.container.metadata.update|Register/Modify Container Metadata|-|
+|event_id.object_storage.container.sync.enable|Set Container Replication|-|
+|event_id.object_storage.container.sync.update|Change Container Replication Settings|-|
+|event_id.object_storage.container.sync.disable|Unset Container Replication|-|
+
+
 ### DataQuery
 
 #### Cluster (DataQuery:Cluster)
 
 | Event ID | Event Name | Event Type |
 |--- |--- |--- |
-|event_id.dataquery.cluster_on|Trino Cluster On|Create Resource|
-|event_id.dataquery.cluster_off|Trino Cluster Off|Delete Resource|
+|event_id.dataquery.cluster_on|Cluster On|Create Resource|
+|event_id.dataquery.cluster_off|Cluster Off|Delete Resource|
 |event_id.dataquery.kr3.cluster_on||Create Resource|
 |event_id.dataquery.kr3.cluster_off||Delete Resource|
 |event_id.dataquery.pj1.cluster_on||Create Resource|
