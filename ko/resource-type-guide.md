@@ -66,7 +66,7 @@
 
 ### EasyCache
 
-####  (EasyCache:NodeInstance)
+#### 노드 인스턴스 (EasyCache:NodeInstance)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
 |--- |--- |--- |
@@ -152,16 +152,36 @@
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
 |--- |--- |--- |
 |event_id.iaas.volume.create_end|블록 스토리지 생성 완료|리소스 생성|
+|event_id.iaas.volume.transfer_accept||리소스 생성|
 |event_id.iaas.volume.copy_end|블록 스토리지 복제 완료|리소스 생성|
 |event_id.iaas.volume.delete_end|블록 스토리지 삭제 완료|리소스 삭제|
+|event_id.iaas.volume.transfer_create||리소스 삭제|
 |event_id.iaas.volume.update_end|블록 스토리지 수정 완료|리소스 수정|
+
+#### 플로팅 IP (Infrastructure:FLOATING_IP)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.floating_ip.create_end|플로팅 IP 생성 완료|리소스 생성|
+|event_id.iaas.floating_ip.update_end|플로팅 IP 변경 완료|리소스 수정|
+|event_id.iaas.floating_ip.delete_end|플로팅 IP 삭제 완료|리소스 삭제|
+
+#### 플로우 로그 로거 (Infrastructure:FLOW_LOG_LOGGER)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.flowlog_logger.create_end|플로우 로그 로거 생성 완료|리소스 생성|
+|event_id.iaas.flowlog_logger.update_end|플로우 로그 로거 수정 완료|리소스 수정|
+|event_id.iaas.flowlog_logger.delete_end|플로우 로그 로거 삭제 완료|리소스 삭제|
 
 #### 이미지 (Infrastructure:IMAGE)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
 |--- |--- |--- |
 |event_id.iaas.image.create_end|이미지 생성 완료|리소스 생성|
+|event_id.iaas.image.transfer_accept||리소스 생성|
 |event_id.iaas.image.delete_end|이미지 삭제 완료|리소스 삭제|
+|event_id.iaas.image.transfer_create||리소스 삭제|
 |event_id.iaas.image.update_end|이미지 수정 완료|리소스 수정|
 
 #### 이미지 템플릿 (Infrastructure:ImageTemplate)
@@ -174,12 +194,60 @@
 |event_id.iaas.image_template.cancel_build|이미지 빌드 취소|-|
 |event_id.iaas.image_template.delete|이미지 템플릿 삭제|리소스 삭제|
 
+#### 로드 밸런서 (Infrastructure:LOAD_BALANCER)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.loadbalancer.create_end|로드 밸런서 생성 완료|리소스 생성|
+|event_id.iaas.loadbalancer.update_end|로드 밸런서 정보 변경 완료|리소스 수정|
+|event_id.iaas.loadbalancer.delete_end|로드 밸런서 삭제 완료|리소스 삭제|
+
+#### NAT 게이트웨이 (Infrastructure:NAT_GATEWAY)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.nat_gateway.create_end|NAT 게이트웨이 생성 완료|리소스 생성|
+|event_id.iaas.nat_gateway.update_end|NAT 게이트웨이 변경 완료|리소스 수정|
+|event_id.iaas.nat_gateway.delete_end|NAT 게이트웨이 삭제 완료|리소스 삭제|
+
+#### Private DNS Zone (Infrastructure:PRIVATE_DNS_ZONE)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.private_dns.zone.create_end|Private DNS Zone 생성 완료|리소스 생성|
+|event_id.iaas.private_dns.zone.update_end|Private DNS Zone 수정 완료|리소스 수정|
+|event_id.iaas.private_dns.zone.delete_end|Private DNS Zone 삭제 완료|리소스 삭제|
+
 #### 블록 스토리지 스냅숏 (Infrastructure:SNAPSHOT)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
 |--- |--- |--- |
 |event_id.iaas.snapshot.create_end|블록 스토리지 스냅숏 생성 완료|리소스 생성|
 |event_id.iaas.snapshot.delete_end|블록 스토리지 스냅숏 삭제 완료|리소스 삭제|
+
+#### 트랜짓 허브 (Infrastructure:TRANSIT_HUB)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.transit_hub.create_end|트랜짓 허브 생성 완료|리소스 생성|
+|event_id.iaas.transit_hub.update_end|트랜짓 허브 수정 완료|리소스 수정|
+|event_id.iaas.transit_hub.delete_end|트랜짓 허브 삭제 완료|리소스 삭제|
+
+#### 트랜짓 허브 연결 (Infrastructure:TRANSIT_HUB_ATTACHMENT)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.transit_hub_attachment.create_end|트랜짓 허브 연결 생성 완료|리소스 생성|
+|event_id.iaas.transit_hub_attachment.update_end|트랜짓 허브 연결 변경 완료|리소스 수정|
+|event_id.iaas.transit_hub_attachment.delete_end|트랜짓 허브 연결 삭제 완료|리소스 삭제|
+
+#### VPC (Infrastructure:VPC)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.vpc.create_end|VPC 생성 완료|리소스 생성|
+|event_id.iaas.vpc.update_end|VPC 정보 변경 완료|리소스 수정|
+|event_id.iaas.vpc.delete_end|VPC 삭제 완료|리소스 삭제|
 
 #### 인스턴스 (INSTANCE)
 
@@ -207,7 +275,7 @@
 |event_id.iaas.ncs.workload_template_update.start|워크로드 템플릿 변경 시작|리소스 수정|
 |event_id.iaas.ncs.workload_desired_update.start|워크로드 작업 요청 수 변경 시작|리소스 수정|
 |event_id.iaas.ncs.workload_schedule.update|워크로드 예약 실행 변경|리소스 수정|
-|event_id.iaas.ncs.workload_loadbalancer_update.start||리소스 수정|
+|event_id.iaas.ncs.workload_loadbalancer_update.start|워크로드 로드 밸런서 설정 변경 시작|리소스 수정|
 |event_id.iaas.ncs.workload_create.end|워크로드 생성 완료|-|
 |event_id.iaas.ncs.workload_restart.end|워크로드 재시작 완료|-|
 |event_id.iaas.ncs.workload_restart.failed|워크로드 재시작 실패|-|
@@ -221,14 +289,28 @@
 |event_id.iaas.ncs.workload_description.update|워크로드 설명 변경|-|
 
 
+### Object Storage
+
+#### 컨테이너 (ObjectStorage:Container)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.object_storage.container.create|컨테이너 생성|리소스 생성|
+|event_id.object_storage.container.delete|컨테이너 삭제|리소스 삭제|
+|event_id.object_storage.container.metadata.update|컨테이너 메타데이터 등록/수정|-|
+|event_id.object_storage.container.sync.enable|컨테이너 복제 설정|-|
+|event_id.object_storage.container.sync.update|컨테이너 복제 설정 변경|-|
+|event_id.object_storage.container.sync.disable|컨테이너 복제 설정 해제|-|
+
+
 ### DataQuery
 
 #### 클러스터 (DataQuery:Cluster)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
 |--- |--- |--- |
-|event_id.dataquery.cluster_on|Trino 클러스터 켜짐|리소스 생성|
-|event_id.dataquery.cluster_off|Trino 클러스터 꺼짐|리소스 삭제|
+|event_id.dataquery.cluster_on|클러스터 켜짐|리소스 생성|
+|event_id.dataquery.cluster_off|클러스터 꺼짐|리소스 삭제|
 |event_id.dataquery.kr3.cluster_on||리소스 생성|
 |event_id.dataquery.kr3.cluster_off||리소스 삭제|
 |event_id.dataquery.pj1.cluster_on||리소스 생성|
