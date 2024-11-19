@@ -145,6 +145,9 @@
 |event_id.iaas.cluster.update_nks_registry.end|NKSレジストリ更新の完了|-|
 |event_id.iaas.cluster.update_nks_registry.fail|NKSレジストリ更新に失敗しました|-|
 |event_id.iaas.cluster.update_nks_registry.start|NKSレジストリ更新の開始|-|
+|event_id.iaas.cluster.update_k8s_args.start|K8Sオーデントアップデート開始|-|
+|event_id.iaas.cluster.update_k8s_args.end|K8S集約更新が完了しました|-|
+|event_id.iaas.cluster.update_k8s_args.failed|K8Sオーデントアップデートは失敗しました|-|
 
 #### ブロックストレージ (Infrastructure:BLOCK_STORAGE)
 
@@ -200,6 +203,24 @@
 |event_id.iaas.loadbalancer.create_end|ロードバランサーの作成完了|リソース作成|
 |event_id.iaas.loadbalancer.update_end|ロードバランサー情報の変更完了|リソース修正|
 |event_id.iaas.loadbalancer.delete_end|ロードバランサーの削除完了|リソース削除|
+
+#### NASストレージ (Infrastructure:NAS.STORAGE)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.nas.volume.create|NASボリュームの作成|リソース作成|
+|event_id.iaas.nas.volume.update_end||リソース修正|
+|event_id.iaas.nas.volume.delete_end||リソース削除|
+|event_id.iaas.nas.snapshot.create|NASスナップショットの作成|-|
+|event_id.iaas.nas.snapshot.delete|NASスナップショットの削除|-|
+|event_id.iaas.nas.snapshot.restore|NASスナップショット復元|-|
+|event_id.iaas.nas.replication.set||-|
+|event_id.iaas.nas.replication.unset||-|
+|event_id.iaas.nas.replication.start||-|
+|event_id.iaas.nas.replication.stop||-|
+|event_id.iaas.nas.replication.change_direction||-|
+|event_id.iaas.nas.subnet.attach||-|
+|event_id.iaas.nas.subnet.detach||-|
 
 #### NATゲートウェイ (Infrastructure:NAT_GATEWAY)
 
