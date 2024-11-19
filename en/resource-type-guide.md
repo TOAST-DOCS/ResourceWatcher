@@ -145,6 +145,9 @@
 |event_id.iaas.cluster.update_nks_registry.end|NKS registry update completed|-|
 |event_id.iaas.cluster.update_nks_registry.fail|NKS registry update failed|-|
 |event_id.iaas.cluster.update_nks_registry.start|NKS registry update started|-|
+|event_id.iaas.cluster.update_k8s_args.start|K8S Audent Update Started|-|
+|event_id.iaas.cluster.update_k8s_args.end|K8S Audent Update Completed|-|
+|event_id.iaas.cluster.update_k8s_args.failed|K8S Audent Update Failed|-|
 
 #### Block Storage (Infrastructure:BLOCK_STORAGE)
 
@@ -173,8 +176,6 @@
 |event_id.iaas.flowlog_logger.update_end|Modify Flow Log Logger Completed|Modify Resource|
 |event_id.iaas.flowlog_logger.delete_end|Delete Flow Log Logger Completed|Delete Resource|
 
-
-
 #### Image (Infrastructure:IMAGE)
 
 | Event ID | Event Name | Event Type |
@@ -202,6 +203,24 @@
 |event_id.iaas.loadbalancer.create_end|Create Load Balancer Completed|Create Resource|
 |event_id.iaas.loadbalancer.update_end|Change Load Balancer Information Completed|Modify Resource|
 |event_id.iaas.loadbalancer.delete_end|Delete Load Balancer Completed|Delete Resource|
+
+#### NAS Storage (Infrastructure:NAS.STORAGE)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.nas.volume.create|Create NAS Volume|Create Resource|
+|event_id.iaas.nas.volume.update_end||Modify Resource|
+|event_id.iaas.nas.volume.delete_end||Delete Resource|
+|event_id.iaas.nas.snapshot.create|Create NAS Snapshot|-|
+|event_id.iaas.nas.snapshot.delete|Delete NAS Snapshot|-|
+|event_id.iaas.nas.snapshot.restore|Restore NAS Snapshot|-|
+|event_id.iaas.nas.replication.set||-|
+|event_id.iaas.nas.replication.unset||-|
+|event_id.iaas.nas.replication.start||-|
+|event_id.iaas.nas.replication.stop||-|
+|event_id.iaas.nas.replication.change_direction||-|
+|event_id.iaas.nas.subnet.attach||-|
+|event_id.iaas.nas.subnet.detach||-|
 
 #### NAT Gateway (Infrastructure:NAT_GATEWAY)
 
