@@ -146,6 +146,9 @@
 |event_id.iaas.cluster.update_nks_registry.end|NKS 레지스트리 업데이트 완료|-|
 |event_id.iaas.cluster.update_nks_registry.fail|NKS 레지스트리 업데이트 실패|-|
 |event_id.iaas.cluster.update_nks_registry.start|NKS 레지스트리 업데이트 시작|-|
+|event_id.iaas.cluster.update_k8s_args.start|k8s 아규먼트 업데이트 시작|-|
+|event_id.iaas.cluster.update_k8s_args.end|k8s 아규먼트 업데이트 완료|-|
+|event_id.iaas.cluster.update_k8s_args.failed|k8s 아규먼트 업데이트 실패|-|
 
 #### 블록 스토리지 (Infrastructure:BLOCK_STORAGE)
 
@@ -201,6 +204,24 @@
 |event_id.iaas.loadbalancer.create_end|로드 밸런서 생성 완료|리소스 생성|
 |event_id.iaas.loadbalancer.update_end|로드 밸런서 정보 변경 완료|리소스 수정|
 |event_id.iaas.loadbalancer.delete_end|로드 밸런서 삭제 완료|리소스 삭제|
+
+#### NAS 스토리지 (Infrastructure:NAS.STORAGE)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.nas.volume.create|NAS 볼륨 생성|리소스 생성|
+|event_id.iaas.nas.volume.update_end||리소스 수정|
+|event_id.iaas.nas.volume.delete_end||리소스 삭제|
+|event_id.iaas.nas.snapshot.create|NAS 스냅숏 생성|-|
+|event_id.iaas.nas.snapshot.delete|NAS 스냅숏 삭제|-|
+|event_id.iaas.nas.snapshot.restore|NAS 스냅숏 복원|-|
+|event_id.iaas.nas.replication.set||-|
+|event_id.iaas.nas.replication.unset||-|
+|event_id.iaas.nas.replication.start||-|
+|event_id.iaas.nas.replication.stop||-|
+|event_id.iaas.nas.replication.change_direction||-|
+|event_id.iaas.nas.subnet.attach||-|
+|event_id.iaas.nas.subnet.detach||-|
 
 #### NAT 게이트웨이 (Infrastructure:NAT_GATEWAY)
 
