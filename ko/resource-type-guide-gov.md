@@ -302,3 +302,36 @@
 |event_id.iaas.ncs.workload_description.update|워크로드 설명 변경|-|
 
 
+### DNS Plus
+
+#### DNS Plus GSLB (DNSPlus:GSLB)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.dnsplus.gslb.create|GSLB 생성|리소스 생성|
+|event_id.dnsplus.gslb.update|GSLB 수정|리소스 수정|
+|event_id.dnsplus.gslb.delete|GSLB 삭제|리소스 삭제|
+
+#### DNS Plus 헬스 체크 (DNSPlus:HealthCheck)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.dnsplus.health_check.create|헬스 체크 생성|리소스 생성|
+|event_id.dnsplus.health_check.update|헬스 체크 수정|리소스 수정|
+|event_id.dnsplus.health_check.delete|헬스 체크 삭제|리소스 삭제|
+
+#### DNS Plus Pool (DNSPlus:Pool)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.dnsplus.pool.create|Pool 생성|리소스 생성|
+|event_id.dnsplus.pool.update|Pool 수정|리소스 수정|
+|event_id.dnsplus.pool.delete|Pool 삭제|리소스 삭제|
+
+#### DNS Plus Zone (DNSPlus:Zone)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.dnsplus.zone.create|DNS Zone 생성|리소스 생성|
+|event_id.dnsplus.zone.update|DNS Zone 수정|리소스 수정|
+|event_id.dnsplus.zone.delete|DNS Zone 삭제|리소스 삭제|
