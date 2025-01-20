@@ -337,3 +337,36 @@
 |event_id.dataquery.pj1.cluster_off||Delete Resource|
 
 
+### DNS Plus
+
+#### DNS Plus GSLB (DNSPlus:GSLB)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.dnsplus.gslb.create|Create GSLB|Create Resource|
+|event_id.dnsplus.gslb.update|Modify GSLB|Modify Resource|
+|event_id.dnsplus.gslb.delete|Delete GSLB|Delete Resource|
+
+#### DNS Plus Health Check (DNSPlus:HealthCheck)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.dnsplus.health_check.create|Create Health Checks|Create Resource|
+|event_id.dnsplus.health_check.update|Modify Health Checks|Modify Resource|
+|event_id.dnsplus.health_check.delete|Delete Health Checks|Delete Resource|
+
+#### DNS Plus Pool (DNSPlus:Pool)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.dnsplus.pool.create|Create Pools|Create Resource|
+|event_id.dnsplus.pool.update|Modify Pools|Modify Resource|
+|event_id.dnsplus.pool.delete|Delete Pools|Delete Resource|
+
+#### DNS Plus Zone (DNSPlus:Zone)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.dnsplus.zone.create|Create DNS Zone|Create Resource|
+|event_id.dnsplus.zone.update|Modify DNS Zone|Modify Resource|
+|event_id.dnsplus.zone.delete|Delete DNS Zone|Delete Resource|
