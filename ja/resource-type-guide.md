@@ -337,3 +337,36 @@
 |event_id.dataquery.pj1.cluster_off||リソース削除|
 
 
+### DNS Plus
+
+#### DNS Plus GSLB (DNSPlus:GSLB)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.dnsplus.gslb.create|GSLB作成|リソース作成|
+|event_id.dnsplus.gslb.update|GSLB修正|リソース修正|
+|event_id.dnsplus.gslb.delete|GSLB削除|リソース削除|
+
+#### DNS Plus  ヘルスチェック (DNSPlus:HealthCheck)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.dnsplus.health_check.create|ヘルスチェック作成|リソース作成|
+|event_id.dnsplus.health_check.update|ヘルスチェック修正|リソース修正|
+|event_id.dnsplus.health_check.delete|ヘルスチェック削除|リソース削除|
+
+#### DNS Plus Pool (DNSPlus:Pool)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.dnsplus.pool.create|Pool作成|リソース作成|
+|event_id.dnsplus.pool.update|Pool修正|リソース修正|
+|event_id.dnsplus.pool.delete|Pool削除|リソース削除|
+
+#### DNS Plus Zone (DNSPlus:Zone)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.dnsplus.zone.create|DNS Zone作成|リソース作成|
+|event_id.dnsplus.zone.update|DNS Zone修正|リソース修正|
+|event_id.dnsplus.zone.delete|DNS Zone削除|リソース削除|
