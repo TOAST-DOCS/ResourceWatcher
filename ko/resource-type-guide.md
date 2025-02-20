@@ -248,6 +248,17 @@
 | event_id.iaas.snapshot.create_end | 블록 스토리지 스냅숏 생성 완료 | 리소스 생성 |
 | event_id.iaas.snapshot.delete_end | 블록 스토리지 스냅숏 삭제 완료 | 리소스 삭제 |
 
+#### 스토리지 게이트웨이 (Infrastructure:STORAGE_GATEWAY.GATEWAY)
+
+| 이벤트 ID                                        | 이벤트 명 | 이벤트 유형 |
+| ------------------------------------------------ | --------- | ----------- |
+| event_id.iaas.storage_gateway.gateway.create     |           | 리소스 생성 |
+| event_id.iaas.storage_gateway.gateway.update_end |           | 리소스 수정 |
+| event_id.iaas.storage_gateway.gateway.delete_end |           | 리소스 삭제 |
+| event_id.iaas.storage_gateway.share.create       |           | -           |
+| event_id.iaas.storage_gateway.share.update_end   |           | -           |
+| event_id.iaas.storage_gateway.share.delete_end   |           | -           |
+
 #### 트랜짓 허브 (Infrastructure:TRANSIT_HUB)
 
 | 이벤트 ID                            | 이벤트 명             | 이벤트 유형 |

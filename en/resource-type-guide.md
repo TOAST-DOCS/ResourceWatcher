@@ -248,6 +248,17 @@
 | event_id.iaas.snapshot.create_end | Create Block Storage Snapshot Completed | Create Resource |
 | event_id.iaas.snapshot.delete_end | Delete Block Storage Snapshot Completed | Delete Resource |
 
+#### Storage Gateway (Infrastructure:STORAGE_GATEWAY.GATEWAY)
+
+| Event ID                                         | Event Name | Event Type      |
+| ------------------------------------------------ | ---------- | --------------- |
+| event_id.iaas.storage_gateway.gateway.create     |            | Create Resource |
+| event_id.iaas.storage_gateway.gateway.update_end |            | Modify Resource |
+| event_id.iaas.storage_gateway.gateway.delete_end |            | Delete Resource |
+| event_id.iaas.storage_gateway.share.create       |            | -               |
+| event_id.iaas.storage_gateway.share.update_end   |            | -               |
+| event_id.iaas.storage_gateway.share.delete_end   |            | -               |
+
 #### Transit Hub (Infrastructure:TRANSIT_HUB)
 
 | Event ID                             | Event Name                   | Event Type      |
