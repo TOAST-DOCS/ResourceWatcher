@@ -11,35 +11,35 @@
 
 #### キーストア (SecureKeyManager:KeyStore)
 
-| イベント ID                                 | イベント名検索         | イベントタイプ |
-| ------------------------------------------- | ---------------------- | -------------- |
-| event_id.skm.keystore.create                | キーストアの作成       | リソース作成   |
-| event_id.skm.keystore.delete                | キーストアの削除       | リソース削除   |
-| event_id.skm.keystore.update                | キーストア情報の変更   | リソース修正   |
-| event_id.skm.secret.create                  | 機密データの作成       | -              |
-| event_id.skm.secret.delete                  | 機密データの即時削除   | -              |
-| event_id.skm.symmetric.create               | 対称鍵の作成           | -              |
-| event_id.skm.symmetric.delete               | 対称鍵の即時削除       | -              |
-| event_id.skm.asymmetric.create              | 非対称鍵の作成         | -              |
-| event_id.skm.asymmetric.delete              | 非対称鍵の即時削除     | -              |
-| event_id.skm.api.secrets.get                | 機密データの照会       | -              |
-| event_id.skm.api.symmetric.encrypt          | 対称鍵による暗号化     | -              |
-| event_id.skm.api.symmetric.decrypt          | 対称による復号         | -              |
-| event_id.skm.api.symmetric.create_local_key | ローカルキー作成       | -              |
-| event_id.skm.api.symmetric.get              | 対称鍵の照会           | -              |
-| event_id.skm.api.asymmetric.sign            | 非対称鍵による署名     | -              |
-| event_id.skm.api.asymmetric.verify          | 非対称鍵による署名検証 | -              |
-| event_id.skm.api.asymmetric.get.privateKey  | 秘密鍵の照会           | -              |
-| event_id.skm.api.asymmetric.get.publicKey   | 公開鍵の照会           | -              |
-| event_id.skm.api.secrets.create             | 機密データの作成       | -              |
-| event_id.skm.api.symmetric.create           | 対称鍵の作成           | -              |
-| event_id.skm.api.asymmetric.create          | 非対称鍵の作成         | -              |
-| event_id.skm.api.secrets.delete             | 機密データの即時削除   | -              |
-| event_id.skm.api.symmetric.delete           | 対称鍵の即時削除       | -              |
-| event_id.skm.api.asymmetric.delete          | 非対称鍵の即時削除     | -              |
-| event_id.skm.secrets.scheduled_delete       | 機密データの自動削除   | -              |
-| event_id.skm.symmetric.scheduled_delete     | 対称鍵の自動削除       | -              |
-| event_id.skm.asymmetric.scheduled_delete    | 非対称鍵の自動削除     | -              |
+| イベント ID                                 | イベント名検索               | イベントタイプ |
+| ------------------------------------------- | ---------------------------- | -------------- |
+| event_id.skm.keystore.create                | キーストアの作成             | リソース作成   |
+| event_id.skm.keystore.delete                | キーストアの削除             | リソース削除   |
+| event_id.skm.keystore.update                | キーストア情報の変更         | リソース修正   |
+| event_id.skm.secret.create                  | 機密データの作成             | -              |
+| event_id.skm.secret.delete                  | 機密データの即時削除         | -              |
+| event_id.skm.symmetric.create               | 対称鍵の作成                 | -              |
+| event_id.skm.symmetric.delete               | 対称鍵の即時削除             | -              |
+| event_id.skm.asymmetric.create              | 非対称鍵の作成               | -              |
+| event_id.skm.asymmetric.delete              | 非対称鍵の即時削除           | -              |
+| event_id.skm.api.secrets.get                | 機密データの照会 (API)       | -              |
+| event_id.skm.api.symmetric.encrypt          | 対称鍵による暗号化 (API)     | -              |
+| event_id.skm.api.symmetric.decrypt          | 対称による復号 (API)         | -              |
+| event_id.skm.api.symmetric.create_local_key | ローカルキー作成 (API)       | -              |
+| event_id.skm.api.symmetric.get              | 対称鍵の照会 (API)           | -              |
+| event_id.skm.api.asymmetric.sign            | 非対称鍵による署名 (API)     | -              |
+| event_id.skm.api.asymmetric.verify          | 非対称鍵による署名検証 (API) | -              |
+| event_id.skm.api.asymmetric.get.privateKey  | 秘密鍵の照会 (API)           | -              |
+| event_id.skm.api.asymmetric.get.publicKey   | 公開鍵の照会 (API)           | -              |
+| event_id.skm.api.secrets.create             | 機密データの作成 (API)       | -              |
+| event_id.skm.api.symmetric.create           | 対称鍵の作成 (API)           | -              |
+| event_id.skm.api.asymmetric.create          | 非対称鍵の作成 (API)         | -              |
+| event_id.skm.api.secrets.delete             | 機密データの即時削除 (API)   | -              |
+| event_id.skm.api.symmetric.delete           | 対称鍵の即時削除 (API)       | -              |
+| event_id.skm.api.asymmetric.delete          | 非対称鍵の即時削除 (API)     | -              |
+| event_id.skm.secrets.scheduled_delete       | 機密データの自動削除         | -              |
+| event_id.skm.symmetric.scheduled_delete     | 対称鍵の自動削除             | -              |
+| event_id.skm.asymmetric.scheduled_delete    | 非対称鍵の自動削除           | -              |
 
 ### NHN Container Registry(NCR)
 
@@ -145,6 +145,12 @@
 | event_id.iaas.cluster.update_k8s_args.start               | K8S オーデントアップデート開始                          | -              |
 | event_id.iaas.cluster.update_k8s_args.end                 | K8S 集約更新が完了しました                              | -              |
 | event_id.iaas.cluster.update_k8s_args.failed              | K8S オーデントアップデートは失敗しました                | -              |
+| event_id.iaas.cluster.update_oidc_args.start              | OIDC オーデントアップデート開始                         | -              |
+| event_id.iaas.cluster.update_oidc_args.end                | OIDC 集約更新が完了しました                             | -              |
+| event_id.iaas.cluster.update_oidc_args.failed             | OIDC オーデントアップデートは失敗しました               | -              |
+| event_id.iaas.cluster.update_vm_auth_key.start            | キーペアアップデートを開始                              | -              |
+| event_id.iaas.cluster.update_vm_auth_key.end              | キーペア更新完了                                        | -              |
+| event_id.iaas.cluster.update_vm_auth_key.failed           | キーペアの更新に失敗しました                            | -              |
 
 #### ブロックストレージ (Infrastructure:BLOCK_STORAGE)
 
@@ -241,6 +247,17 @@
 | --------------------------------- | ------------------------------------------ | -------------- |
 | event_id.iaas.snapshot.create_end | ブロックストレージスナップショット作成完了 | リソース作成   |
 | event_id.iaas.snapshot.delete_end | ブロックストレージスナップショット削除完了 | リソース削除   |
+
+#### ストレージゲートウェイ (Infrastructure:STORAGE_GATEWAY.GATEWAY)
+
+| イベント ID                                      | イベント名検索 | イベントタイプ |
+| ------------------------------------------------ | -------------- | -------------- |
+| event_id.iaas.storage_gateway.gateway.create     |                | リソース作成   |
+| event_id.iaas.storage_gateway.gateway.update_end |                | リソース修正   |
+| event_id.iaas.storage_gateway.gateway.delete_end |                | リソース削除   |
+| event_id.iaas.storage_gateway.share.create       |                | -              |
+| event_id.iaas.storage_gateway.share.update_end   |                | -              |
+| event_id.iaas.storage_gateway.share.delete_end   |                | -              |
 
 #### トランジットハブ (Infrastructure:TRANSIT_HUB)
 
