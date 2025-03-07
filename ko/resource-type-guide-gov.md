@@ -11,35 +11,35 @@
 
 #### 키 저장소 (SecureKeyManager:KeyStore)
 
-| 이벤트 ID                                   | 이벤트 명                  | 이벤트 유형 |
-| ------------------------------------------- | -------------------------- | ----------- |
-| event_id.skm.keystore.create                | 키 저장소 생성             | 리소스 생성 |
-| event_id.skm.keystore.delete                | 키 저장소 삭제             | 리소스 삭제 |
-| event_id.skm.keystore.update                | 키 저장소 정보 변경        | 리소스 수정 |
-| event_id.skm.secret.create                  | 기밀 데이터 생성           | -           |
-| event_id.skm.secret.delete                  | 기밀 데이터 즉시 삭제      | -           |
-| event_id.skm.symmetric.create               | 대칭 키 생성               | -           |
-| event_id.skm.symmetric.delete               | 대칭 키 즉시 삭제          | -           |
-| event_id.skm.asymmetric.create              | 비대칭 키 생성             | -           |
-| event_id.skm.asymmetric.delete              | 비대칭 키 즉시 삭제        | -           |
-| event_id.skm.api.secrets.get                | 기밀 데이터 조회           | -           |
-| event_id.skm.api.symmetric.encrypt          | 대칭 키를 통한 암호화      | -           |
-| event_id.skm.api.symmetric.decrypt          | 대칭 키를 통한 복호화      | -           |
-| event_id.skm.api.symmetric.create_local_key | 로컬 키 생성               | -           |
-| event_id.skm.api.symmetric.get              | 대칭 키 조회               | -           |
-| event_id.skm.api.asymmetric.sign            | 비대칭 키를 통한 서명      | -           |
-| event_id.skm.api.asymmetric.verify          | 비대칭 키를 통한 서명 검증 | -           |
-| event_id.skm.api.asymmetric.get.privateKey  | 개인 키 조회               | -           |
-| event_id.skm.api.asymmetric.get.publicKey   | 공개 키 조회               | -           |
-| event_id.skm.api.secrets.create             | 기밀 데이터 생성           | -           |
-| event_id.skm.api.symmetric.create           | 대칭 키 생성               | -           |
-| event_id.skm.api.asymmetric.create          | 비대칭 키 생성             | -           |
-| event_id.skm.api.secrets.delete             | 기밀 데이터 즉시 삭제      | -           |
-| event_id.skm.api.symmetric.delete           | 대칭 키 즉시 삭제          | -           |
-| event_id.skm.api.asymmetric.delete          | 비대칭 키 즉시 삭제        | -           |
-| event_id.skm.secrets.scheduled_delete       | 기밀 데이터 자동 삭제      | -           |
-| event_id.skm.symmetric.scheduled_delete     | 대칭 키 자동 삭제          | -           |
-| event_id.skm.asymmetric.scheduled_delete    | 비대칭 키 자동 삭제        | -           |
+| 이벤트 ID                                   | 이벤트 명                        | 이벤트 유형 |
+| ------------------------------------------- | -------------------------------- | ----------- |
+| event_id.skm.keystore.create                | 키 저장소 생성                   | 리소스 생성 |
+| event_id.skm.keystore.delete                | 키 저장소 삭제                   | 리소스 삭제 |
+| event_id.skm.keystore.update                | 키 저장소 정보 변경              | 리소스 수정 |
+| event_id.skm.secret.create                  | 기밀 데이터 생성                 | -           |
+| event_id.skm.secret.delete                  | 기밀 데이터 즉시 삭제            | -           |
+| event_id.skm.symmetric.create               | 대칭 키 생성                     | -           |
+| event_id.skm.symmetric.delete               | 대칭 키 즉시 삭제                | -           |
+| event_id.skm.asymmetric.create              | 비대칭 키 생성                   | -           |
+| event_id.skm.asymmetric.delete              | 비대칭 키 즉시 삭제              | -           |
+| event_id.skm.api.secrets.get                | 기밀 데이터 조회 (API)           | -           |
+| event_id.skm.api.symmetric.encrypt          | 대칭 키를 통한 암호화 (API)      | -           |
+| event_id.skm.api.symmetric.decrypt          | 대칭 키를 통한 복호화 (API)      | -           |
+| event_id.skm.api.symmetric.create_local_key | 로컬 키 생성 (API)               | -           |
+| event_id.skm.api.symmetric.get              | 대칭 키 조회 (API)               | -           |
+| event_id.skm.api.asymmetric.sign            | 비대칭 키를 통한 서명 (API)      | -           |
+| event_id.skm.api.asymmetric.verify          | 비대칭 키를 통한 서명 검증 (API) | -           |
+| event_id.skm.api.asymmetric.get.privateKey  | 개인 키 조회 (API)               | -           |
+| event_id.skm.api.asymmetric.get.publicKey   | 공개 키 조회 (API)               | -           |
+| event_id.skm.api.secrets.create             | 기밀 데이터 생성 (API)           | -           |
+| event_id.skm.api.symmetric.create           | 대칭 키 생성 (API)               | -           |
+| event_id.skm.api.asymmetric.create          | 비대칭 키 생성 (API)             | -           |
+| event_id.skm.api.secrets.delete             | 기밀 데이터 즉시 삭제 (API)      | -           |
+| event_id.skm.api.symmetric.delete           | 대칭 키 즉시 삭제 (API)          | -           |
+| event_id.skm.api.asymmetric.delete          | 비대칭 키 즉시 삭제 (API)        | -           |
+| event_id.skm.secrets.scheduled_delete       | 기밀 데이터 자동 삭제            | -           |
+| event_id.skm.symmetric.scheduled_delete     | 대칭 키 자동 삭제                | -           |
+| event_id.skm.asymmetric.scheduled_delete    | 비대칭 키 자동 삭제              | -           |
 
 ### NHN Container Registry(NCR)
 
@@ -154,14 +154,14 @@
 
 #### 블록 스토리지 (Infrastructure:BLOCK_STORAGE)
 
-| 이벤트 ID                            | 이벤트 명                      | 이벤트 유형 |
-| ------------------------------------ | ------------------------------ | ----------- |
-| event_id.iaas.volume.create_end      | 블록 스토리지 생성 완료        | 리소스 생성 |
-| event_id.iaas.volume.transfer_accept | 블록 스토리지 이동 완료 (대상) | 리소스 생성 |
-| event_id.iaas.volume.copy_end        | 블록 스토리지 복제 완료        | 리소스 생성 |
-| event_id.iaas.volume.delete_end      | 블록 스토리지 삭제 완료        | 리소스 삭제 |
-| event_id.iaas.volume.transfer_create | 블록 스토리지 이동 완료 (소스) | 리소스 삭제 |
-| event_id.iaas.volume.update_end      | 블록 스토리지 수정 완료        | 리소스 수정 |
+| 이벤트 ID                            | 이벤트 명               | 이벤트 유형 |
+| ------------------------------------ | ----------------------- | ----------- |
+| event_id.iaas.volume.create_end      | 블록 스토리지 생성 완료 | 리소스 생성 |
+| event_id.iaas.volume.transfer_accept |                         | 리소스 생성 |
+| event_id.iaas.volume.copy_end        | 블록 스토리지 복제 완료 | 리소스 생성 |
+| event_id.iaas.volume.delete_end      | 블록 스토리지 삭제 완료 | 리소스 삭제 |
+| event_id.iaas.volume.transfer_create |                         | 리소스 삭제 |
+| event_id.iaas.volume.update_end      | 블록 스토리지 수정 완료 | 리소스 수정 |
 
 #### 플로팅 IP (Infrastructure:FLOATING_IP)
 
@@ -171,15 +171,23 @@
 | event_id.iaas.floating_ip.update_end | 플로팅 IP 변경 완료 | 리소스 수정 |
 | event_id.iaas.floating_ip.delete_end | 플로팅 IP 삭제 완료 | 리소스 삭제 |
 
+#### 플로우 로그 로거 (Infrastructure:FLOW_LOG_LOGGER)
+
+| 이벤트 ID                               | 이벤트 명                  | 이벤트 유형 |
+| --------------------------------------- | -------------------------- | ----------- |
+| event_id.iaas.flowlog_logger.create_end | 플로우 로그 로거 생성 완료 | 리소스 생성 |
+| event_id.iaas.flowlog_logger.update_end | 플로우 로그 로거 수정 완료 | 리소스 수정 |
+| event_id.iaas.flowlog_logger.delete_end | 플로우 로그 로거 삭제 완료 | 리소스 삭제 |
+
 #### 이미지 (Infrastructure:IMAGE)
 
-| 이벤트 ID                           | 이벤트 명               | 이벤트 유형 |
-| ----------------------------------- | ----------------------- | ----------- |
-| event_id.iaas.image.create_end      | 이미지 생성 완료        | 리소스 생성 |
-| event_id.iaas.image.transfer_accept | 이미지 이동 완료 (대상) | 리소스 생성 |
-| event_id.iaas.image.delete_end      | 이미지 삭제 완료        | 리소스 삭제 |
-| event_id.iaas.image.transfer_create | 이미지 이동 완료 (소스) | 리소스 삭제 |
-| event_id.iaas.image.update_end      | 이미지 수정 완료        | 리소스 수정 |
+| 이벤트 ID                           | 이벤트 명        | 이벤트 유형 |
+| ----------------------------------- | ---------------- | ----------- |
+| event_id.iaas.image.create_end      | 이미지 생성 완료 | 리소스 생성 |
+| event_id.iaas.image.transfer_accept |                  | 리소스 생성 |
+| event_id.iaas.image.delete_end      | 이미지 삭제 완료 | 리소스 삭제 |
+| event_id.iaas.image.transfer_create |                  | 리소스 삭제 |
+| event_id.iaas.image.update_end      | 이미지 수정 완료 | 리소스 수정 |
 
 #### 이미지 템플릿 (Infrastructure:ImageTemplate)
 
@@ -239,6 +247,17 @@
 | --------------------------------- | ------------------------------ | ----------- |
 | event_id.iaas.snapshot.create_end | 블록 스토리지 스냅숏 생성 완료 | 리소스 생성 |
 | event_id.iaas.snapshot.delete_end | 블록 스토리지 스냅숏 삭제 완료 | 리소스 삭제 |
+
+#### 스토리지 게이트웨이 (Infrastructure:STORAGE_GATEWAY.GATEWAY)
+
+| 이벤트 ID                                        | 이벤트 명 | 이벤트 유형 |
+| ------------------------------------------------ | --------- | ----------- |
+| event_id.iaas.storage_gateway.gateway.create     |           | 리소스 생성 |
+| event_id.iaas.storage_gateway.gateway.update_end |           | 리소스 수정 |
+| event_id.iaas.storage_gateway.gateway.delete_end |           | 리소스 삭제 |
+| event_id.iaas.storage_gateway.share.create       |           | -           |
+| event_id.iaas.storage_gateway.share.update_end   |           | -           |
+| event_id.iaas.storage_gateway.share.delete_end   |           | -           |
 
 #### 트랜짓 허브 (Infrastructure:TRANSIT_HUB)
 
@@ -302,6 +321,32 @@
 | event_id.iaas.ncs.workload_active_deadline.update       | 워크로드 종료 예약 변경             | -           |
 | event_id.iaas.ncs.workload_internal_loadbalancer.update | 워크로드 내부 로드 밸런서 설정 변경 | -           |
 | event_id.iaas.ncs.workload_description.update           | 워크로드 설명 변경                  | -           |
+
+### Object Storage
+
+#### 컨테이너 (ObjectStorage:Container)
+
+| 이벤트 ID                                         | 이벤트 명                     | 이벤트 유형 |
+| ------------------------------------------------- | ----------------------------- | ----------- |
+| event_id.object_storage.container.create          | 컨테이너 생성                 | 리소스 생성 |
+| event_id.object_storage.container.delete          | 컨테이너 삭제                 | 리소스 삭제 |
+| event_id.object_storage.container.metadata.update | 컨테이너 메타데이터 등록/수정 | -           |
+| event_id.object_storage.container.sync.enable     | 컨테이너 복제 설정            | -           |
+| event_id.object_storage.container.sync.update     | 컨테이너 복제 설정 변경       | -           |
+| event_id.object_storage.container.sync.disable    | 컨테이너 복제 설정 해제       | -           |
+
+### DataQuery
+
+#### 클러스터 (DataQuery:Cluster)
+
+| 이벤트 ID                          | 이벤트 명     | 이벤트 유형 |
+| ---------------------------------- | ------------- | ----------- |
+| event_id.dataquery.cluster_on      | 클러스터 켜짐 | 리소스 생성 |
+| event_id.dataquery.cluster_off     | 클러스터 꺼짐 | 리소스 삭제 |
+| event_id.dataquery.kr3.cluster_on  |               | 리소스 생성 |
+| event_id.dataquery.kr3.cluster_off |               | 리소스 삭제 |
+| event_id.dataquery.pj1.cluster_on  |               | 리소스 생성 |
+| event_id.dataquery.pj1.cluster_off |               | 리소스 삭제 |
 
 ### DNS Plus
 
