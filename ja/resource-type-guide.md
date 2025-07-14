@@ -2,10 +2,10 @@
 
 * サービスリソースの種類及び関連するイベントのリストです。
 * イベントの種類
-  * リソース作成：リソースの作成時に発生するイベント
-  * リソース修正：リソースの修正時に発生するイベント
-  * リソース削除：リソースの削除時に発生するイベント
-  * -：リソース作成/修正/削除と関連ないイベント
+    * リソース作成：リソースの作成時に発生するイベント
+    * リソース修正：リソースの修正時に発生するイベント
+    * リソース削除：リソースの削除時に発生するイベント
+    * -：リソース作成/修正/削除と関連ないイベント
 
 ### Secure Key Manager
 
@@ -40,6 +40,56 @@
 |event_id.skm.secrets.scheduled_delete|機密データの自動削除|-|
 |event_id.skm.symmetric.scheduled_delete|対称鍵の自動削除|-|
 |event_id.skm.asymmetric.scheduled_delete|非対称鍵の自動削除|-|
+
+
+### RDS for MariaDB
+
+#### DBインスタンス (MariaDB:DbInstance)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.rds_for_mysql.service_resource.instance.create|DBインスタンスの作成|リソース作成|
+|event_id.rds_for_mysql.service_resource.instance.update|DBインスタンス名の変更|リソース修正|
+|event_id.rds_for_mysql.service_resource.instance.delete|DBインスタンスの削除|リソース削除|
+|event_id.rds_for_mysql.instance.management.update|DBインスタンス管理情報を変更|-|
+|event_id.rds_for_mysql.instance.db_definition.update|DB定義情報変更|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.create|DBスキーマ作成|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.delete|DBスキーマ削除|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.sync|DBスキーマの同期|-|
+|event_id.rds_for_mysql.instance.db_definition.user.create|ユーザーの追加|-|
+|event_id.rds_for_mysql.instance.db_definition.user.update|ユーザー変更|-|
+|event_id.rds_for_mysql.instance.db_definition.user.delete|ユーザーの削除|-|
+|event_id.rds_for_mysql.instance.db_definition.user.sync|ユーザーの同期|-|
+|event_id.rds_for_mysql.instance.configuration.update|DBインスタンスの構成を変更|-|
+|event_id.rds_for_mysql.instance_action.backup|DBインスタンスのバックアップ|-|
+|event_id.rds_for_mysql.instance_action.restore|DBインスタンスの復元|-|
+|event_id.rds_for_mysql.instance_action.replicate|DBインスタンスのコピー|-|
+|event_id.rds_for_mysql.instance_action.replicate-legacy-db|社内DBレプリカの作成|-|
+|event_id.rds_for_mysql.instance_action.promote-replicated-legacy-db|社内DBレプリカの昇格|-|
+|event_id.rds_for_mysql.instance_action.start|DBインスタンスの起動|-|
+|event_id.rds_for_mysql.instance_action.restart|DBインスタンスの再起動|-|
+|event_id.rds_for_mysql.instance_action.force_restart|DBインスタンス強制再起動|-|
+|event_id.rds_for_mysql.instance_action.promote|DBインスタンスの昇格|-|
+|event_id.rds_for_mysql.instance_action.force_promote|DBインスタンス強制昇格|-|
+|event_id.rds_for_mysql.instance_action.failover_split|フェイルオーバー完了後、一般DBインスタンスに変更|-|
+|event_id.rds_for_mysql.instance.volume.extend|DBインスタンスのストレージを拡張|-|
+|event_id.rds_for_mysql.instance.volume.secure|DBインスタンスの容量を確保|-|
+|event_id.rds_for_mysql.instance.ha.repair|障害措置インスタンス高可用性機能を復旧|-|
+|event_id.rds_for_mysql.instance.ha.rebuild|フェイルオーバーが完了した高可用性の再構築|-|
+|event_id.rds_for_mysql.instance.ha.remove||-|
+|event_id.rds_for_mysql.instance.ha.pause|高可用性一時停止|-|
+|event_id.rds_for_mysql.instance.ha.resume|高可用性再開|-|
+|event_id.rds_for_mysql.instance.repair_replication|複製再構築|-|
+|event_id.rds_for_mysql.instance.backup.export|DBインスタンスのバックアップおよびエクスポート|-|
+|event_id.rds_for_mysql.instance.stop|インスタンスの停止|-|
+|event_id.rds_for_mysql.instance.restore_from_obs|DBインスタンスオブジェクトストレージから復元|-|
+|event_id.rds_for_mysql.instance.migrate-single|DBインスタンスマイグレーション|-|
+|event_id.rds_for_mysql.instance.migrate|DBインスタンスマイグレーション|-|
+|event_id.rds_for_mysql.instance_apply_recent_parameter_group|パラメータグループの変更事項を適用|-|
+|event_id.rds_for_mysql.instance.change_deletion_protection|DBインスタンスの削除保護設定を変更|-|
+|event_id.rds_for_mysql.enable_authentication_plugin|認証プラグインの有効化|-|
+|event_id.rds_for_mysql.get_last_query_to_restore|復元される最後のクエリ確認|-|
+|event_id.rds_for_mysql.instance.os.upgrade|DBインスタンスOSアップグレード|-|
 
 
 ### NHN Container Registry(NCR)
@@ -288,12 +338,12 @@
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
-|event_id.iaas.storage_gateway.gateway.create|ゲートウェイ作成|リソース作成|
-|event_id.iaas.storage_gateway.gateway.update_end|ゲートウェイ設定変更完了|リソース修正|
-|event_id.iaas.storage_gateway.gateway.delete_end|ゲートウェイ削除完了|リソース削除|
-|event_id.iaas.storage_gateway.share.create|共有作成|-|
-|event_id.iaas.storage_gateway.share.update_end|共有設定変更完了|-|
-|event_id.iaas.storage_gateway.share.delete_end|共有削除完了|-|
+|event_id.iaas.storage_gateway.gateway.create|ストレージゲートウェイの作成|リソース作成|
+|event_id.iaas.storage_gateway.gateway.update_end|ストレージゲートウェイ設定変更完了|リソース修正|
+|event_id.iaas.storage_gateway.gateway.delete_end|ストレージゲートウェイ削除完了|リソース削除|
+|event_id.iaas.storage_gateway.share.create|ストレージゲートウェイ共有の作成|-|
+|event_id.iaas.storage_gateway.share.update_end|ストレージゲートウェイ共有設定変更完了|-|
+|event_id.iaas.storage_gateway.share.delete_end|ストレージゲートウェイ共有の削除完了|-|
 
 #### トランジットハブ (Infrastructure:TRANSIT_HUB)
 
@@ -328,10 +378,10 @@
 |event_id.iaas.instance.update|インスタンス情報の変更|リソース修正|
 |event_id.iaas.instance_action.reboot_end|インスタンスの再起動完了|-|
 |event_id.iaas.instance_action.resize_end|インスタンスタイプの変更完了|-|
-|event_id.iaas.instance_action.start_end|停止したインスタンスの起動完了|-|
+|event_id.iaas.instance_action.start_end|インスタンスの起動完了|-|
 |event_id.iaas.instance_action.stop_end|インスタンスの停止完了|-|
 |event_id.iaas.instance_action.shelve_end|インスタンス終了完了|-|
-|event_id.iaas.instance_action.unshelve_end|終了したインスタンスの起動完了|-|
+|event_id.iaas.instance_action.unshelve_end|インスタンスの起動完了|-|
 
 #### ワークロード (NHNContainerService:Workload)
 
@@ -371,6 +421,57 @@
 |event_id.object_storage.container.sync.enable|コンテナ複製設定|-|
 |event_id.object_storage.container.sync.update|コンテナ複製設定の変更|-|
 |event_id.object_storage.container.sync.disable|コンテナ複製設定の解除|-|
+
+
+### RDS for MySQL
+
+#### DBインスタンス (MySQL:DbInstance)
+
+| イベント ID | イベント名検索 | イベントタイプ |
+|--- |--- |--- |
+|event_id.rds_for_mysql.service_resource.instance.create|DBインスタンスの作成|リソース作成|
+|event_id.rds_for_mysql.service_resource.instance.update|DBインスタンス名の変更|リソース修正|
+|event_id.rds_for_mysql.service_resource.instance.delete|DBインスタンスの削除|リソース削除|
+|event_id.rds_for_mysql.instance.management.update|DBインスタンス管理情報を変更|-|
+|event_id.rds_for_mysql.instance.db_definition.update|DB定義情報変更|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.create|DBスキーマ作成|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.delete|DBスキーマ削除|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.sync|DBスキーマの同期|-|
+|event_id.rds_for_mysql.instance.db_definition.user.create|ユーザーの追加|-|
+|event_id.rds_for_mysql.instance.db_definition.user.update|ユーザー変更|-|
+|event_id.rds_for_mysql.instance.db_definition.user.delete|ユーザーの削除|-|
+|event_id.rds_for_mysql.instance.db_definition.user.sync|ユーザーの同期|-|
+|event_id.rds_for_mysql.instance.configuration.update|DBインスタンスの構成を変更|-|
+|event_id.rds_for_mysql.instance_action.backup|DBインスタンスのバックアップ|-|
+|event_id.rds_for_mysql.instance_action.restore|DBインスタンスの復元|-|
+|event_id.rds_for_mysql.instance_action.replicate|DBインスタンスのコピー|-|
+|event_id.rds_for_mysql.instance_action.replicate-legacy-db|社内DBレプリカの作成|-|
+|event_id.rds_for_mysql.instance_action.promote-replicated-legacy-db|社内DBレプリカの昇格|-|
+|event_id.rds_for_mysql.instance_action.start|DBインスタンスの起動|-|
+|event_id.rds_for_mysql.instance_action.restart|DBインスタンスの再起動|-|
+|event_id.rds_for_mysql.instance_action.force_restart|DBインスタンス強制再起動|-|
+|event_id.rds_for_mysql.instance_action.promote|DBインスタンスの昇格|-|
+|event_id.rds_for_mysql.instance_action.force_promote|DBインスタンス強制昇格|-|
+|event_id.rds_for_mysql.instance_action.failover_split|フェイルオーバー完了後、一般DBインスタンスに変更|-|
+|event_id.rds_for_mysql.instance.volume.extend|DBインスタンスのストレージを拡張|-|
+|event_id.rds_for_mysql.instance.volume.secure|DBインスタンスの容量を確保|-|
+|event_id.rds_for_mysql.instance.ha.repair|障害措置インスタンス高可用性機能を復旧|-|
+|event_id.rds_for_mysql.instance.ha.rebuild|フェイルオーバーが完了した高可用性の再構築|-|
+|event_id.rds_for_mysql.instance.ha.remove||-|
+|event_id.rds_for_mysql.instance.ha.pause|高可用性一時停止|-|
+|event_id.rds_for_mysql.instance.ha.resume|高可用性再開|-|
+|event_id.rds_for_mysql.instance.repair_replication|複製再構築|-|
+|event_id.rds_for_mysql.instance.backup.export|DBインスタンスのバックアップおよびエクスポート|-|
+|event_id.rds_for_mysql.instance.stop|インスタンスの停止|-|
+|event_id.rds_for_mysql.instance.restore_from_obs|DBインスタンスオブジェクトストレージから復元|-|
+|event_id.rds_for_mysql.instance.migrate-single|DBインスタンスマイグレーション|-|
+|event_id.rds_for_mysql.instance.migrate|DBインスタンスマイグレーション|-|
+|event_id.rds_for_mysql.instance_apply_recent_parameter_group|パラメータグループの変更事項を適用|-|
+|event_id.rds_for_mysql.instance.change_deletion_protection|DBインスタンスの削除保護設定を変更|-|
+|event_id.rds_for_mysql.enable_authentication_plugin|認証プラグインの有効化|-|
+|event_id.rds_for_mysql.get_last_query_to_restore|復元される最後のクエリ確認|-|
+|event_id.rds_for_mysql.instance.os.upgrade|DBインスタンスOSアップグレード|-|
+|event_id.rds_for_mysql.instance.create-vip|VIP追加|-|
 
 
 ### DataQuery

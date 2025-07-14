@@ -2,10 +2,10 @@
 
 * 서비스 리소스 유형 및 관련된 이벤트 목록입니다.
 * 이벤트 유형
-  * 리소스 생성: 리소스 생성 시 발생하는 이벤트
-  * 리소스 수정: 리소스 수정 시 발생하는 이벤트
-  * 리소스 삭제: 리소스 삭제 시 발생하는 이벤트
-  * -: 리소스 생성/수정/삭제와 관련 없는 이벤트
+	* 리소스 생성: 리소스 생성 시 발생하는 이벤트
+	* 리소스 수정: 리소스 수정 시 발생하는 이벤트
+	* 리소스 삭제: 리소스 삭제 시 발생하는 이벤트
+	* -: 리소스 생성/수정/삭제와 관련 없는 이벤트
 
 
 ### Secure Key Manager
@@ -41,6 +41,56 @@
 |event_id.skm.secrets.scheduled_delete|기밀 데이터 자동 삭제|-|
 |event_id.skm.symmetric.scheduled_delete|대칭 키 자동 삭제|-|
 |event_id.skm.asymmetric.scheduled_delete|비대칭 키 자동 삭제|-|
+
+
+### RDS for MariaDB
+
+#### DB 인스턴스 (MariaDB:DbInstance)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.rds_for_mysql.service_resource.instance.create|DB 인스턴스 생성|리소스 생성|
+|event_id.rds_for_mysql.service_resource.instance.update|DB 인스턴스 이름 변경|리소스 수정|
+|event_id.rds_for_mysql.service_resource.instance.delete|DB 인스턴스 삭제|리소스 삭제|
+|event_id.rds_for_mysql.instance.management.update|DB 인스턴스 관리 정보 변경|-|
+|event_id.rds_for_mysql.instance.db_definition.update|DB 정의 정보 변경|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.create|DB 스키마 생성|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.delete|DB 스키마 삭제|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.sync|DB 스키마 동기화|-|
+|event_id.rds_for_mysql.instance.db_definition.user.create|사용자 추가|-|
+|event_id.rds_for_mysql.instance.db_definition.user.update|사용자 변경|-|
+|event_id.rds_for_mysql.instance.db_definition.user.delete|사용자 삭제|-|
+|event_id.rds_for_mysql.instance.db_definition.user.sync|사용자 동기화|-|
+|event_id.rds_for_mysql.instance.configuration.update|DB 인스턴스 Configuration 변경|-|
+|event_id.rds_for_mysql.instance_action.backup|DB 인스턴스 백업|-|
+|event_id.rds_for_mysql.instance_action.restore|DB 인스턴스 복원|-|
+|event_id.rds_for_mysql.instance_action.replicate|DB 인스턴스 복제|-|
+|event_id.rds_for_mysql.instance_action.replicate-legacy-db|사내 DB 복제본 생성|-|
+|event_id.rds_for_mysql.instance_action.promote-replicated-legacy-db|사내 DB 복제본 승격|-|
+|event_id.rds_for_mysql.instance_action.start|DB 인스턴스 시작|-|
+|event_id.rds_for_mysql.instance_action.restart|DB 인스턴스 재시작|-|
+|event_id.rds_for_mysql.instance_action.force_restart|DB 인스턴스 강제 재시작|-|
+|event_id.rds_for_mysql.instance_action.promote|DB 인스턴스 승격|-|
+|event_id.rds_for_mysql.instance_action.force_promote|DB 인스턴스 강제 승격|-|
+|event_id.rds_for_mysql.instance_action.failover_split|장애조치 완료후 일반 DB 인스턴스로 변경|-|
+|event_id.rds_for_mysql.instance.volume.extend|DB 인스턴스 스토리지 확장|-|
+|event_id.rds_for_mysql.instance.volume.secure|DB 인스턴스 용량 확보|-|
+|event_id.rds_for_mysql.instance.ha.repair|장애 조치 인스턴스 고가용성 기능 복구|-|
+|event_id.rds_for_mysql.instance.ha.rebuild|장애조치 완료된 고가용성 재구축|-|
+|event_id.rds_for_mysql.instance.ha.remove||-|
+|event_id.rds_for_mysql.instance.ha.pause|고가용성 일시 중지|-|
+|event_id.rds_for_mysql.instance.ha.resume|고가용성 다시 시작|-|
+|event_id.rds_for_mysql.instance.repair_replication|복제 재구축|-|
+|event_id.rds_for_mysql.instance.backup.export|DB 인스턴스 백업 및 내보내기|-|
+|event_id.rds_for_mysql.instance.stop|인스턴스 중지|-|
+|event_id.rds_for_mysql.instance.restore_from_obs|DB 인스턴스 오브젝트 스토리지로부터 복원|-|
+|event_id.rds_for_mysql.instance.migrate-single|DB 인스턴스 마이그레이션|-|
+|event_id.rds_for_mysql.instance.migrate|DB 인스턴스 마이그레이션|-|
+|event_id.rds_for_mysql.instance_apply_recent_parameter_group|파라미터 그룹 변경 사항 적용|-|
+|event_id.rds_for_mysql.instance.change_deletion_protection|DB 인스턴스 삭제 보호 설정 변경|-|
+|event_id.rds_for_mysql.enable_authentication_plugin|인증 플러그인 활성화|-|
+|event_id.rds_for_mysql.get_last_query_to_restore|복원될 마지막 쿼리 확인|-|
+|event_id.rds_for_mysql.instance.os.upgrade|DB 인스턴스 운영체제 업그레이드|-|
 
 
 ### NHN Container Registry(NCR)
@@ -260,7 +310,7 @@
 |event_id.iaas.nas.replication.stop|NAS 스토리지 복제 중지|-|
 |event_id.iaas.nas.replication.change_direction|NAS 스토리지 복제 방향 변경|-|
 |event_id.iaas.nas.subnet.attach|NAS 스토리지 서브넷 연결 추가|-|
-|event_id.iaas.nas.subnet.detach|NAS 스토리지 서브넷 연결 해제|-|
+|event_id.iaas.nas.subnet.detach|NAS 스토리지 서브넷 연결 해제|-|
 
 #### NAT 게이트웨이 (Infrastructure:NAT_GATEWAY)
 
@@ -274,9 +324,9 @@
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
 |--- |--- |--- |
-|event_id.iaas.private_dns.zone.create_end|Private DNS Zone 생성 완료|리소스 생성|
-|event_id.iaas.private_dns.zone.update_end|Private DNS Zone 수정 완료|리소스 수정|
-|event_id.iaas.private_dns.zone.delete_end|Private DNS Zone 삭제 완료|리소스 삭제|
+|event_id.iaas.private_dns.zone.create_end|Private DNS Zone 생성 완료|리소스 생성|
+|event_id.iaas.private_dns.zone.update_end|Private DNS Zone 수정 완료|리소스 수정|
+|event_id.iaas.private_dns.zone.delete_end|Private DNS Zone 삭제 완료|리소스 삭제|
 
 #### 블록 스토리지 스냅숏 (Infrastructure:SNAPSHOT)
 
@@ -289,12 +339,12 @@
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
 |--- |--- |--- |
-|event_id.iaas.storage_gateway.gateway.create|게이트웨이 생성|리소스 생성|
-|event_id.iaas.storage_gateway.gateway.update_end|게이트웨이 설정 변경 완료|리소스 수정|
-|event_id.iaas.storage_gateway.gateway.delete_end|게이트웨이 삭제 완료|리소스 삭제|
-|event_id.iaas.storage_gateway.share.create|공유 생성|-|
-|event_id.iaas.storage_gateway.share.update_end|공유 설정 변경 완료|-|
-|event_id.iaas.storage_gateway.share.delete_end|공유 삭제 완료|-|
+|event_id.iaas.storage_gateway.gateway.create|스토리지 게이트웨이 생성|리소스 생성|
+|event_id.iaas.storage_gateway.gateway.update_end|스토리지 게이트웨이 설정 변경 완료|리소스 수정|
+|event_id.iaas.storage_gateway.gateway.delete_end|스토리지 게이트웨이 삭제 완료|리소스 삭제|
+|event_id.iaas.storage_gateway.share.create|스토리지 게이트웨이 공유 생성|-|
+|event_id.iaas.storage_gateway.share.update_end|스토리지 게이트웨이 공유 설정 변경 완료|-|
+|event_id.iaas.storage_gateway.share.delete_end|스토리지 게이트웨이 공유 삭제 완료|-|
 
 #### 트랜짓 허브 (Infrastructure:TRANSIT_HUB)
 
@@ -329,10 +379,10 @@
 |event_id.iaas.instance.update|인스턴스 정보 변경|리소스 수정|
 |event_id.iaas.instance_action.reboot_end|인스턴스 재부팅 완료|-|
 |event_id.iaas.instance_action.resize_end|인스턴스 타입 변경 완료|-|
-|event_id.iaas.instance_action.start_end|중지된 인스턴스 시작 완료|-|
+|event_id.iaas.instance_action.start_end|인스턴스 시작 완료|-|
 |event_id.iaas.instance_action.stop_end|인스턴스 중지 완료|-|
 |event_id.iaas.instance_action.shelve_end|인스턴스 종료 완료|-|
-|event_id.iaas.instance_action.unshelve_end|종료된 인스턴스 시작 완료|-|
+|event_id.iaas.instance_action.unshelve_end|인스턴스 시작 완료|-|
 
 #### 워크로드 (NHNContainerService:Workload)
 
@@ -372,6 +422,57 @@
 |event_id.object_storage.container.sync.enable|컨테이너 복제 설정|-|
 |event_id.object_storage.container.sync.update|컨테이너 복제 설정 변경|-|
 |event_id.object_storage.container.sync.disable|컨테이너 복제 설정 해제|-|
+
+
+### RDS for MySQL
+
+#### DB 인스턴스 (MySQL:DbInstance)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.rds_for_mysql.service_resource.instance.create|DB 인스턴스 생성|리소스 생성|
+|event_id.rds_for_mysql.service_resource.instance.update|DB 인스턴스 이름 변경|리소스 수정|
+|event_id.rds_for_mysql.service_resource.instance.delete|DB 인스턴스 삭제|리소스 삭제|
+|event_id.rds_for_mysql.instance.management.update|DB 인스턴스 관리 정보 변경|-|
+|event_id.rds_for_mysql.instance.db_definition.update|DB 정의 정보 변경|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.create|DB 스키마 생성|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.delete|DB 스키마 삭제|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.sync|DB 스키마 동기화|-|
+|event_id.rds_for_mysql.instance.db_definition.user.create|사용자 추가|-|
+|event_id.rds_for_mysql.instance.db_definition.user.update|사용자 변경|-|
+|event_id.rds_for_mysql.instance.db_definition.user.delete|사용자 삭제|-|
+|event_id.rds_for_mysql.instance.db_definition.user.sync|사용자 동기화|-|
+|event_id.rds_for_mysql.instance.configuration.update|DB 인스턴스 Configuration 변경|-|
+|event_id.rds_for_mysql.instance_action.backup|DB 인스턴스 백업|-|
+|event_id.rds_for_mysql.instance_action.restore|DB 인스턴스 복원|-|
+|event_id.rds_for_mysql.instance_action.replicate|DB 인스턴스 복제|-|
+|event_id.rds_for_mysql.instance_action.replicate-legacy-db|사내 DB 복제본 생성|-|
+|event_id.rds_for_mysql.instance_action.promote-replicated-legacy-db|사내 DB 복제본 승격|-|
+|event_id.rds_for_mysql.instance_action.start|DB 인스턴스 시작|-|
+|event_id.rds_for_mysql.instance_action.restart|DB 인스턴스 재시작|-|
+|event_id.rds_for_mysql.instance_action.force_restart|DB 인스턴스 강제 재시작|-|
+|event_id.rds_for_mysql.instance_action.promote|DB 인스턴스 승격|-|
+|event_id.rds_for_mysql.instance_action.force_promote|DB 인스턴스 강제 승격|-|
+|event_id.rds_for_mysql.instance_action.failover_split|장애조치 완료후 일반 DB 인스턴스로 변경|-|
+|event_id.rds_for_mysql.instance.volume.extend|DB 인스턴스 스토리지 확장|-|
+|event_id.rds_for_mysql.instance.volume.secure|DB 인스턴스 용량 확보|-|
+|event_id.rds_for_mysql.instance.ha.repair|장애 조치 인스턴스 고가용성 기능 복구|-|
+|event_id.rds_for_mysql.instance.ha.rebuild|장애조치 완료된 고가용성 재구축|-|
+|event_id.rds_for_mysql.instance.ha.remove||-|
+|event_id.rds_for_mysql.instance.ha.pause|고가용성 일시 중지|-|
+|event_id.rds_for_mysql.instance.ha.resume|고가용성 다시 시작|-|
+|event_id.rds_for_mysql.instance.repair_replication|복제 재구축|-|
+|event_id.rds_for_mysql.instance.backup.export|DB 인스턴스 백업 및 내보내기|-|
+|event_id.rds_for_mysql.instance.stop|인스턴스 중지|-|
+|event_id.rds_for_mysql.instance.restore_from_obs|DB 인스턴스 오브젝트 스토리지로부터 복원|-|
+|event_id.rds_for_mysql.instance.migrate-single|DB 인스턴스 마이그레이션|-|
+|event_id.rds_for_mysql.instance.migrate|DB 인스턴스 마이그레이션|-|
+|event_id.rds_for_mysql.instance_apply_recent_parameter_group|파라미터 그룹 변경 사항 적용|-|
+|event_id.rds_for_mysql.instance.change_deletion_protection|DB 인스턴스 삭제 보호 설정 변경|-|
+|event_id.rds_for_mysql.enable_authentication_plugin|인증 플러그인 활성화|-|
+|event_id.rds_for_mysql.get_last_query_to_restore|복원될 마지막 쿼리 확인|-|
+|event_id.rds_for_mysql.instance.os.upgrade|DB 인스턴스 운영체제 업그레이드|-|
+|event_id.rds_for_mysql.instance.create-vip|VIP 추가|-|
 
 
 ### DataQuery
@@ -421,3 +522,5 @@
 |event_id.dnsplus.zone.create|DNS Zone 생성|리소스 생성|
 |event_id.dnsplus.zone.update|DNS Zone 수정|리소스 수정|
 |event_id.dnsplus.zone.delete|DNS Zone 삭제|리소스 삭제|
+
+

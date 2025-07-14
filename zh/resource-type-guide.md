@@ -2,10 +2,10 @@
 
 * Below are service resource types and relevant events
 * Event Types
-  * Create Resource: Event that occurs when a resource is created
-  * Modify Resource: Event that occurs when a resource is modified
-  * Delete Resource: Event that occurs when a resource is deleted
-  * -: Event not related to Create/Modify/Delete Resource
+    * Create Resource: Event that occurs when a resource is created
+    * Modify Resource: Event that occurs when a resource is modified
+    * Delete Resource: Event that occurs when a resource is deleted
+    * -: Event not related to Create/Modify/Delete Resource
 
 ### Secure Key Manager
 
@@ -40,6 +40,56 @@
 |event_id.skm.secrets.scheduled_delete|Auto Delete Confidential Data|-|
 |event_id.skm.symmetric.scheduled_delete|Auto Delete Symmetric Key|-|
 |event_id.skm.asymmetric.scheduled_delete|Auto Delete Asymmetric Key|-|
+
+
+### RDS for MariaDB
+
+#### DB Instance (MariaDB:DbInstance)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.rds_for_mysql.service_resource.instance.create|Create DB Instance|Create Resource|
+|event_id.rds_for_mysql.service_resource.instance.update|Change DB Instance name|Modify Resource|
+|event_id.rds_for_mysql.service_resource.instance.delete|Delete DB Instance|Delete Resource|
+|event_id.rds_for_mysql.instance.management.update|Change Management Information for DB Instance|-|
+|event_id.rds_for_mysql.instance.db_definition.update|Updated DB definition information|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.create|DB schema created|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.delete|DB schema deleted|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.sync|Synchronize DB Schema|-|
+|event_id.rds_for_mysql.instance.db_definition.user.create|Add User|-|
+|event_id.rds_for_mysql.instance.db_definition.user.update|Modify User|-|
+|event_id.rds_for_mysql.instance.db_definition.user.delete|Delete User|-|
+|event_id.rds_for_mysql.instance.db_definition.user.sync|Synchronize User|-|
+|event_id.rds_for_mysql.instance.configuration.update|Change DB Instance Configuration|-|
+|event_id.rds_for_mysql.instance_action.backup|Back Up DB Instance|-|
+|event_id.rds_for_mysql.instance_action.restore|Restore DB Instance|-|
+|event_id.rds_for_mysql.instance_action.replicate|Replicate DB Instance|-|
+|event_id.rds_for_mysql.instance_action.replicate-legacy-db|Create Internal DB Replica|-|
+|event_id.rds_for_mysql.instance_action.promote-replicated-legacy-db|Promote Internal DB Replica|-|
+|event_id.rds_for_mysql.instance_action.start|DB instance started|-|
+|event_id.rds_for_mysql.instance_action.restart|Restart DB Instance|-|
+|event_id.rds_for_mysql.instance_action.force_restart|Force Restart DB Instance|-|
+|event_id.rds_for_mysql.instance_action.promote|Promote DB Instance|-|
+|event_id.rds_for_mysql.instance_action.force_promote|DB instance force promotion|-|
+|event_id.rds_for_mysql.instance_action.failover_split|Change to DB Instance after Failover|-|
+|event_id.rds_for_mysql.instance.volume.extend|Expand DB Instance Storage|-|
+|event_id.rds_for_mysql.instance.volume.secure|Free Up DB Instance Space|-|
+|event_id.rds_for_mysql.instance.ha.repair|复原障碍措施实例高可用性功能|-|
+|event_id.rds_for_mysql.instance.ha.rebuild|High Availability Rebuild after Failover|-|
+|event_id.rds_for_mysql.instance.ha.remove||-|
+|event_id.rds_for_mysql.instance.ha.pause|Pause High Availability|-|
+|event_id.rds_for_mysql.instance.ha.resume|Resume High Availability|-|
+|event_id.rds_for_mysql.instance.repair_replication|Rebuild Replication|-|
+|event_id.rds_for_mysql.instance.backup.export|Make and export a DB instance backup|-|
+|event_id.rds_for_mysql.instance.stop|Stop Instance|-|
+|event_id.rds_for_mysql.instance.restore_from_obs|Restoration from DB Instance Object Storage|-|
+|event_id.rds_for_mysql.instance.migrate-single|DB instance migration|-|
+|event_id.rds_for_mysql.instance.migrate|DB instance migration|-|
+|event_id.rds_for_mysql.instance_apply_recent_parameter_group|Apply Parameter Group Changes|-|
+|event_id.rds_for_mysql.instance.change_deletion_protection|Change Deletion Protection Setting for DB instance|-|
+|event_id.rds_for_mysql.enable_authentication_plugin|Enable Authentication Plugin|-|
+|event_id.rds_for_mysql.get_last_query_to_restore|Check Last Restorable Query|-|
+|event_id.rds_for_mysql.instance.os.upgrade|DB Instance OS Upgrade|-|
 
 
 ### NHN Container Registry(NCR)
@@ -252,14 +302,14 @@
 |event_id.iaas.nas.volume.delete_end|NAS Storage Deletion Completed|Delete Resource|
 |event_id.iaas.nas.snapshot.create|Create NAS Storage Snapshot|-|
 |event_id.iaas.nas.snapshot.delete|Delete NAS Storage Snapshot|-|
-|event_id.iaas.nas.snapshot.restore|Restore NAS Storage Snapshot|-|
-|event_id.iaas.nas.replication.set|Set NAS Storage Replication|-|
-|event_id.iaas.nas.replication.unset|Turn off NAS Storage Replication|-|
+|event_id.iaas.nas.snapshot.restore|Restore NAS Storage Snapshot|-|
+|event_id.iaas.nas.replication.set|Set NAS Storage Replication|-|
+|event_id.iaas.nas.replication.unset|Turn off NAS Storage Replication|-|
 |event_id.iaas.nas.replication.start|Start NAS Storage Replication|-|
 |event_id.iaas.nas.replication.stop|Stop NAS Storage Replication|-|
 |event_id.iaas.nas.replication.change_direction|Change NAS Storage Replication Direction|-|
-|event_id.iaas.nas.subnet.attach|Add NAS Storage Subnet Association|-|
-|event_id.iaas.nas.subnet.detach|Disassociate NAS Storage Subnet|-|
+|event_id.iaas.nas.subnet.attach|Add NAS Storage Subnet Association|-|
+|event_id.iaas.nas.subnet.detach|Disassociate NAS Storage Subnet|-|
 
 #### NAT Gateway (Infrastructure:NAT_GATEWAY)
 
@@ -273,9 +323,9 @@
 
 | Event ID | Event Name | Event Type |
 |--- |--- |--- |
-|event_id.iaas.private_dns.zone.create_end|Create Private DNS Zone Completed|Create Resource|
-|event_id.iaas.private_dns.zone.update_end|Modify Private DNS Zone Completed|Modify Resource|
-|event_id.iaas.private_dns.zone.delete_end|Delete Private DNS Zone Completed|Delete Resource|
+|event_id.iaas.private_dns.zone.create_end|Create Private DNS Zone Completed|Create Resource|
+|event_id.iaas.private_dns.zone.update_end|Modify Private DNS Zone Completed|Modify Resource|
+|event_id.iaas.private_dns.zone.delete_end|Delete Private DNS Zone Completed|Delete Resource|
 
 #### Block Storage Snapshot (Infrastructure:SNAPSHOT)
 
@@ -288,12 +338,12 @@
 
 | Event ID | Event Name | Event Type |
 |--- |--- |--- |
-|event_id.iaas.storage_gateway.gateway.create|Create Gateway|Create Resource|
-|event_id.iaas.storage_gateway.gateway.update_end|Change Gateway Settings Completed|Modify Resource|
-|event_id.iaas.storage_gateway.gateway.delete_end|Delete Gateway Completed|Delete Resource|
-|event_id.iaas.storage_gateway.share.create|Create Share|-|
-|event_id.iaas.storage_gateway.share.update_end|Change Share Settings Completed|-|
-|event_id.iaas.storage_gateway.share.delete_end|Delete Share Completed|-|
+|event_id.iaas.storage_gateway.gateway.create|Create Storage Gateway|Create Resource|
+|event_id.iaas.storage_gateway.gateway.update_end|Change Storage Gateway Settings Completed|Modify Resource|
+|event_id.iaas.storage_gateway.gateway.delete_end|Delete Storage Gateway Completed|Delete Resource|
+|event_id.iaas.storage_gateway.share.create|Create Storage Share|-|
+|event_id.iaas.storage_gateway.share.update_end|Change Storage Share Settings Completed|-|
+|event_id.iaas.storage_gateway.share.delete_end|Delete Storage Share Completed|-|
 
 #### Transit Hub (Infrastructure:TRANSIT_HUB)
 
@@ -328,10 +378,10 @@
 |event_id.iaas.instance.update|Change Instance Information|Modify Resource|
 |event_id.iaas.instance_action.reboot_end|Reboot Instance Completed|-|
 |event_id.iaas.instance_action.resize_end|Change Instance Type Completed|-|
-|event_id.iaas.instance_action.start_end|Start Stopped Instance Completed|-|
+|event_id.iaas.instance_action.start_end|Start Instance Completed|-|
 |event_id.iaas.instance_action.stop_end|Stop Instance Completed|-|
 |event_id.iaas.instance_action.shelve_end|Terminate Instance Completed|-|
-|event_id.iaas.instance_action.unshelve_end|Start Terminated Instance Completed|-|
+|event_id.iaas.instance_action.unshelve_end|Start Instance Completed|-|
 
 #### WORKLOAD (NHNContainerService:Workload)
 
@@ -371,6 +421,57 @@
 |event_id.object_storage.container.sync.enable|Set Container Replication|-|
 |event_id.object_storage.container.sync.update|Change Container Replication Settings|-|
 |event_id.object_storage.container.sync.disable|Unset Container Replication|-|
+
+
+### RDS for MySQL
+
+#### DB Instance (MySQL:DbInstance)
+
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.rds_for_mysql.service_resource.instance.create|Create DB Instance|Create Resource|
+|event_id.rds_for_mysql.service_resource.instance.update|Change DB Instance name|Modify Resource|
+|event_id.rds_for_mysql.service_resource.instance.delete|Delete DB Instance|Delete Resource|
+|event_id.rds_for_mysql.instance.management.update|Change Management Information for DB Instance|-|
+|event_id.rds_for_mysql.instance.db_definition.update|Updated DB definition information|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.create|DB schema created|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.delete|DB schema deleted|-|
+|event_id.rds_for_mysql.instance.db_definition.schema.sync|Synchronize DB Schema|-|
+|event_id.rds_for_mysql.instance.db_definition.user.create|Add User|-|
+|event_id.rds_for_mysql.instance.db_definition.user.update|Modify User|-|
+|event_id.rds_for_mysql.instance.db_definition.user.delete|Delete User|-|
+|event_id.rds_for_mysql.instance.db_definition.user.sync|Synchronize User|-|
+|event_id.rds_for_mysql.instance.configuration.update|Change DB Instance Configuration|-|
+|event_id.rds_for_mysql.instance_action.backup|Back Up DB Instance|-|
+|event_id.rds_for_mysql.instance_action.restore|Restore DB Instance|-|
+|event_id.rds_for_mysql.instance_action.replicate|Replicate DB Instance|-|
+|event_id.rds_for_mysql.instance_action.replicate-legacy-db|Create Internal DB Replica|-|
+|event_id.rds_for_mysql.instance_action.promote-replicated-legacy-db|Promote Internal DB Replica|-|
+|event_id.rds_for_mysql.instance_action.start|DB instance started|-|
+|event_id.rds_for_mysql.instance_action.restart|Restart DB Instance|-|
+|event_id.rds_for_mysql.instance_action.force_restart|Force Restart DB Instance|-|
+|event_id.rds_for_mysql.instance_action.promote|Promote DB Instance|-|
+|event_id.rds_for_mysql.instance_action.force_promote|DB instance force promotion|-|
+|event_id.rds_for_mysql.instance_action.failover_split|Change to DB Instance after Failover|-|
+|event_id.rds_for_mysql.instance.volume.extend|Expand DB Instance Storage|-|
+|event_id.rds_for_mysql.instance.volume.secure|Free Up DB Instance Space|-|
+|event_id.rds_for_mysql.instance.ha.repair|复原障碍措施实例高可用性功能|-|
+|event_id.rds_for_mysql.instance.ha.rebuild|High Availability Rebuild after Failover|-|
+|event_id.rds_for_mysql.instance.ha.remove||-|
+|event_id.rds_for_mysql.instance.ha.pause|Pause High Availability|-|
+|event_id.rds_for_mysql.instance.ha.resume|Resume High Availability|-|
+|event_id.rds_for_mysql.instance.repair_replication|Rebuild Replication|-|
+|event_id.rds_for_mysql.instance.backup.export|Make and export a DB instance backup|-|
+|event_id.rds_for_mysql.instance.stop|Stop Instance|-|
+|event_id.rds_for_mysql.instance.restore_from_obs|Restoration from DB Instance Object Storage|-|
+|event_id.rds_for_mysql.instance.migrate-single|DB instance migration|-|
+|event_id.rds_for_mysql.instance.migrate|DB instance migration|-|
+|event_id.rds_for_mysql.instance_apply_recent_parameter_group|Apply Parameter Group Changes|-|
+|event_id.rds_for_mysql.instance.change_deletion_protection|Change Deletion Protection Setting for DB instance|-|
+|event_id.rds_for_mysql.enable_authentication_plugin|Enable Authentication Plugin|-|
+|event_id.rds_for_mysql.get_last_query_to_restore|Check Last Restorable Query|-|
+|event_id.rds_for_mysql.instance.os.upgrade|DB Instance OS Upgrade|-|
+|event_id.rds_for_mysql.instance.create-vip|Add VIP|-|
 
 
 ### DataQuery
@@ -420,3 +521,5 @@
 |event_id.dnsplus.zone.create|Create DNS Zone|Create Resource|
 |event_id.dnsplus.zone.update|Modify DNS Zone|Modify Resource|
 |event_id.dnsplus.zone.delete|Delete DNS Zone|Delete Resource|
+
+
