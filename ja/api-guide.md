@@ -4,25 +4,14 @@
 
 ## User Access Key & Secret Access Key
 
-REST APIを使うためには、まずUser Access KeyとSecret Access Keyを発行する必要があります。<br/>
-User Access KeyとSecret Access Keyは**APIセキュリティ設定**で発行できます。<br/>
-コンソール右上のアカウントにマウスポインタを合わせると表示されるドロップダウンメニューから**APIセキュリティ設定**を選択した後、**User Access Key ID作成**をクリックします。<br/>
-セキュリティのため、User Access KeyとSecret Access Keyの両方を作成することを推奨します。
+ResourceWatcher APIを使用するには、User Access Keyが必要です。User Access Keyは、NHN CloudアカウントまたはIAMアカウントに基づいて発行される認証キーであり、Secret Access Keyと共に使用してAPIリクエストに対する認証手段として利用されます。
 
-![[図1] APIセキュリティ設定位置](http://static.toastoven.net/prod_resource_watcher/img46_JP.png)
-<center>[図1] APIセキュリティ設定位置</center>
-
-![[図2] APIセキュリティ設定ページ](http://static.toastoven.net/prod_resource_watcher/img47_JP.png)
-<center>[図2] APIセキュリティ設定ページ</center>
-
-![[図3] UserAccessKeyとSecretAccessKey作成](http://static.toastoven.net/prod_resource_watcher/img48_JP.png)
-<center>[図3] User Access KeyとSecret Access Key作成</center>
+User Access KeyとSecret Access Keyは、コンソールのAPIセキュリティ設定で発行できます。User Access Keyの発行及び使用に関する詳細は、[User Access Key](docs.nhncloud.com/ja/nhncloud/ja/public-api/user-access-key)を参照してください。
 
 ## Public API URL & Appkey確認
-RESTful APIを使用するにはAppkeyが必要です。<br/>
-コンソール右側のURL & Appkeyをクリックして発行されたkey情報を確認できます。
-![[図4] Public API URL & Appkey](http://static.toastoven.net/prod_resource_watcher/img49_JP.png)
-<center>[図4] URL & Appkey</center>
+ResourceWatcher APIを使用するには、Appkeyが必要です。Appkeyは、API呼び出し時にリクエストURLに含めて特定のリソースを指定し、識別するために使用されます。
+
+Appkeyの確認及び使用に関する詳細は、[Appkey](docs.nhncloud.com/ja/nhncloud/ja/public-api/appkey)を参照してください。
 
 ## REST APIガイド
 
