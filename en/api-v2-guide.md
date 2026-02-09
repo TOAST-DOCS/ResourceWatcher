@@ -4,25 +4,14 @@
 
 ## User Access Key & Secret Access Key
 
-To use the RESTful API, you must first obtain a User Access Key and Secret Access Key.<br/>
-User Access Key and Secret Access Key can be issued in the **API security settings**.<br/>
-In the drop-down menu that appears when you hover over your account in the upper-right corner of the console, select **API security settings**, and then click **Create User Access Key ID**.<br/>
-For security purposes, it is recommended to create both a User Access Key and a Secret Access Key.
+User Access Key is required to use the ResourceWatcher API. A User Access Key is an authentication key issued based on an NHN Cloud or IAM account. It is used in conjunction with a Secret Access Key to authenticate API requests.
 
-![[Figure 1] API security settings location](http://static.toastoven.net/prod_resource_watcher/img46_EN.png)
-<center>[Figure 1] API security settings location</center>
-
-![[Figure 2] API security settings page](http://static.toastoven.net/prod_resource_watcher/img47_EN.png)
-<center>[Figure 2] API security settings page</center>
-
-![[Figure 3] Create a User AccessKey and SecretAccessKey](http://static.toastoven.net/prod_resource_watcher/img48_EN.png)
-<center>[Figure 3] Generate User Access Key and Secret Access Key</center>
+User Access Keys and Secret Access Keys can be issued in the console's API Security Setting. For more information on issuing and using User Access Key, please refer to the [User Access Key](docs.nhncloud.com/en/nhncloud/en/public-api/user-access-key).
 
 ## Check Public API URL & Appkey
-Appkey is required to use Restful API.<br/>
-You can check the issued key information by clicking **URL & Appkey** on the right side of the console.
-![[Figure 4] Public API URL & Appkey](http://static.toastoven.net/prod_resource_watcher/img49_EN.png)
-<center>[Figure 4] URL &amp; Appkey</center>
+Appkey is required to use the ResourceWatcher API. The Appkey is included in the request URL to identify and specify a particular resource when making API calls.
+
+For more information on checking and using Appkeys, please refer to the [Appkey](docs.nhncloud.com/en/nhncloud/en/public-api/appkey).
 
 ## RESTful API Guide
 
