@@ -6,12 +6,12 @@
 
 ResourceWatcher API를 사용하려면 User Access Key가 필요합니다. User Access Key는 NHN Cloud 계정 또는 IAM 계정을 기반으로 발급되는 인증 키로, Secret Access Key와 함께 사용하여 API 요청에 대한 인증 수단으로 활용됩니다.
 
-User Access Key와 Secret Access Key는 콘솔의 API 보안 설정에서 발급할 수 있습니다. User Access Key 발급 및 사용에 대한 자세한 내용은 [User Access Key](docs.nhncloud.com/ko/nhncloud/ko/public-api/user-access-key)를 참고하세요.
+User Access Key와 Secret Access Key는 콘솔의 API 보안 설정에서 발급할 수 있습니다. User Access Key 발급 및 사용에 대한 자세한 내용은 [User Access Key](/nhncloud/ko/public-api/user-access-key)를 참고하세요.
 
 ## Public API URL & Appkey 확인
 ResourceWatcher API를 사용하려면 Appkey가 필요합니다. Appkey는 API 호출 시 요청 URL에 포함하여 특정 리소스를 가리키고 식별하는 데 사용됩니다.
 
-Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](docs.nhncloud.com/ko/nhncloud/ko/public-api/appkey)를 참고하세요.
+Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/public-api/appkey)를 참고하세요.
 
 ## REST API 가이드
 
