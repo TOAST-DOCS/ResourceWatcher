@@ -293,7 +293,7 @@
 |event_id.iaas.loadbalancer.update_end|Change Load Balancer Information Completed|Modify Resource|
 |event_id.iaas.loadbalancer.delete_end|Delete Load Balancer Completed|Delete Resource|
 
-#### NAS Storage (Infrastructure:NAS.STORAGE)
+#### NAS Volume (Infrastructure:NAS.STORAGE)
 
 | Event ID | Event Name | Event Type |
 |--- |--- |--- |
