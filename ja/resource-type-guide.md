@@ -293,7 +293,7 @@
 |event_id.iaas.loadbalancer.update_end|ロードバランサー情報の変更完了|リソース修正|
 |event_id.iaas.loadbalancer.delete_end|ロードバランサーの削除完了|リソース削除|
 
-#### NASストレージ (Infrastructure:NAS.STORAGE)
+#### NASボリューム (Infrastructure:NAS.STORAGE)
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
