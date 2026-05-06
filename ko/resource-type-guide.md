@@ -298,19 +298,22 @@
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
 |--- |--- |--- |
-|event_id.iaas.nas.volume.create|NAS 스토리지 생성|리소스 생성|
-|event_id.iaas.nas.volume.update_end|NAS 스토리지 설정 변경 완료|리소스 수정|
-|event_id.iaas.nas.volume.delete_end|NAS 스토리지 삭제 완료|리소스 삭제|
-|event_id.iaas.nas.snapshot.create|NAS 스토리지 스냅숏 생성|-|
-|event_id.iaas.nas.snapshot.delete|NAS 스토리지 스냅숏 삭제|-|
-|event_id.iaas.nas.snapshot.restore|NAS 스토리지 스냅숏 복원|-|
-|event_id.iaas.nas.replication.set|NAS 스토리지 복제 설정|-|
-|event_id.iaas.nas.replication.unset|NAS 스토리지 복제 설정 해제|-|
-|event_id.iaas.nas.replication.start|NAS 스토리지 복제 시작|-|
-|event_id.iaas.nas.replication.stop|NAS 스토리지 복제 중지|-|
-|event_id.iaas.nas.replication.change_direction|NAS 스토리지 복제 방향 변경|-|
-|event_id.iaas.nas.subnet.attach|NAS 스토리지 서브넷 연결 추가|-|
-|event_id.iaas.nas.subnet.detach|NAS 스토리지 서브넷 연결 해제|-|
+|event_id.iaas.nas.volume.create|NAS 볼륨 생성|리소스 생성|
+|event_id.iaas.nas.volume.delete|NAS 볼륨 삭제|리소스 삭제|
+|event_id.iaas.nas.volume.update|NAS 볼륨 설정 변경|리소스 수정|
+|event_id.iaas.nas.volume.create_end|NAS 볼륨 생성 완료|-|
+|event_id.iaas.nas.volume.delete_end|NAS 볼륨 삭제 완료|-|
+|event_id.iaas.nas.volume.update_end|NAS 볼륨 설정 변경 완료|-|
+|event_id.iaas.nas.snapshot.create|NAS 볼륨 스냅숏 생성|-|
+|event_id.iaas.nas.snapshot.delete|NAS 볼륨 스냅숏 삭제|-|
+|event_id.iaas.nas.snapshot.restore|NAS 볼륨 스냅숏 복원|-|
+|event_id.iaas.nas.replication.set|NAS 볼륨 복제 설정|-|
+|event_id.iaas.nas.replication.unset|NAS 볼륨 복제 설정 해제|-|
+|event_id.iaas.nas.replication.start|NAS 볼륨 복제 시작|-|
+|event_id.iaas.nas.replication.stop|NAS 볼륨 복제 중지|-|
+|event_id.iaas.nas.replication.change_direction|NAS 볼륨 복제 방향 변경|-|
+|event_id.iaas.nas.subnet.attach|NAS 볼륨 서브넷 연결 추가|-|
+|event_id.iaas.nas.subnet.detach|NAS 볼륨 서브넷 연결 해제|-|
 
 #### NAT 게이트웨이 (Infrastructure:NAT_GATEWAY)
 
