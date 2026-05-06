@@ -297,19 +297,22 @@
 
 | Event ID | Event Name | Event Type |
 |--- |--- |--- |
-|event_id.iaas.nas.volume.create|Create NAS Storage|Create Resource|
-|event_id.iaas.nas.volume.update_end|NAS Storage Settings Modification Completed|Modify Resource|
-|event_id.iaas.nas.volume.delete_end|NAS Storage Deletion Completed|Delete Resource|
-|event_id.iaas.nas.snapshot.create|Create NAS Storage Snapshot|-|
-|event_id.iaas.nas.snapshot.delete|Delete NAS Storage Snapshot|-|
-|event_id.iaas.nas.snapshot.restore|Restore NAS Storage Snapshot|-|
-|event_id.iaas.nas.replication.set|Set NAS Storage Replication|-|
-|event_id.iaas.nas.replication.unset|Turn off NAS Storage Replication|-|
-|event_id.iaas.nas.replication.start|Start NAS Storage Replication|-|
-|event_id.iaas.nas.replication.stop|Stop NAS Storage Replication|-|
-|event_id.iaas.nas.replication.change_direction|Change NAS Storage Replication Direction|-|
-|event_id.iaas.nas.subnet.attach|Add NAS Storage Subnet Association|-|
-|event_id.iaas.nas.subnet.detach|Disassociate NAS Storage Subnet|-|
+|event_id.iaas.nas.volume.create|Create NAS Volume|Create Resource|
+|event_id.iaas.nas.volume.delete|Delete NAS Volume|Delete Resource|
+|event_id.iaas.nas.volume.update|Modify NAS Volume Settings|Modify Resource|
+|event_id.iaas.nas.volume.create_end|NAS Volume Creation Completed|-|
+|event_id.iaas.nas.volume.delete_end|NAS Volume Deletion Completed|-|
+|event_id.iaas.nas.volume.update_end|NAS Volume Settings Modification Completed|-|
+|event_id.iaas.nas.snapshot.create|Create NAS Volume Snapshot|-|
+|event_id.iaas.nas.snapshot.delete|Delete NAS Volume Snapshot|-|
+|event_id.iaas.nas.snapshot.restore|Restore NAS Volume Snapshot|-|
+|event_id.iaas.nas.replication.set|Set NAS Volume Replication|-|
+|event_id.iaas.nas.replication.unset|Turn off NAS Volume Replication|-|
+|event_id.iaas.nas.replication.start|Start NAS Volume Replication|-|
+|event_id.iaas.nas.replication.stop|Stop NAS Volume Replication|-|
+|event_id.iaas.nas.replication.change_direction|Change NAS Volume Replication Direction|-|
+|event_id.iaas.nas.subnet.attach|Add NAS Volume Subnet Association|-|
+|event_id.iaas.nas.subnet.detach|Disassociate NAS Volume Subnet|-|
 
 #### NAT Gateway (Infrastructure:NAT_GATEWAY)
 

@@ -297,17 +297,20 @@
 
 | イベント ID | イベント名検索 | イベントタイプ |
 |--- |--- |--- |
-|event_id.iaas.nas.volume.create|NASストレージ作成|リソース作成|
-|event_id.iaas.nas.volume.update_end|NASストレージ設定の変更完了|リソース修正|
-|event_id.iaas.nas.volume.delete_end|NASストレージ削除完了|リソース削除|
-|event_id.iaas.nas.snapshot.create|NASストレージスナップショット作成|-|
-|event_id.iaas.nas.snapshot.delete|NASストレージスナップショット削除|-|
-|event_id.iaas.nas.snapshot.restore|NASストレージスナップショット復元|-|
-|event_id.iaas.nas.replication.set|NASストレージ複製設定|-|
-|event_id.iaas.nas.replication.unset|NASストレージ複製設定の解除|-|
-|event_id.iaas.nas.replication.start|NASストレージ複製開始|-|
-|event_id.iaas.nas.replication.stop|NASストレージ複製停止|-|
-|event_id.iaas.nas.replication.change_direction|NASストレージ複製方向の変更|-|
+|event_id.iaas.nas.volume.create|NASボリューム作成|リソース作成|
+|event_id.iaas.nas.volume.delete|NASボリューム削除|リソース削除|
+|event_id.iaas.nas.volume.update|NASボリューム設定の変更|リソース修正|
+|event_id.iaas.nas.volume.create_end|NASボリューム作成完了|-|
+|event_id.iaas.nas.volume.delete_end|NASボリューム削除完了|-|
+|event_id.iaas.nas.volume.update_end|NASボリューム設定の変更完了|-|
+|event_id.iaas.nas.snapshot.create|NASボリュームスナップショット作成|-|
+|event_id.iaas.nas.snapshot.delete|NASボリュームスナップショット削除|-|
+|event_id.iaas.nas.snapshot.restore|NASボリュームスナップショット復元|-|
+|event_id.iaas.nas.replication.set|NASボリューム複製設定|-|
+|event_id.iaas.nas.replication.unset|NASボリューム複製設定の解除|-|
+|event_id.iaas.nas.replication.start|NASボリューム複製開始|-|
+|event_id.iaas.nas.replication.stop|NASボリューム複製停止|-|
+|event_id.iaas.nas.replication.change_direction|NASボリューム複製方向の変更|-|
 |event_id.iaas.nas.subnet.attach|NASサブネット接続の追加|-|
 |event_id.iaas.nas.subnet.detach|NASサブネット接続解除|-|
 
