@@ -296,9 +296,9 @@
 |event_id.iaas.nas.volume.create_end|NAS 볼륨 생성 완료|-|
 |event_id.iaas.nas.volume.delete_end|NAS 볼륨 삭제 완료|-|
 |event_id.iaas.nas.volume.update_end|NAS 볼륨 설정 변경 완료|-|
-|event_id.iaas.nas.snapshot.create|NAS 스토리지 스냅숏 생성|-|
-|event_id.iaas.nas.snapshot.delete|NAS 스토리지 스냅숏 삭제|-|
-|event_id.iaas.nas.snapshot.restore|NAS 스토리지 스냅숏 복원|-|
+|event_id.iaas.nas.snapshot.create|NAS 볼륨 스냅숏 생성|-|
+|event_id.iaas.nas.snapshot.delete|NAS 볼륨 스냅숏 삭제|-|
+|event_id.iaas.nas.snapshot.restore|NAS 볼륨 스냅숏 복원|-|
 |event_id.iaas.nas.replication.set|NAS 볼륨 복제 설정|-|
 |event_id.iaas.nas.replication.unset|NAS 볼륨 복제 설정 해제|-|
 |event_id.iaas.nas.replication.start|NAS 볼륨 복제 시작|-|
