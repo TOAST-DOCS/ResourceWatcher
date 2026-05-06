@@ -303,9 +303,9 @@
 |event_id.iaas.nas.volume.create_end|NAS Volume Creation Completed|-|
 |event_id.iaas.nas.volume.delete_end|NAS Volume Deletion Completed|-|
 |event_id.iaas.nas.volume.update_end|NAS Volume Settings Modification Completed|-|
-|event_id.iaas.nas.snapshot.create|Create NAS Volume Snapshot|-|
-|event_id.iaas.nas.snapshot.delete|Delete NAS Volume Snapshot|-|
-|event_id.iaas.nas.snapshot.restore|Restore NAS Volume Snapshot|-|
+|event_id.iaas.nas.snapshot.create|Create NAS Snapshot|-|
+|event_id.iaas.nas.snapshot.delete|Delete NAS Snapshot|-|
+|event_id.iaas.nas.snapshot.restore|Restore NAS Snapshot|-|
 |event_id.iaas.nas.replication.set|Set NAS Volume Replication|-|
 |event_id.iaas.nas.replication.unset|Turn off NAS Volume Replication|-|
 |event_id.iaas.nas.replication.start|Start NAS Volume Replication|-|
