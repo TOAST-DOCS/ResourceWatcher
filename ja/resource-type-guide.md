@@ -303,9 +303,9 @@
 |event_id.iaas.nas.volume.create_end|NASボリューム作成完了|-|
 |event_id.iaas.nas.volume.delete_end|NASボリューム削除完了|-|
 |event_id.iaas.nas.volume.update_end|NASボリューム設定の変更完了|-|
-|event_id.iaas.nas.snapshot.create|NASボリュームスナップショット作成|-|
-|event_id.iaas.nas.snapshot.delete|NASボリュームスナップショット削除|-|
-|event_id.iaas.nas.snapshot.restore|NASボリュームスナップショット復元|-|
+|event_id.iaas.nas.snapshot.create|NASスナップショットの作成|-|
+|event_id.iaas.nas.snapshot.delete|NASスナップショットの削除|-|
+|event_id.iaas.nas.snapshot.restore|NASスナップショット復元|-|
 |event_id.iaas.nas.replication.set|NASボリューム複製設定|-|
 |event_id.iaas.nas.replication.unset|NASボリューム複製設定の解除|-|
 |event_id.iaas.nas.replication.start|NASボリューム複製開始|-|
