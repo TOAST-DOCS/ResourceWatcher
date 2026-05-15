@@ -294,7 +294,7 @@
 |event_id.iaas.loadbalancer.update_end|로드 밸런서 정보 변경 완료|리소스 수정|
 |event_id.iaas.loadbalancer.delete_end|로드 밸런서 삭제 완료|리소스 삭제|
 
-#### 로드 밸런서 DSR (Infrastructure:LOAD_BALANCER_DSR)
+#### 로드 밸런서(DSR) (Infrastructure:LOAD_BALANCER_DSR)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
 |--- |--- |--- |
