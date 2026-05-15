@@ -286,6 +286,14 @@
 |event_id.iaas.loadbalancer.update_end|로드 밸런서 정보 변경 완료|리소스 수정|
 |event_id.iaas.loadbalancer.delete_end|로드 밸런서 삭제 완료|리소스 삭제|
 
+#### 로드 밸런서 DSR (Infrastructure:LOAD_BALANCER_DSR)
+
+| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
+|--- |--- |--- |
+|event_id.iaas.loadbalancer_dsr.create_end|로드 밸런서(DSR) 생성 완료|리소스 생성|
+|event_id.iaas.loadbalancer_dsr.update_end|로드 밸런서(DSR) 정보 변경 완료|리소스 수정|
+|event_id.iaas.loadbalancer_dsr.delete_end|로드 밸런서(DSR) 삭제 완료|리소스 삭제|
+
 #### NAS 볼륨 (Infrastructure:NAS.STORAGE)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
