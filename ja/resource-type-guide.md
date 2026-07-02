@@ -364,14 +364,6 @@
 |event_id.iaas.transit_hub_attachment.update_end|トランジットハブ接続の変更完了|リソース修正|
 |event_id.iaas.transit_hub_attachment.delete_end|トランジットハブ接続の削除完了|リソース削除|
 
-#### VPC (Infrastructure:VPC)
-
-| イベント ID | イベント名検索 | イベントタイプ |
-|--- |--- |--- |
-|event_id.iaas.vpc.create_end|VPCの作成完了|リソース作成|
-|event_id.iaas.vpc.update_end|VPCの情報変更完了|リソース修正|
-|event_id.iaas.vpc.delete_end|VPCの削除完了|リソース削除|
-
 #### インスタンス (INSTANCE)
 
 | イベント ID | イベント名検索 | イベントタイプ |
