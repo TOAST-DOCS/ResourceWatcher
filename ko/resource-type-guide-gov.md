@@ -354,14 +354,6 @@
 |event_id.iaas.transit_hub_attachment.update_end|트랜짓 허브 연결 변경 완료|리소스 수정|
 |event_id.iaas.transit_hub_attachment.delete_end|트랜짓 허브 연결 삭제 완료|리소스 삭제|
 
-#### VPC (Infrastructure:VPC)
-
-| 이벤트 ID | 이벤트 명 | 이벤트 유형 |
-|--- |--- |--- |
-|event_id.iaas.vpc.create_end|VPC 생성 완료|리소스 생성|
-|event_id.iaas.vpc.update_end|VPC 정보 변경 완료|리소스 수정|
-|event_id.iaas.vpc.delete_end|VPC 삭제 완료|리소스 삭제|
-
 #### 인스턴스 (INSTANCE)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |

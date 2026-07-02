@@ -364,14 +364,6 @@
 |event_id.iaas.transit_hub_attachment.update_end|Modify Transit Hub Attachment Completed|Modify Resource|
 |event_id.iaas.transit_hub_attachment.delete_end|Delete Transit Hub Attachment Completed|Delete Resource|
 
-#### VPC (Infrastructure:VPC)
-
-| Event ID | Event Name | Event Type |
-|--- |--- |--- |
-|event_id.iaas.vpc.create_end|Create VPC Completed|Create Resource|
-|event_id.iaas.vpc.update_end|Change VPC Information Completed|Modify Resource|
-|event_id.iaas.vpc.delete_end|Delete VPC Completed|Delete Resource|
-
 #### INSTANCE (INSTANCE)
 
 | Event ID | Event Name | Event Type |
