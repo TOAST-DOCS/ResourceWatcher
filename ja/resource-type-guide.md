@@ -1,4 +1,7 @@
-## Governance & Audit > Resource Watcher > リソースタイプリスト
+<!-- pre-align:aligned sig=706135cfcfdf -->
+
+<a id="governance-audit-resource-watcher-list-of-resource-type"></a>
+## Governance & Audit > Resource Watcher > リソースタイプリスト { #governance-audit-resource-watcher-list-of-resource-type }
 
 * サービスリソースの種類及び関連するイベントのリストです。
 * イベントの種類
@@ -7,8 +10,10 @@
     * リソース削除：リソースの削除時に発生するイベント
     * -：リソース作成/修正/削除と関連ないイベント
 
-### Secure Key Manager
+<a id="secure-key-manager"></a>
+### Secure Key Manager { #secure-key-manager }
 
+<a id="secure-key-manager-key-store-securekeymanagerkeystore"></a>
 #### キーストア (SecureKeyManager:KeyStore)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -42,8 +47,10 @@
 |event_id.skm.asymmetric.scheduled_delete|非対称鍵の自動削除|-|
 
 
-### RDS for MariaDB
+<a id="rds-for-mariadb"></a>
+### RDS for MariaDB { #rds-for-mariadb }
 
+<a id="rds-for-mariadb-db-instance-mariadbdbinstance"></a>
 #### DBインスタンス (MariaDB:DbInstance)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -92,8 +99,10 @@
 |event_id.rds_for_mysql.instance.os.upgrade|DBインスタンスOSアップグレード|-|
 
 
-### NHN Container Registry(NCR)
+<a id="nhn-container-registryncr"></a>
+### NHN Container Registry(NCR) { #nhn-container-registryncr }
 
+<a id="nhn-container-registryncr-container-registry-nhncontainerregistrycontainerregistry"></a>
 #### コンテナレジストリ (NHNContainerRegistry:ContainerRegistry)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -113,8 +122,10 @@
 |event_id.ncr.webhook.update|Webフック修正|-|
 
 
-### EasyCache
+<a id="easycache"></a>
+### EasyCache { #easycache }
 
+<a id="easycache-node-instance-easycachenodeinstance"></a>
 #### ノードインスタンス (EasyCache:NodeInstance)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -124,8 +135,10 @@
 |event_id.easycache.node.delete|ノード削除|リソース削除|
 
 
-### 基本インフラサービス
+<a id="default-infrastructure-service"></a>
+### 基本インフラサービス { #default-infrastructure-service }
 
+<a id="default-infrastructure-service-cluster-cluster"></a>
 #### クラスター (CLUSTER)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -238,6 +251,7 @@
 |event_id.iaas.cluster.update_addon.end|Addonの更新完了|-|
 |event_id.iaas.cluster.update_addon.failed|Addonの更新失敗|-|
 
+<a id="default-infrastructure-service-block-storage-infrastructureblockstorage"></a>
 #### ブロックストレージ (Infrastructure:BLOCK_STORAGE)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -249,6 +263,7 @@
 |event_id.iaas.volume.transfer_create|ブロックストレージ移動完了(ソース)|リソース削除|
 |event_id.iaas.volume.update_end|ブロックストレージ修正完了|リソース修正|
 
+<a id="default-infrastructure-service-floating-ip-infrastructurefloatingip"></a>
 #### Floating IP (Infrastructure:FLOATING_IP)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -257,6 +272,7 @@
 |event_id.iaas.floating_ip.update_end|Floating IPの変更完了|リソース修正|
 |event_id.iaas.floating_ip.delete_end|Floating IPの削除完了|リソース削除|
 
+<a id="default-infrastructure-service-flow-log-logger-infrastructureflowloglogger"></a>
 #### フローログロガー (Infrastructure:FLOW_LOG_LOGGER)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -265,6 +281,7 @@
 |event_id.iaas.flowlog_logger.update_end|フローログロガーの修正完了|リソース修正|
 |event_id.iaas.flowlog_logger.delete_end|フローログロガーの削除完了|リソース削除|
 
+<a id="default-infrastructure-service-image-infrastructureimage"></a>
 #### イメージの (Infrastructure:IMAGE)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -275,6 +292,7 @@
 |event_id.iaas.image.transfer_create||リソース削除|
 |event_id.iaas.image.update_end|イメージ修正完了|リソース修正|
 
+<a id="default-infrastructure-service-image-template-infrastructureimagetemplate"></a>
 #### イメージテンプレート (Infrastructure:ImageTemplate)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -285,6 +303,7 @@
 |event_id.iaas.image_template.cancel_build|イメージビルドのキャンセル|-|
 |event_id.iaas.image_template.delete|イメージテンプレートの削除|リソース削除|
 
+<a id="default-infrastructure-service-load-balancer-infrastructureloadbalancer"></a>
 #### ロードバランサー (Infrastructure:LOAD_BALANCER)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -293,6 +312,12 @@
 |event_id.iaas.loadbalancer.update_end|ロードバランサー情報の変更完了|リソース修正|
 |event_id.iaas.loadbalancer.delete_end|ロードバランサーの削除完了|リソース削除|
 
+<a id="default-infrastructure-service-load-balancer-dsr-infrastructureloadbalancerdsr"></a>
+#### ロードバランサー(DSR) (Infrastructure:LOADBALANCERDSR)
+
+<!-- TODO: translate body -->
+
+<a id="default-infrastructure-service-nas-volume-infrastructurenasstorage"></a>
 #### NASボリューム (Infrastructure:NAS.STORAGE)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -314,6 +339,7 @@
 |event_id.iaas.nas.subnet.attach|NASサブネット接続の追加|-|
 |event_id.iaas.nas.subnet.detach|NASサブネット接続解除|-|
 
+<a id="default-infrastructure-service-nat-gateway-infrastructurenatgateway"></a>
 #### NATゲートウェイ (Infrastructure:NAT_GATEWAY)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -322,6 +348,7 @@
 |event_id.iaas.nat_gateway.update_end|NATゲートウェイの変更完了|リソース修正|
 |event_id.iaas.nat_gateway.delete_end|NATゲートウェイの削除完了|リソース削除|
 
+<a id="default-infrastructure-service-private-dns-zone-infrastructureprivatednszone"></a>
 #### Private DNS Zone (Infrastructure:PRIVATE_DNS_ZONE)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -330,6 +357,7 @@
 |event_id.iaas.private_dns.zone.update_end|Private DNS Zone修正完了|リソース修正|
 |event_id.iaas.private_dns.zone.delete_end|Private DNS Zone削除完了|リソース削除|
 
+<a id="default-infrastructure-service-block-storage-snapshot-infrastructuresnapshot"></a>
 #### ブロックストレージスナップショット (Infrastructure:SNAPSHOT)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -337,6 +365,7 @@
 |event_id.iaas.snapshot.create_end|ブロックストレージスナップショット作成完了|リソース作成|
 |event_id.iaas.snapshot.delete_end|ブロックストレージスナップショット削除完了|リソース削除|
 
+<a id="default-infrastructure-service-storage-gateway-infrastructurestoragegatewaygateway"></a>
 #### ストレージゲートウェイ (Infrastructure:STORAGE_GATEWAY.GATEWAY)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -348,6 +377,7 @@
 |event_id.iaas.storage_gateway.share.update_end|ストレージゲートウェイ共有設定変更完了|-|
 |event_id.iaas.storage_gateway.share.delete_end|ストレージゲートウェイ共有の削除完了|-|
 
+<a id="default-infrastructure-service-transit-hub-infrastructuretransithub"></a>
 #### トランジットハブ (Infrastructure:TRANSIT_HUB)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -356,6 +386,7 @@
 |event_id.iaas.transit_hub.update_end|トランジットハブの変更完了|リソース修正|
 |event_id.iaas.transit_hub.delete_end|トランジットハブの削除完了|リソース削除|
 
+<a id="default-infrastructure-service-transit-hub-attachment-infrastructuretransithubattachment"></a>
 #### トランジットハブ接続 (Infrastructure:TRANSIT_HUB_ATTACHMENT)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -364,6 +395,7 @@
 |event_id.iaas.transit_hub_attachment.update_end|トランジットハブ接続の変更完了|リソース修正|
 |event_id.iaas.transit_hub_attachment.delete_end|トランジットハブ接続の削除完了|リソース削除|
 
+<a id="default-infrastructure-service-instance-instance"></a>
 #### インスタンス (INSTANCE)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -378,6 +410,7 @@
 |event_id.iaas.instance_action.shelve_end|インスタンス終了完了|-|
 |event_id.iaas.instance_action.unshelve_end|インスタンスの起動完了|-|
 
+<a id="default-infrastructure-service-workload-nhncontainerserviceworkload"></a>
 #### ワークロード (NHNContainerService:Workload)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -404,8 +437,10 @@
 |event_id.iaas.ncs.workload_description.update|ワークロード説明の変更|-|
 
 
-### Object Storage
+<a id="object-storage"></a>
+### Object Storage { #object-storage }
 
+<a id="object-storage-container-objectstoragecontainer"></a>
 #### コンテナ (ObjectStorage:Container)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -418,8 +453,10 @@
 |event_id.object_storage.container.sync.disable|コンテナ複製設定の解除|-|
 
 
-### RDS for MySQL
+<a id="rds-for-mysql"></a>
+### RDS for MySQL { #rds-for-mysql }
 
+<a id="rds-for-mysql-db-instance-mysqldbinstance"></a>
 #### DBインスタンス (MySQL:DbInstance)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -469,8 +506,10 @@
 |event_id.rds_for_mysql.instance.create-vip|VIP追加|-|
 
 
-### DataQuery
+<a id="dataquery"></a>
+### DataQuery { #dataquery }
 
+<a id="dataquery-cluster-dataquerycluster"></a>
 #### クラスタオン (DataQuery:Cluster)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -483,8 +522,10 @@
 |event_id.dataquery.pj1.cluster_off||リソース削除|
 
 
-### DNS Plus
+<a id="dns-plus"></a>
+### DNS Plus { #dns-plus }
 
+<a id="dns-plus-gslb-dnsplusgslb"></a>
 #### DNS Plus GSLB (DNSPlus:GSLB)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -493,6 +534,7 @@
 |event_id.dnsplus.gslb.update|GSLB修正|リソース修正|
 |event_id.dnsplus.gslb.delete|GSLB削除|リソース削除|
 
+<a id="dns-plus-health-check-dnsplushealthcheck"></a>
 #### DNS Plus  ヘルスチェック (DNSPlus:HealthCheck)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -501,6 +543,7 @@
 |event_id.dnsplus.health_check.update|ヘルスチェック修正|リソース修正|
 |event_id.dnsplus.health_check.delete|ヘルスチェック削除|リソース削除|
 
+<a id="dns-plus-pool-dnspluspool"></a>
 #### DNS Plus Pool (DNSPlus:Pool)
 
 | イベント ID | イベント名検索 | イベントタイプ |
@@ -509,6 +552,7 @@
 |event_id.dnsplus.pool.update|Pool修正|リソース修正|
 |event_id.dnsplus.pool.delete|Pool削除|リソース削除|
 
+<a id="dns-plus-zone-dnspluszone"></a>
 #### DNS Plus Zone (DNSPlus:Zone)
 
 | イベント ID | イベント名検索 | イベントタイプ |

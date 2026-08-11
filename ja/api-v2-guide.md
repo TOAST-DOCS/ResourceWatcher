@@ -1,22 +1,26 @@
-## Governance & Audit > Resource Watcher > API V2ガイド
+<a id="governance-audit-resource-watcher-api-v2-guide"></a>
+## Governance & Audit > Resource Watcher > API V2ガイド { #governance-audit-resource-watcher-api-v2-guide }
 
 > Resource WatcherにRESTful APIを呼び出して、イベントやリソースの状態変更に伴う通知を受けるように設定できます。
 
-## User Access Key & Secret Access Key
+<a id="user-access-key-secret-access-key"></a>
+## User Access Key & Secret Access Key { #user-access-key-secret-access-key }
 
 ResourceWatcher APIを使用するには、User Access Keyが必要です。User Access Keyは、NHN CloudアカウントまたはIAMアカウントに基づいて発行される認証キーであり、Secret Access Keyと共に使用してAPIリクエストに対する認証手段として利用されます。
 
 User Access KeyとSecret Access Keyは、コンソールのAPIセキュリティ設定で発行できます。User Access Keyの発行及び使用に関する詳細は、[User Access Key](/nhncloud/ja/public-api/user-access-key)を参照してください。
 
-## Public API URL & Appkey確認
+<a id="check-public-api-url-appkey"></a>
+## Public API URL & Appkey確認 { #check-public-api-url-appkey }
 ResourceWatcher APIを使用するには、Appkeyが必要です。Appkeyは、API呼び出し時にリクエストURLに含めて特定のリソースを指定し、識別するために使用されます。
 
 Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。
 
-## RESTful APIガイド
+<a id="restful-api-guide"></a>
+## RESTful APIガイド { #restful-api-guide }
 
 <a id="common-response-body"></a>
-### Common Response Body
+### Common Response Body { #common-response-body }
 
 すべてのAPIリクエストに対してHTTPレスポンスコードは200でレスポンスします。<br/>
 詳しいレスポンス結果はResponse Bodyのheader項目を参照してください。
@@ -43,8 +47,10 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 }
 ```
 
-### 1. 通知
+<a id="notifications"></a>
+### 1. 通知 { #notifications }
 
+<a id="notifications-1-register-notifications"></a>
 #### 1.1通知を登録する
 
 **[基本情報]**
@@ -163,6 +169,7 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 
 * 参考: [Common Response Body](#common-response-body)と同じです。
 
+<a id="notifications-2-view-notifications"></a>
 #### 1.2通知照会
 
 **[基本情報]**
@@ -417,6 +424,7 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 ```
 
 
+<a id="notifications-3-get-a-list-of-notifications"></a>
 #### 1.3通知リスト照会
 
 **[基本情報]**
@@ -564,6 +572,7 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 }
 ```
 
+<a id="notifications-4-edit-notifications"></a>
 #### 1.4.通知の修正
 
 **[基本情報]**
@@ -598,6 +607,7 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 
 * 参考: [Common Response Body](#common-response-body)と同じです。
 
+<a id="notifications-5-delete-a-notification"></a>
 #### 1.5. 通知の削除
 
 **[基本情報]**
@@ -632,6 +642,7 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 * 参考: [Common Response Body](#common-response-body)と同じです。
 
 
+<a id="notifications-6-delete-a-batch-of-notifications"></a>
 #### 1.6. 複数の通知を削除
 
 

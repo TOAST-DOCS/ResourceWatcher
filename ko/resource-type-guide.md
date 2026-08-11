@@ -1,4 +1,7 @@
-## Governance & Audit > Resource Watcher > 리소스 유형 목록
+<!-- pre-align:aligned sig=706135cfcfdf -->
+
+<a id="governance-audit-resource-watcher-list-of-resource-type"></a>
+## Governance & Audit > Resource Watcher > 리소스 유형 목록 { #governance-audit-resource-watcher-list-of-resource-type }
 
 * 서비스 리소스 유형 및 관련된 이벤트 목록입니다.
 * 이벤트 유형
@@ -8,8 +11,10 @@
 	* -: 리소스 생성/수정/삭제와 관련 없는 이벤트
 
 
-### Secure Key Manager
+<a id="secure-key-manager"></a>
+### Secure Key Manager { #secure-key-manager }
 
+<a id="secure-key-manager-key-store-securekeymanagerkeystore"></a>
 #### 키 저장소 (SecureKeyManager:KeyStore)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -43,8 +48,10 @@
 |event_id.skm.asymmetric.scheduled_delete|비대칭 키 자동 삭제|-|
 
 
-### RDS for MariaDB
+<a id="rds-for-mariadb"></a>
+### RDS for MariaDB { #rds-for-mariadb }
 
+<a id="rds-for-mariadb-db-instance-mariadbdbinstance"></a>
 #### DB 인스턴스 (MariaDB:DbInstance)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -93,8 +100,10 @@
 |event_id.rds_for_mysql.instance.os.upgrade|DB 인스턴스 운영체제 업그레이드|-|
 
 
-### NHN Container Registry(NCR)
+<a id="nhn-container-registryncr"></a>
+### NHN Container Registry(NCR) { #nhn-container-registryncr }
 
+<a id="nhn-container-registryncr-container-registry-nhncontainerregistrycontainerregistry"></a>
 #### 컨테이너 레지스트리 (NHNContainerRegistry:ContainerRegistry)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -114,8 +123,10 @@
 |event_id.ncr.webhook.update|웹훅 수정|-|
 
 
-### EasyCache
+<a id="easycache"></a>
+### EasyCache { #easycache }
 
+<a id="easycache-node-instance-easycachenodeinstance"></a>
 #### 노드 인스턴스 (EasyCache:NodeInstance)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -125,8 +136,10 @@
 |event_id.easycache.node.delete|노드 삭제|리소스 삭제|
 
 
-### 기본 인프라 서비스
+<a id="default-infrastructure-service"></a>
+### 기본 인프라 서비스 { #default-infrastructure-service }
 
+<a id="default-infrastructure-service-cluster-cluster"></a>
 #### 클러스터 (CLUSTER)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -239,6 +252,7 @@
 |event_id.iaas.cluster.update_addon.end|Addon 업데이트 완료|-|
 |event_id.iaas.cluster.update_addon.failed|Addon 업데이트 실패|-|
 
+<a id="default-infrastructure-service-block-storage-infrastructureblockstorage"></a>
 #### 블록 스토리지 (Infrastructure:BLOCK_STORAGE)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -250,6 +264,7 @@
 |event_id.iaas.volume.transfer_create|블록 스토리지 이동 완료(소스)|리소스 삭제|
 |event_id.iaas.volume.update_end|블록 스토리지 수정 완료|리소스 수정|
 
+<a id="default-infrastructure-service-floating-ip-infrastructurefloatingip"></a>
 #### 플로팅 IP (Infrastructure:FLOATING_IP)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -258,6 +273,7 @@
 |event_id.iaas.floating_ip.update_end|플로팅 IP 변경 완료|리소스 수정|
 |event_id.iaas.floating_ip.delete_end|플로팅 IP 삭제 완료|리소스 삭제|
 
+<a id="default-infrastructure-service-flow-log-logger-infrastructureflowloglogger"></a>
 #### 플로우 로그 로거 (Infrastructure:FLOW_LOG_LOGGER)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -266,6 +282,7 @@
 |event_id.iaas.flowlog_logger.update_end|플로우 로그 로거 수정 완료|리소스 수정|
 |event_id.iaas.flowlog_logger.delete_end|플로우 로그 로거 삭제 완료|리소스 삭제|
 
+<a id="default-infrastructure-service-image-infrastructureimage"></a>
 #### 이미지 (Infrastructure:IMAGE)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -276,6 +293,7 @@
 |event_id.iaas.image.transfer_create||리소스 삭제|
 |event_id.iaas.image.update_end|이미지 수정 완료|리소스 수정|
 
+<a id="default-infrastructure-service-image-template-infrastructureimagetemplate"></a>
 #### 이미지 템플릿 (Infrastructure:ImageTemplate)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -286,6 +304,7 @@
 |event_id.iaas.image_template.cancel_build|이미지 빌드 취소|-|
 |event_id.iaas.image_template.delete|이미지 템플릿 삭제|리소스 삭제|
 
+<a id="default-infrastructure-service-load-balancer-infrastructureloadbalancer"></a>
 #### 로드 밸런서 (Infrastructure:LOAD_BALANCER)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -294,6 +313,7 @@
 |event_id.iaas.loadbalancer.update_end|로드 밸런서 정보 변경 완료|리소스 수정|
 |event_id.iaas.loadbalancer.delete_end|로드 밸런서 삭제 완료|리소스 삭제|
 
+<a id="default-infrastructure-service-load-balancer-dsr-infrastructureloadbalancerdsr"></a>
 #### 로드 밸런서(DSR) (Infrastructure:LOAD_BALANCER_DSR)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -302,6 +322,7 @@
 |event_id.iaas.loadbalancer_dsr.update_end|로드 밸런서(DSR) 정보 변경 완료|리소스 수정|
 |event_id.iaas.loadbalancer_dsr.delete_end|로드 밸런서(DSR) 삭제 완료|리소스 삭제|
 
+<a id="default-infrastructure-service-nas-volume-infrastructurenasstorage"></a>
 #### NAS 볼륨 (Infrastructure:NAS.STORAGE)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -323,6 +344,7 @@
 |event_id.iaas.nas.subnet.attach|NAS 볼륨 서브넷 연결 추가|-|
 |event_id.iaas.nas.subnet.detach|NAS 볼륨 서브넷 연결 해제|-|
 
+<a id="default-infrastructure-service-nat-gateway-infrastructurenatgateway"></a>
 #### NAT 게이트웨이 (Infrastructure:NAT_GATEWAY)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -331,6 +353,7 @@
 |event_id.iaas.nat_gateway.update_end|NAT 게이트웨이 변경 완료|리소스 수정|
 |event_id.iaas.nat_gateway.delete_end|NAT 게이트웨이 삭제 완료|리소스 삭제|
 
+<a id="default-infrastructure-service-private-dns-zone-infrastructureprivatednszone"></a>
 #### Private DNS Zone (Infrastructure:PRIVATE_DNS_ZONE)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -339,6 +362,7 @@
 |event_id.iaas.private_dns.zone.update_end|Private DNS Zone 수정 완료|리소스 수정|
 |event_id.iaas.private_dns.zone.delete_end|Private DNS Zone 삭제 완료|리소스 삭제|
 
+<a id="default-infrastructure-service-block-storage-snapshot-infrastructuresnapshot"></a>
 #### 블록 스토리지 스냅숏 (Infrastructure:SNAPSHOT)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -346,6 +370,7 @@
 |event_id.iaas.snapshot.create_end|블록 스토리지 스냅숏 생성 완료|리소스 생성|
 |event_id.iaas.snapshot.delete_end|블록 스토리지 스냅숏 삭제 완료|리소스 삭제|
 
+<a id="default-infrastructure-service-storage-gateway-infrastructurestoragegatewaygateway"></a>
 #### 스토리지 게이트웨이 (Infrastructure:STORAGE_GATEWAY.GATEWAY)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -357,6 +382,7 @@
 |event_id.iaas.storage_gateway.share.update_end|스토리지 게이트웨이 공유 설정 변경 완료|-|
 |event_id.iaas.storage_gateway.share.delete_end|스토리지 게이트웨이 공유 삭제 완료|-|
 
+<a id="default-infrastructure-service-transit-hub-infrastructuretransithub"></a>
 #### 트랜짓 허브 (Infrastructure:TRANSIT_HUB)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -365,6 +391,7 @@
 |event_id.iaas.transit_hub.update_end|트랜짓 허브 수정 완료|리소스 수정|
 |event_id.iaas.transit_hub.delete_end|트랜짓 허브 삭제 완료|리소스 삭제|
 
+<a id="default-infrastructure-service-transit-hub-attachment-infrastructuretransithubattachment"></a>
 #### 트랜짓 허브 연결 (Infrastructure:TRANSIT_HUB_ATTACHMENT)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -373,6 +400,7 @@
 |event_id.iaas.transit_hub_attachment.update_end|트랜짓 허브 연결 변경 완료|리소스 수정|
 |event_id.iaas.transit_hub_attachment.delete_end|트랜짓 허브 연결 삭제 완료|리소스 삭제|
 
+<a id="default-infrastructure-service-instance-instance"></a>
 #### 인스턴스 (INSTANCE)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -387,6 +415,7 @@
 |event_id.iaas.instance_action.shelve_end|인스턴스 종료 완료|-|
 |event_id.iaas.instance_action.unshelve_end|인스턴스 시작 완료|-|
 
+<a id="default-infrastructure-service-workload-nhncontainerserviceworkload"></a>
 #### 워크로드 (NHNContainerService:Workload)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -413,8 +442,10 @@
 |event_id.iaas.ncs.workload_description.update|워크로드 설명 변경|-|
 
 
-### Object Storage
+<a id="object-storage"></a>
+### Object Storage { #object-storage }
 
+<a id="object-storage-container-objectstoragecontainer"></a>
 #### 컨테이너 (ObjectStorage:Container)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -427,8 +458,10 @@
 |event_id.object_storage.container.sync.disable|컨테이너 복제 설정 해제|-|
 
 
-### RDS for MySQL
+<a id="rds-for-mysql"></a>
+### RDS for MySQL { #rds-for-mysql }
 
+<a id="rds-for-mysql-db-instance-mysqldbinstance"></a>
 #### DB 인스턴스 (MySQL:DbInstance)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -478,8 +511,10 @@
 |event_id.rds_for_mysql.instance.create-vip|VIP 추가|-|
 
 
-### DataQuery
+<a id="dataquery"></a>
+### DataQuery { #dataquery }
 
+<a id="dataquery-cluster-dataquerycluster"></a>
 #### 클러스터 (DataQuery:Cluster)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -492,8 +527,10 @@
 |event_id.dataquery.pj1.cluster_off||리소스 삭제|
 
 
-### DNS Plus
+<a id="dns-plus"></a>
+### DNS Plus { #dns-plus }
 
+<a id="dns-plus-gslb-dnsplusgslb"></a>
 #### DNS Plus GSLB (DNSPlus:GSLB)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -502,6 +539,7 @@
 |event_id.dnsplus.gslb.update|GSLB 수정|리소스 수정|
 |event_id.dnsplus.gslb.delete|GSLB 삭제|리소스 삭제|
 
+<a id="dns-plus-health-check-dnsplushealthcheck"></a>
 #### DNS Plus 헬스 체크 (DNSPlus:HealthCheck)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -510,6 +548,7 @@
 |event_id.dnsplus.health_check.update|헬스 체크 수정|리소스 수정|
 |event_id.dnsplus.health_check.delete|헬스 체크 삭제|리소스 삭제|
 
+<a id="dns-plus-pool-dnspluspool"></a>
 #### DNS Plus Pool (DNSPlus:Pool)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
@@ -518,6 +557,7 @@
 |event_id.dnsplus.pool.update|Pool 수정|리소스 수정|
 |event_id.dnsplus.pool.delete|Pool 삭제|리소스 삭제|
 
+<a id="dns-plus-zone-dnspluszone"></a>
 #### DNS Plus Zone (DNSPlus:Zone)
 
 | 이벤트 ID | 이벤트 명 | 이벤트 유형 |
