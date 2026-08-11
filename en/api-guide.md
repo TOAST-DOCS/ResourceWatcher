@@ -500,7 +500,7 @@ Look up the list of registered event alarms.
 | modDatetime | Date | date and time of modification | 
 | regDatetime | Date | date and time of registration |
 
-- AlarmRule <a id ="list_alarm_response_alarm_rule"></a>
+- AlarmRule <a id="list-alarm-response-alarm-rule"></a>
 
 | Key | Type | Description | 
 |----------------------|----------|----------------------------------------------------------------------------------------| 

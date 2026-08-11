@@ -500,7 +500,7 @@ productId, eventId値は[3.1イベントリスト照会APIレスポンス値](#l
 | modDatetime     | Date                                         | 修正日時                                                                            |
 | regDatetime     | Date                                         | 登録日時                                                                            |
 
-- AlarmRule <a id ="list_alarm_response_alarm_rule"></a>
+- AlarmRule <a id="list-alarm-response-alarm-rule"></a>
 
 | Key                  | 	Type    | 	Description                                                                           |
 |----------------------|----------|----------------------------------------------------------------------------------------|
