@@ -500,7 +500,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | modDatetime     | Date                                         | 수정 일시                                                                             |
 | regDatetime     | Date                                         | 등록 일시                                                                             |
 
-- AlarmRule <a id="list-alarm-response-alarm-rule"></a>
+- AlarmRule <a id ="list_alarm_response_alarm_rule"></a>
 
 | Key                  | 	Type    | 	Description                                                                           |
 |----------------------|----------|----------------------------------------------------------------------------------------|
