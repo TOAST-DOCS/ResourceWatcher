@@ -1,12 +1,19 @@
-## Governance & Audit > Resource Watcher > 릴리스 노트
-### 2024. 11. 26.
+<!-- pre-align:aligned sig=1a424feff099 -->
 
+<a id="governance-audit-resource-watcher-release-notes"></a>
+## Governance & Audit > Resource Watcher > 릴리스 노트 { #governance-audit-resource-watcher-release-notes }
+<a id="november-26-2024"></a>
+### 2024. 11. 26. { #november-26-2024 }
+
+<a id="november-26-2024-feature-updates"></a>
 #### 기능 개선
 
 - [Console] 리소스 태그의 key 1개당 생성할 수 있는 value의 갯수 제한을 50개에서 2000개로 상향하였습니다.
 
-### 2024. 07. 23.
+<a id="july-23-2024"></a>
+### 2024. 07. 23. { #july-23-2024 }
 
+<a id="july-23-2024-feature-updates"></a>
 #### 기능 개선
 
 - [Console] 리소스 페이지에서 삭제된 리소스를 조회할 수 있도록 기능을 개선하였습니다.
@@ -16,6 +23,7 @@
   - 리소스 그룹 생성, 수정하는 설정 화면(모달 창)에서 리소스 태그를 선택하는 영역이 변경되었습니다.
   - 알림 생성, 수정하는 설정 화면(모달 창)에서 리소스 태그를 선택하는 영역이 변경되었습니다.
 
+<a id="july-23-2024-added-features"></a>
 #### 기능 추가
 
 - [Console] 리소스에 할당된 리소스 그룹, 리소스 태그의 변경 이력을 조회하는 기능을 추가하였습니다.
@@ -23,23 +31,29 @@
 - [RESTful API] Public API v2가 출시되었습니다.
   - 알림 조회 시, 리소스 태그의 {key:value} 형식에 대한 응답 값이 추가되었습니다.
 
-### 2024. 06. 11.
+<a id="june-11-2024"></a>
+### 2024. 06. 11. { #june-11-2024 }
 
+<a id="june-11-2024-feature-updates"></a>
 #### 기능 개선
 
 - 역할, 권한이 적용되었습니다.
 - API 호출에 필요한 권한 설명이 추가되었습니다.
 
-### 2024. 04. 23.
+<a id="april-23-2024"></a>
+### 2024. 04. 23. { #april-23-2024 }
 
+<a id="april-23-2024-feature-updates"></a>
 #### 기능 개선
 
 - 보안 강화를 위해 NCRN의 형식이 변경되었습니다.
   - appKey 부분이 제거되었습니다.
 - IAM Cloud Console에서 사용할 수 없다는 제약 사항을 제거하였습니다.
 
-### 2024. 02. 27.
+<a id="february-27-2024"></a>
+### 2024. 02. 27. { #february-27-2024 }
 
+<a id="february-27-2024-feature-updates"></a>
 #### 기능 개선
 
 - 알림 내역 조회 화면에서 콘솔로 이동 시 해당 알림의 상세 이력을 확인할 수 있도록 기능을 개선하였습니다.
@@ -50,16 +64,20 @@
 - 알림 생성 시 수신 대상, 이벤트, 리소스를 더 편리하게 추가할 수 있도록 개선하였습니다.
   - 기존에 수신 방법을 선택하고 추가 버튼을 누르는 두 단계를 거쳤습니다. 이제 수신 방법을 선택하면 바로 추가할 수 있습니다.
 
-### 2023. 11. 14.
+<a id="november-14-2023"></a>
+### 2023. 11. 14. { #november-14-2023 }
 
+<a id="november-14-2023-feature-updates"></a>
 #### 기능 개선
 
 - 알림 설정 시 여러 개의 이벤트를 선택할 수 있도록 개선하였습니다.
   - 알림 규칙은 더 이상 선택할 수 없습니다.
 - 알림 설정 시 `리소스 전체`와 `이벤트 전체`를 선택할 수 있도록 개선하였습니다.
 
-### 2022. 12. 13.
+<a id="december-13-2022"></a>
+### 2022. 12. 13. { #december-13-2022 }
 
+<a id="december-13-2022-added-features"></a>
 #### 기능 추가
 
 - Resource Watcher 서비스 출시

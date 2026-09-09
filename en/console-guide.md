@@ -1,6 +1,10 @@
-## Governance & Audit > Resource Watcher > Console Guide
+<!-- pre-align:aligned sig=908d2392a1d7 -->
 
-### Getting Started
+<a id="governance-audit-resource-watcher-console-guide"></a>
+## Governance & Audit > Resource Watcher > Console Guide { #governance-audit-resource-watcher-console-guide }
+
+<a id="getting-started"></a>
+### Getting Started { #getting-started }
 
 Resource Watcher is a service provided by default when an organization is activated.
 Therefore, after creating an organization, you can use the service by selecting **Resource Watcher** from **Select Service** without any additional action. 
@@ -10,7 +14,8 @@ you have to first define a resource group or resource tag before creating notifi
 You can receive notifications on resources that have been created or changed after setting notifications.
 
 
-### Resource Tag
+<a id="resource-tag"></a>
+### Resource Tag { #resource-tag }
 
 You can manage resources by setting resource tags freely.
 
@@ -27,6 +32,7 @@ Resource tags can be created and set to resources by the user, and can also be s
 
 > Resource tags in system type is going to support Tags in current project name, allowing to manage project information for each Resource as Tags. We plan to continue to add system type resource tags.
 
+<a id="resource-tag-search-resource-tag"></a>
 #### Search resource tag 
 
 Search resource tag consists of as follows. 
@@ -55,6 +61,7 @@ Click **View Resource list by resource tag** to display a list of resources at t
 > The resource tag key is retrieved, as well as a list of all resources with the resource tag value set that belong to the tag key.
 > Features to set tags to resources is provided from **Resource** menu.
 
+<a id="resource-tag-create-resource-tag"></a>
 #### Create Resource Tag
 
 To create resource tag, press **+ Create resource tag** on Search resource tag screen.
@@ -64,6 +71,7 @@ To create resource tag, press **+ Create resource tag** on Search resource tag s
 In the Create Resource Tag screen, enter the tag key and tag value you want to add and press **Add** to create the resource tag.
 The names of resource tag keys cannot be duplicated, and resource tag values cannot be duplicated within a tag key.
 
+<a id="resource-tag-modify-resource-tag"></a>
 #### Modify Resource Tag
 
 In resource tags list from Search resource tags screen, click **Modify Tag** for the item want to change.
@@ -74,6 +82,7 @@ You can modify tag keys, and change the tag values that belong to them.
 
 > When modifying resource tag, tag settings for resource on which the corresponding tag is set are also to be changed.
 
+<a id="resource-tag-delete-resource-tag"></a>
 #### Delete Resource Tag
 
 On Search resource tag screen, you can delete an item by selecting the check box want to delete from resource tag list.  
@@ -92,7 +101,8 @@ Precautions for deleting resource tags are as follows.
 
 
 
-### Resource Group
+<a id="resource-group"></a>
+### Resource Group { #resource-group }
 
 You can create resource groups in different ways to separate and manage resources. 
 You can create resource groups by specifying one of the resource group creation methods in the table below.
@@ -106,6 +116,7 @@ You can create resource groups by specifying one of the resource group creation 
 > Resource can be included and managed in more than one resource groups. 
 > When a resource is deleted, it is automatically removed from the resource group.
 
+<a id="resource-group-search-resource-group"></a>
 #### Search Resource Group
 
 Search Resource Group screen consists of the following.
@@ -131,6 +142,7 @@ Click **View Resource List by resource group** to display the list of resources 
 | Resource List | Displays list of Resources included in the selected resource group. |
 
 
+<a id="resource-group-create-resource-group"></a>
 #### Create Resource Group
 
 To create a resource group, on Search resource group screen, click **Create Resource Group**.
@@ -155,11 +167,13 @@ If you specify **Select Resources** method on **Create** tab, you can view the l
 | Resource Search Condition | You can filter the list of Resources. |
 
 
+<a id="resource-group-modify-resource-group"></a>
 #### Modify Resource Group
 
 You can change name, description, Resource creation type of resource group. 
 You can modify it the same way created resource group.
 
+<a id="resource-group-delete-resource-group"></a>
 #### Delete Resource Group
 
 You can delete an item by selecting the check box for the item you want to delete from resource groups list on the Search Resource Group screen. 
@@ -168,7 +182,8 @@ You can also delete multiple items at once.
 ![resourcewatcher_05](https://static.toastoven.net/prod_resource_watcher/img05_EN.png)
 
 
-### Notification
+<a id="notification"></a>
+### Notification { #notification }
 
 You can detect changes in resources of interest, send notifications including email, SMS, and Webhook based on conditions, and manage history of notifications sent.
 
@@ -179,6 +194,7 @@ When selecting notification targets, if Resource is added after notification is 
 When creating a notification, you select an event and specify a target resource, and the user will be notified when the corresponding event occurs on that resource.
 The events you select are the same as the list of events provided by the CloudTrail service.
 
+<a id="notification-search-notifications"></a>
 #### Search Notifications
 
 Search Notifications screen consists of the following. 
@@ -219,6 +235,7 @@ Click **View Resource List** tab to display list of Resources to be notified at 
 | Resource Search Condition | You can filter list of Resources to be notified. |
 | Resource List | Displays list of Searched notification target resources on screen.  |
 
+<a id="notification-create-notifications"></a>
 #### Create Notifications
 
 To Create notifications, press **Create notifications** on Search Notifications screen.
@@ -240,12 +257,14 @@ To Create notifications, press **Create notifications** on Search Notifications 
 > If select project role, notifications are sent only to the members of the project to which the selected role set among project members the Resource that event occurred belong to.  
 > For example, if you have two projects created and you select ADMIN member, notification is sent to the project member who has ADMIN role of Project A when notifications occur on the Resource created in Project A.
 
+<a id="notification-modify-notifications"></a>
 #### Modify Notifications
 
 You can change name, description, event, and target resource of the notification, notification recipient, or the webhook settings.
 - Modify notification settings that have already been created in the list, and then click **Add** to reflect modified values.
   - Example: Select Email only and if the value is saved, select SMS from the list and press **Add** to update it.
 
+<a id="notification-delete-notifications"></a>
 #### Delete Notifications
 
 You can delete item by selecting check box for the item you want to delete from notification list on Search Notification screen. You can also delete multiple items at once.
@@ -256,7 +275,8 @@ You can delete item by selecting check box for the item you want to delete from 
 > Notification history information that occurred in that notification will be deleted together and cannot be recovered.
 Deleting Notification does not affect Resources, resource groups, or resource tags.
 
-### Resource
+<a id="resource"></a>
+### Resource { #resource }
 
 Manage Resources managed by various services within NHN Cloud organization.
 If multiple projects use the same service, Resource Watcher service allows to view list of Resources at a glance and view events for each Resource without having to visit the service console for respective project.
@@ -286,6 +306,7 @@ Resource consists of following information.
 | Resource Tag List | Resource Tag List which was set in Resource                                                                                                                                                                                                                                                                                                            | 
 
 
+<a id="resource-search-resources"></a>
 #### Search Resources
 
 Search Resource screen consists of as follows.
@@ -324,6 +345,7 @@ Click **Event Query** tab to display list of events that occurred in Resource at
 | Search Event Condition | You can search for list of events that occurred in Resource with following search criteria.<li>Events: Specifies list of possible events for that corresponding resource type.</li><li>Date and time of event occurrence: Specifies period that event occurred. |
 | Event List | Displays the list of events that occurred on that resource. |
 
+<a id="resource-reset-resource-tag"></a>
 #### Reset Resource Tag
 
 To set resource tags for Resource, click **Reset Resource Tag** on Search Resource screen.
@@ -342,6 +364,7 @@ To set resource tags for Resource, click **Reset Resource Tag** on Search Resour
 Precautions for Resetting Resource Tags
 > When resetting resource tags, the list of previously set resource tags is initialized and set as the newly specified resource tag.
 
+<a id="resource-tag-setting"></a>
 #### Resource Tag Setting
 
 After viewing an individual resource, click **Settings** for the resource tag entry.
