@@ -1,22 +1,28 @@
-## Governance & Audit > Resource Watcher > API Guide
+<!-- pre-align:aligned sig=4e2f89f6bfa5 -->
+
+<a id="governance-audit-resource-watcher-api-guide"></a>
+## Governance & Audit > Resource Watcher > API Guide { #governance-audit-resource-watcher-api-guide }
 
 > You can call the RESTful API to Resource Watcher to set alarm for changes in the status of events and resources.
 
-## User Access Key & Secret Access Key
+<a id="user-access-key-secret-access-key"></a>
+## User Access Key & Secret Access Key { #user-access-key-secret-access-key }
 
 User Access Key is required to use the ResourceWatcher API. A User Access Key is an authentication key issued based on an NHN Cloud or IAM account. It is used in conjunction with a Secret Access Key to authenticate API requests.
 
 User Access Keys and Secret Access Keys can be issued in the console's API Security Setting. For more information on issuing and using User Access Key, please refer to the [User Access Key](/nhncloud/en/public-api/user-access-key).
 
-## Check Public API URL & Appkey
+<a id="check-public-api-url-appkey"></a>
+## Check Public API URL & Appkey { #check-public-api-url-appkey }
 Appkey is required to use the ResourceWatcher API. The Appkey is included in the request URL to identify and specify a particular resource when making API calls.
 
 For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey).
 
-## REST API Guide
+<a id="rest-api-guide"></a>
+## REST API Guide { #rest-api-guide }
 
 <a id="common-response-body"></a>
-### Common Response Body
+### Common Response Body { #common-response-body }
 
 For all API requests, HTTP response code responds with 200.<br/>
 For detailed response results, refer to header item in Response Body. 
@@ -44,10 +50,12 @@ For detailed response results, refer to header item in Response Body.
 }
 ```
 
-### 1. Alarm
+<a id="alarm"></a>
+### 1. Alarm { #alarm }
 
 > Alarm API v2 is recommended to use.
 
+<a id="alarm-1-register-alarm"></a>
 #### 1.1 Register Alarm
 
 ##### [Basic Information]
@@ -370,6 +378,7 @@ For values of productId, eventid, refer to [3.1 Event List lookup API Response V
 }
 ```
 
+<a id="alarm-2-lookup-event-alarm"></a>
 #### 1.2 Lookup Event Alarm 
 
 ##### [Basic Information]
@@ -403,6 +412,7 @@ Lookup registered alrms.
 * ``Note``: 1.1) Same as [Response](#post-alarm-response) in Create event alarm.
 
 
+<a id="alarm-3-lookup-event-alarm-list"></a>
 #### 1.3 Lookup Event Alarm list
 
 ##### [Basic Information]
@@ -551,6 +561,7 @@ Look up the list of registered event alarms.
 }
 ```
 
+<a id="alarm-4-modify-event-alarms"></a>
 #### 1.4. Modify Event Alarms
 
 ##### [Basic Information]
@@ -585,6 +596,7 @@ Modify registered alarms.
 
 * ``Note``: 1.1) Same as [ Request Body ](#post-alarm-request) in Create event alarm.
 
+<a id="alarm-5-delete-event-alarm"></a>
 #### 1.5. Delete Event Alarm
 
 ##### [Basic Information]
@@ -619,6 +631,7 @@ Delete Registered Alarm
 * ``Note``: Same [as Common Response Body](#common-response-body).
 
 
+<a id="alarm-6-delete-mutiple-event-alarm"></a>
 #### 1.6. Delete mutiple Event Alarm
 
 
@@ -658,8 +671,10 @@ Delete multiple Registered Alarm
 
 * ``Note``: Same [as Common Response Body](#common-response-body).
 
-### 2. alarm history 
+<a id="alarm-history"></a>
+### 2. alarm history { #alarm-history }
 
+<a id="alarm-history-1-look-up-alarm-history"></a>
 #### 2.1. Look up alarm history
 
 
@@ -867,6 +882,7 @@ Look up the history of the registered alarm for one time.
 ```
 
 
+<a id="alarm-history-2-lookup-alarm-history-list"></a>
 #### 2.2. Lookup Alarm History List 
 
 
@@ -1062,8 +1078,10 @@ Lookup all the history that registered alarm sent.
 ```
 
 
-### 3.  Event
+<a id="event"></a>
+### 3.  Event { #event }
 
+<a id="event-1-lookup-event-list"></a>
 #### 3.1. Lookup Event list
 
 ##### [Basic Information]

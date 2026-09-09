@@ -1,4 +1,7 @@
-## Governance & Audit > Resource Watcher > List of Resource Type
+<!-- pre-align:aligned sig=f8b8c754d86f -->
+
+<a id="governance-audit-resource-watcher-list-of-resource-type"></a>
+## Governance & Audit > Resource Watcher > List of Resource Type { #governance-audit-resource-watcher-list-of-resource-type }
 
 * Below are service resource types and relevant events
 * Event Types
@@ -7,8 +10,10 @@
     * Delete Resource: Event that occurs when a resource is deleted
     * -: Event not related to Create/Modify/Delete Resource
 
-### Secure Key Manager
+<a id="secure-key-manager"></a>
+### Secure Key Manager { #secure-key-manager }
 
+<a id="secure-key-manager-key-store-securekeymanagerkeystore"></a>
 #### Key Store (SecureKeyManager:KeyStore)
 
 | Event ID | Event Name | Event Type |
@@ -42,8 +47,10 @@
 |event_id.skm.asymmetric.scheduled_delete|Auto Delete Asymmetric Key|-|
 
 
-### RDS for MariaDB
+<a id="rds-for-mariadb"></a>
+### RDS for MariaDB { #rds-for-mariadb }
 
+<a id="rds-for-mariadb-db-instance-mariadbdbinstance"></a>
 #### DB Instance (MariaDB:DbInstance)
 
 | Event ID | Event Name | Event Type |
@@ -92,8 +99,10 @@
 |event_id.rds_for_mysql.instance.os.upgrade|DB Instance OS Upgrade|-|
 
 
-### NHN Container Registry(NCR)
+<a id="nhn-container-registryncr"></a>
+### NHN Container Registry(NCR) { #nhn-container-registryncr }
 
+<a id="nhn-container-registryncr-container-registry-nhncontainerregistrycontainerregistry"></a>
 #### CONTAINER REGISTRY (NHNContainerRegistry:ContainerRegistry)
 
 | Event ID | Event Name | Event Type |
@@ -113,8 +122,10 @@
 |event_id.ncr.webhook.update|Modify Webhook|-|
 
 
-### EasyCache
+<a id="easycache"></a>
+### EasyCache { #easycache }
 
+<a id="easycache-node-instance-easycachenodeinstance"></a>
 #### NODE INSTANCE (EasyCache:NodeInstance)
 
 | Event ID | Event Name | Event Type |
@@ -124,8 +135,10 @@
 |event_id.easycache.node.delete|Delete Node|Delete Resource|
 
 
-### Default Infrastructure Service
+<a id="default-infrastructure-service"></a>
+### Default Infrastructure Service { #default-infrastructure-service }
 
+<a id="default-infrastructure-service-cluster-cluster"></a>
 #### CLUSTER (CLUSTER)
 
 | Event ID | Event Name | Event Type |
@@ -238,6 +251,7 @@
 |event_id.iaas.cluster.update_addon.end|Addon update Completed|-|
 |event_id.iaas.cluster.update_addon.failed|Addon update Failed|-|
 
+<a id="default-infrastructure-service-block-storage-infrastructureblockstorage"></a>
 #### Block Storage (Infrastructure:BLOCK_STORAGE)
 
 | Event ID | Event Name | Event Type |
@@ -249,6 +263,7 @@
 |event_id.iaas.volume.transfer_create|Move Block Storage Completed (Source)|Delete Resource|
 |event_id.iaas.volume.update_end|Modify Block Storage Completed|Modify Resource|
 
+<a id="default-infrastructure-service-floating-ip-infrastructurefloatingip"></a>
 #### Floating IP (Infrastructure:FLOATING_IP)
 
 | Event ID | Event Name | Event Type |
@@ -257,6 +272,7 @@
 |event_id.iaas.floating_ip.update_end|Update Floating IP Completed|Modify Resource|
 |event_id.iaas.floating_ip.delete_end|Delete Floating IP Completed|Delete Resource|
 
+<a id="default-infrastructure-service-flow-log-logger-infrastructureflowloglogger"></a>
 #### Flow Log Logger (Infrastructure:FLOW_LOG_LOGGER)
 
 | Event ID | Event Name | Event Type |
@@ -265,6 +281,7 @@
 |event_id.iaas.flowlog_logger.update_end|Modify Flow Log Logger Completed|Modify Resource|
 |event_id.iaas.flowlog_logger.delete_end|Delete Flow Log Logger Completed|Delete Resource|
 
+<a id="default-infrastructure-service-image-infrastructureimage"></a>
 #### Image (Infrastructure:IMAGE)
 
 | Event ID | Event Name | Event Type |
@@ -275,6 +292,7 @@
 |event_id.iaas.image.transfer_create||Delete Resource|
 |event_id.iaas.image.update_end|Modify Image Completed|Modify Resource|
 
+<a id="default-infrastructure-service-image-template-infrastructureimagetemplate"></a>
 #### IMAGE TEMPLATE (Infrastructure:ImageTemplate)
 
 | Event ID | Event Name | Event Type |
@@ -285,6 +303,7 @@
 |event_id.iaas.image_template.cancel_build|Cancel Image Build|-|
 |event_id.iaas.image_template.delete|Delete Image Template|Delete Resource|
 
+<a id="default-infrastructure-service-load-balancer-infrastructureloadbalancer"></a>
 #### Load Balancer (Infrastructure:LOAD_BALANCER)
 
 | Event ID | Event Name | Event Type |
@@ -293,6 +312,12 @@
 |event_id.iaas.loadbalancer.update_end|Change Load Balancer Information Completed|Modify Resource|
 |event_id.iaas.loadbalancer.delete_end|Delete Load Balancer Completed|Delete Resource|
 
+<a id="default-infrastructure-service-load-balancerdsr-infrastructureloadbalancerdsr"></a>
+#### Load Balancer(DSR) (Infrastructure:LOADBALANCERDSR)
+
+<!-- TODO: translate body -->
+
+<a id="default-infrastructure-service-nas-volume-infrastructurenasstorage"></a>
 #### NAS Volume (Infrastructure:NAS.STORAGE)
 
 | Event ID | Event Name | Event Type |
@@ -314,6 +339,7 @@
 |event_id.iaas.nas.subnet.attach|Add NAS Volume Subnet Association|-|
 |event_id.iaas.nas.subnet.detach|Disassociate NAS Volume Subnet|-|
 
+<a id="default-infrastructure-service-nat-gateway-infrastructurenatgateway"></a>
 #### NAT Gateway (Infrastructure:NAT_GATEWAY)
 
 | Event ID | Event Name | Event Type |
@@ -322,6 +348,7 @@
 |event_id.iaas.nat_gateway.update_end|Change NAT Gateway Completed|Modify Resource|
 |event_id.iaas.nat_gateway.delete_end|Delete NAT Gateway Completed|Delete Resource|
 
+<a id="default-infrastructure-service-private-dns-zone-infrastructureprivatednszone"></a>
 #### Private DNS Zone (Infrastructure:PRIVATE_DNS_ZONE)
 
 | Event ID | Event Name | Event Type |
@@ -330,6 +357,7 @@
 |event_id.iaas.private_dns.zone.update_end|Modify Private DNS Zone Completed|Modify Resource|
 |event_id.iaas.private_dns.zone.delete_end|Delete Private DNS Zone Completed|Delete Resource|
 
+<a id="default-infrastructure-service-block-storage-snapshot-infrastructuresnapshot"></a>
 #### Block Storage Snapshot (Infrastructure:SNAPSHOT)
 
 | Event ID | Event Name | Event Type |
@@ -337,6 +365,7 @@
 |event_id.iaas.snapshot.create_end|Create Block Storage Snapshot Completed|Create Resource|
 |event_id.iaas.snapshot.delete_end|Delete Block Storage Snapshot Completed|Delete Resource|
 
+<a id="default-infrastructure-service-storage-gateway-infrastructurestoragegatewaygateway"></a>
 #### Storage Gateway (Infrastructure:STORAGE_GATEWAY.GATEWAY)
 
 | Event ID | Event Name | Event Type |
@@ -348,6 +377,7 @@
 |event_id.iaas.storage_gateway.share.update_end|Change Storage Share Settings Completed|-|
 |event_id.iaas.storage_gateway.share.delete_end|Delete Storage Share Completed|-|
 
+<a id="default-infrastructure-service-transit-hub-infrastructuretransithub"></a>
 #### Transit Hub (Infrastructure:TRANSIT_HUB)
 
 | Event ID | Event Name | Event Type |
@@ -356,6 +386,7 @@
 |event_id.iaas.transit_hub.update_end|Modify Transit Hub Completed|Modify Resource|
 |event_id.iaas.transit_hub.delete_end|Delete Transit Hub Completed|Delete Resource|
 
+<a id="default-infrastructure-service-transit-hub-attachment-infrastructuretransithubattachment"></a>
 #### Transit Hub Attachment (Infrastructure:TRANSIT_HUB_ATTACHMENT)
 
 | Event ID | Event Name | Event Type |
@@ -364,6 +395,7 @@
 |event_id.iaas.transit_hub_attachment.update_end|Modify Transit Hub Attachment Completed|Modify Resource|
 |event_id.iaas.transit_hub_attachment.delete_end|Delete Transit Hub Attachment Completed|Delete Resource|
 
+<a id="default-infrastructure-service-instance-instance"></a>
 #### INSTANCE (INSTANCE)
 
 | Event ID | Event Name | Event Type |
@@ -378,6 +410,7 @@
 |event_id.iaas.instance_action.shelve_end|Terminate Instance Completed|-|
 |event_id.iaas.instance_action.unshelve_end|Start Instance Completed|-|
 
+<a id="default-infrastructure-service-workload-nhncontainerserviceworkload"></a>
 #### WORKLOAD (NHNContainerService:Workload)
 
 | Event ID | Event Name | Event Type |
@@ -404,8 +437,10 @@
 |event_id.iaas.ncs.workload_description.update|Change Workload Description|-|
 
 
-### Object Storage
+<a id="object-storage"></a>
+### Object Storage { #object-storage }
 
+<a id="object-storage-container-objectstoragecontainer"></a>
 #### CONTAINER (ObjectStorage:Container)
 
 | Event ID | Event Name | Event Type |
@@ -418,8 +453,10 @@
 |event_id.object_storage.container.sync.disable|Unset Container Replication|-|
 
 
-### RDS for MySQL
+<a id="rds-for-mysql"></a>
+### RDS for MySQL { #rds-for-mysql }
 
+<a id="rds-for-mysql-db-instance-mysqldbinstance"></a>
 #### DB Instance (MySQL:DbInstance)
 
 | Event ID | Event Name | Event Type |
@@ -469,8 +506,10 @@
 |event_id.rds_for_mysql.instance.create-vip|Add VIP|-|
 
 
-### DataQuery
+<a id="dataquery"></a>
+### DataQuery { #dataquery }
 
+<a id="dataquery-cluster-dataquerycluster"></a>
 #### Cluster (DataQuery:Cluster)
 
 | Event ID | Event Name | Event Type |
@@ -483,8 +522,10 @@
 |event_id.dataquery.pj1.cluster_off||Delete Resource|
 
 
-### DNS Plus
+<a id="dns-plus"></a>
+### DNS Plus { #dns-plus }
 
+<a id="dns-plus-gslb-dnsplusgslb"></a>
 #### DNS Plus GSLB (DNSPlus:GSLB)
 
 | Event ID | Event Name | Event Type |
@@ -493,6 +534,7 @@
 |event_id.dnsplus.gslb.update|Modify GSLB|Modify Resource|
 |event_id.dnsplus.gslb.delete|Delete GSLB|Delete Resource|
 
+<a id="dns-plus-health-check-dnsplushealthcheck"></a>
 #### DNS Plus Health Check (DNSPlus:HealthCheck)
 
 | Event ID | Event Name | Event Type |
@@ -501,6 +543,7 @@
 |event_id.dnsplus.health_check.update|Modify Health Checks|Modify Resource|
 |event_id.dnsplus.health_check.delete|Delete Health Checks|Delete Resource|
 
+<a id="dns-plus-pool-dnspluspool"></a>
 #### DNS Plus Pool (DNSPlus:Pool)
 
 | Event ID | Event Name | Event Type |
@@ -509,6 +552,7 @@
 |event_id.dnsplus.pool.update|Modify Pools|Modify Resource|
 |event_id.dnsplus.pool.delete|Delete Pools|Delete Resource|
 
+<a id="dns-plus-zone-dnspluszone"></a>
 #### DNS Plus Zone (DNSPlus:Zone)
 
 | Event ID | Event Name | Event Type |

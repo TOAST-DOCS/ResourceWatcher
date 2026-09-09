@@ -1,7 +1,22 @@
-## Governance & Audit > Resource Watcher > リリースノート
+<!-- pre-align:aligned sig=1a424feff099 -->
 
-### 2024. 07. 23.
+<a id="governance-audit-resource-watcher-release-notes"></a>
+## Governance & Audit > Resource Watcher > リリースノート { #governance-audit-resource-watcher-release-notes }
 
+<a id="november-26-2024"></a>
+### 2024. 11. 26. { #november-26-2024 }
+
+<!-- TODO: translate body -->
+
+<a id="november-26-2024-feature-updates"></a>
+#### 機能改善
+
+<!-- TODO: translate body -->
+
+<a id="july-23-2024"></a>
+### 2024. 07. 23. { #july-23-2024 }
+
+<a id="july-23-2024-feature-updates"></a>
 #### 機能改善
 
 - [Console]リソースページで削除されたリソースを照会できるように機能を改善しました。
@@ -11,28 +26,35 @@
   - リソースグループを作成、修正する設定画面(モーダルウィンドウ)でリソースタグを選択する領域が変更されました。
   - 通知を作成、修正する設定画面(モーダルウィンドウ)でリソースタグを選択する領域が変更されました。
 
+<a id="july-23-2024-added-features"></a>
 #### 機能追加
 
 - [Console]リソースに割り当てられたリソースグループ、リソースタグの変更履歴を照会する機能を追加しました。
 - [Console]リソースタグの変更履歴を照会する機能を追加しました。
 
-### 2024. 06. 11.
+<a id="june-11-2024"></a>
+### 2024. 06. 11. { #june-11-2024 }
 
+<a id="june-11-2024-feature-updates"></a>
 #### 機能改善
 
 - ロール、権限が適用されました。
 - APIの呼び出しに必要な権限の説明が追加されました。 
 
-### 2024. 04. 23.
+<a id="april-23-2024"></a>
+### 2024. 04. 23. { #april-23-2024 }
 
+<a id="april-23-2024-feature-updates"></a>
 #### 機能改善
 
 - セキュリティ強化のため、NCRNの形式が変更されました。
   - appKey部分が削除されました。
 - IAM Cloud Consoleで使用できないという制約を削除しました。
 
-### 2024. 02. 27.
+<a id="february-27-2024"></a>
+### 2024. 02. 27. { #february-27-2024 }
 
+<a id="february-27-2024-feature-updates"></a>
 #### 機能改善
 
 - 通知履歴照会画面でコンソールに移動すると、その通知の詳細履歴を確認できるように機能を改善しました。
@@ -43,16 +65,20 @@
 - 通知作成時,受信対象,イベント,リソースをより便利に追加できるように改善しました。
   - 従来は、受信方法を選択して追加ボタンを押すという二段階を踏んでいましたが、受信方法を選択するとすぐに追加できます。
 
-### 2023. 11. 14.
+<a id="november-14-2023"></a>
+### 2023. 11. 14. { #november-14-2023 }
 
+<a id="november-14-2023-feature-updates"></a>
 #### 機能改善
 
 - 通知設定時に複数のイベントを選択できるように改善しました。
   - 通知ルールは選択できなくなりました。
 - 通知を設定する時、`リソース全体`と`イベント全体`を選択できるように改善しました。
 
-### 2022. 12. 13.
+<a id="december-13-2022"></a>
+### 2022. 12. 13. { #december-13-2022 }
 
+<a id="december-13-2022-added-features"></a>
 #### 機能追加
 
 - Resource Watcher サービスリリース

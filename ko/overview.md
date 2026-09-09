@@ -1,15 +1,20 @@
-## Resource Watcher > 개요
+<!-- pre-align:aligned sig=0e2a6b103a4a -->
+
+<a id="resource-watcher-overview"></a>
+## Resource Watcher > 개요 { #resource-watcher-overview }
 
 Resource Watcher는 그룹과 태그를 이용해 NHN Cloud의 조직 내 서비스에서 생성된 모든 리소스를 효율적으로 관리하고, 알림 조건을 설정하여 리소스에서 발생하는 다양한 변경 사항에 대한 알림을 받을 수 있는 서비스입니다.
 조직 단위로 제공되며, 별도의 활성화 과정 없이 바로 사용할 수 있습니다.
 
-## 특징 및 기능
+<a id="characteristics-and-features"></a>
+## 특징 및 기능 { #characteristics-and-features }
 * 사용자가 생성한 모든 리소스를 프로젝트, 서비스, 리전 등 다양한 조건으로 빠르게 검색할 수 있습니다.
 * 리소스에서 발생하는 이벤트를 시간에 따라 추적할 수 있습니다.
 * 다양한 리소스에 그룹 및 태그를 지정하여 논리적인 단위로 리소스를 관리할 수 있습니다.
 * 관심 대상 리소스의 변경 사항을 감지하고 조건에 따라 알림을 발송하며, 알림 이력을 관리할 수 있습니다.
 
-## 주의 사항
+<a id="precautions"></a>
+## 주의 사항 { #precautions }
 * 조직을 생성하면 자동으로 활성화되며, 수동으로 비활성화할 수 없습니다.
 * 해당 서비스는 조직의 Resource Watcher 권한을 가진 멤버만 사용 가능합니다.
 * 현재는 기본 인프라 서비스의 인스턴스만 리소스로 확인할 수 있습니다.

@@ -1,22 +1,28 @@
-## Governance & Audit > Resource Watcher > API V2 Guide
+<!-- pre-align:aligned sig=eda39a12524d -->
+
+<a id="governance-audit-resource-watcher-api-v2-guide"></a>
+## Governance & Audit > Resource Watcher > API V2 Guide { #governance-audit-resource-watcher-api-v2-guide }
 
 > You can set up Resource Watcher to make RESTful API calls to receive notifications of events and changes in the state of your resources.
 
-## User Access Key & Secret Access Key
+<a id="user-access-key-secret-access-key"></a>
+## User Access Key & Secret Access Key { #user-access-key-secret-access-key }
 
 User Access Key is required to use the ResourceWatcher API. A User Access Key is an authentication key issued based on an NHN Cloud or IAM account. It is used in conjunction with a Secret Access Key to authenticate API requests.
 
 User Access Keys and Secret Access Keys can be issued in the console's API Security Setting. For more information on issuing and using User Access Key, please refer to the [User Access Key](/nhncloud/en/public-api/user-access-key).
 
-## Check Public API URL & Appkey
+<a id="check-public-api-url-appkey"></a>
+## Check Public API URL & Appkey { #check-public-api-url-appkey }
 Appkey is required to use the ResourceWatcher API. The Appkey is included in the request URL to identify and specify a particular resource when making API calls.
 
 For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey).
 
-## RESTful API Guide
+<a id="restful-api-guide"></a>
+## RESTful API Guide { #restful-api-guide }
 
 <a id="common-response-body"></a>
-### Common Response Body
+### Common Response Body { #common-response-body }
 
 For all API requests, the HTTP response code is 200.<br/>
 For detailed response results, see the header item in the Response Body.
@@ -44,8 +50,10 @@ For detailed response results, see the header item in the Response Body.
 }
 ```
 
-### 1. Notifications
+<a id="notifications"></a>
+### 1. Notifications { #notifications }
 
+<a id="notifications-1-register-notifications"></a>
 #### 1.1 Register notifications
 
 ##### [Basic Information]
@@ -168,6 +176,7 @@ For the productId and eventId values, see **API Guide > 3.1 Event list lookup AP
 
 * Note: This is the same as [Common Response Body](#common-response-body).
 
+<a id="notifications-2-view-notifications"></a>
 #### 1.2 View notifications
 
 ##### [Basic Information]
@@ -430,6 +439,7 @@ Retrieves registered notifications.
 ```
 
 
+<a id="notifications-3-get-a-list-of-notifications"></a>
 #### 1.3 Get a list of notifications
 
 ##### [Basic Information]
@@ -578,6 +588,7 @@ Get a list of event notifications you've signed up for.
 }
 ```
 
+<a id="notifications-4-edit-notifications"></a>
 #### 1.4. Edit notifications
 
 ##### [Basic Information]
@@ -616,6 +627,7 @@ Edit a registered alert.
 
 * Note: This is the same as [Common Response Body](#common-response-body).
 
+<a id="notifications-5-delete-a-notification"></a>
 #### 1.5. Delete a notification
 
 ##### [Basic Information]
@@ -650,6 +662,7 @@ Delete a registered alert.
 * Note: This is the same as [Common Response Body](#common-response-body).
 
 
+<a id="notifications-6-delete-a-batch-of-notifications"></a>
 #### 1.6. Delete a batch of notifications
 
 

@@ -1,22 +1,28 @@
-## Governance & Audit > Resource Watcher > API V2 가이드
+<!-- pre-align:aligned sig=eda39a12524d -->
+
+<a id="governance-audit-resource-watcher-api-v2-guide"></a>
+## Governance & Audit > Resource Watcher > API V2 가이드 { #governance-audit-resource-watcher-api-v2-guide }
 
 > Resource Watcher에 RESTful API를 호출하여 이벤트 및 리소스들의 상태 변경에 따른 알림을 받도록 설정할 수 있습니다.
 
-## User Access Key & Secret Access Key
+<a id="user-access-key-secret-access-key"></a>
+## User Access Key & Secret Access Key { #user-access-key-secret-access-key }
 
 ResourceWatcher API를 사용하려면 User Access Key가 필요합니다. User Access Key는 NHN Cloud 계정 또는 IAM 계정을 기반으로 발급되는 인증 키로, Secret Access Key와 함께 사용하여 API 요청에 대한 인증 수단으로 활용됩니다.
 
 User Access Key와 Secret Access Key는 콘솔의 API 보안 설정에서 발급할 수 있습니다. User Access Key 발급 및 사용에 대한 자세한 내용은 [User Access Key](/nhncloud/ko/public-api/user-access-key)를 참고하세요.
 
-## Public API URL & Appkey 확인
+<a id="check-public-api-url-appkey"></a>
+## Public API URL & Appkey 확인 { #check-public-api-url-appkey }
 ResourceWatcher API를 사용하려면 Appkey가 필요합니다. Appkey는 API 호출 시 요청 URL에 포함하여 특정 리소스를 가리키고 식별하는 데 사용됩니다.
 
 Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/public-api/appkey)를 참고하세요.
 
-## RESTful API 가이드
+<a id="restful-api-guide"></a>
+## RESTful API 가이드 { #restful-api-guide }
 
 <a id="common-response-body"></a>
-### Common Response Body
+### Common Response Body { #common-response-body }
 
 모든 API 요청에 대해 HTTP 응답 코드는 200으로 응답합니다.<br/>
 자세한 응답 결과는 Response Body의 header 항목을 참고합니다.
@@ -44,8 +50,10 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 }
 ```
 
-### 1. 알림
+<a id="notifications"></a>
+### 1. 알림 { #notifications }
 
+<a id="notifications-1-register-notifications"></a>
 #### 1.1 알림 등록하기
 
 ##### [기본 정보]
@@ -168,6 +176,7 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 
 * 참고 : [Common Response Body](#common-response-body)와 동일합니다.
 
+<a id="notifications-2-view-notifications"></a>
 #### 1.2 알림 조회
 
 ##### [기본 정보]
@@ -430,6 +439,7 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 ```
 
 
+<a id="notifications-3-get-a-list-of-notifications"></a>
 #### 1.3 알림 리스트 조회
 
 ##### [기본 정보]
@@ -578,6 +588,7 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 }
 ```
 
+<a id="notifications-4-edit-notifications"></a>
 #### 1.4. 알림 수정
 
 ##### [기본 정보]
@@ -616,6 +627,7 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 
 * 참고 : [Common Response Body](#common-response-body)와 동일합니다.
 
+<a id="notifications-5-delete-a-notification"></a>
 #### 1.5. 알림 삭제
 
 ##### [기본 정보]
@@ -650,6 +662,7 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 * 참고 : [Common Response Body](#common-response-body)와 동일합니다.
 
 
+<a id="notifications-6-delete-a-batch-of-notifications"></a>
 #### 1.6. 알림 다건 삭제
 
 
