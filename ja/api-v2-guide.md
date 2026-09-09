@@ -25,7 +25,8 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 |---------|-----------------------------------|-------------|
 | header  | [Header](#common-response-header) | レスポンスヘッダ     |
 
-- Header <a id="common-response-header"></a>
+<a id="common-response-header"></a>
+#### Header 
 
 | Key           | 	Type    | 	Description                             |
 |---------------|----------|------------------------------------------|
@@ -47,7 +48,7 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 
 #### 1.1通知を登録する
 
-**[基本情報]**
+##### [基本情報]
 
 | Method | 	URI                                                  |
 |--------|-------------------------------------------------------|
@@ -67,14 +68,14 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 - `リソース全体`に設定すると、リソースに関係なく、特定のイベントの通知を受信するように設定できます。
 - `イベント全体`と`リソース全体`は同時に設定できません。
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                           |
 |----------------------------|----------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	コンソールで発行されたUser Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	コンソールで発行されたSecret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key    | 	Value                |
 |--------|-----------------------|
@@ -82,7 +83,7 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 
 
 <a id="post-alarm-request"></a>
-**[Request Body]**
+##### [Request Body]
 
 | Key                         | 	Type                                             | 	Required | 	Description                                         |
 |-----------------------------|---------------------------------------------------|-----------|------------------------------------------------------|
@@ -91,14 +92,16 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 | events                      | [Event[]](#post-alarm-request-event)              | No        | 通知対象イベントリスト<br/> 発生するすべてのイベントに対して受信を希望する場合は設定しない。 |
 | target                      | [Target](#post-alarm-request-target)              | No        | 対象リソース情報<br/> リソースに関係なくイベントを受信したい場合は設定しない。       |
 
-- Alarm <a id="post-alarm-request-alarm"></a>
+<a id="post-alarm-request-alarm"></a>
+##### Alarm 
 
 | Key               | 	Type     | 	Required | 	Description                     |
 |-------------------|-----------|-----------|----------------------------------|
 | alarmName   | 	String   | 	Yes      | 	通知名 <br/> 最大255文字まで登録可能 |
 | description | 	String   | 	No       | 	通知説明 <br/> 最大1,000文字まで登録可能 |
 
-- AlarmTarget <a id="post-alarm-request-alarm-target"></a>
+<a id="post-alarm-request-alarm-target"></a>
+##### AlarmTarget 
 
 | Key                 | 	Type          | 	Required | 	Description                                                                                                                                                                                         |
 |---------------------|----------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -109,7 +112,8 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 | webhookUrl          | 	String        | 	No       | WebフックURLアドレス<br/>http:// またはhttps://で始まる必要がある<br/> 通知対象タイプ **WEBHOOK** 設定時に入力                                                                                                            |
 | webhookSecret       | 	String        | 	No       | 	Webフック秘密鍵<br/> 通知対象タイプ **WEBHOOK** 設定時に入力                                                                                                                                              |
 
-- Event <a id="post-alarm-request-event"></a>
+<a id="post-alarm-request-event"></a>
+##### Event 
 
 | Key        | 	Type    | 	Required | 	Description |
 |------------|----------|-----------|--------------|
@@ -118,7 +122,8 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 
 productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポンス値**を参考してください。
 
-- Target <a id="post-alarm-request-target"></a>
+<a id="post-alarm-request-target"></a>
+##### Target 
 
 | Key              | 	Type         | 	Required | 	Description      |
 |------------------|---------------|-----------|-------------------|
@@ -159,13 +164,13 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 }
 ```
 
-**[Response Body]**
+##### [Response Body]
 
 * 参考: [Common Response Body](#common-response-body)と同じです。
 
 #### 1.2通知照会
 
-**[基本情報]**
+##### [基本情報]
 
 | Method | 	URI                                                            |
 |--------|-----------------------------------------------------------------|
@@ -177,21 +182,21 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 
 登録された通知について照会します。
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	コンソールで発行されたUser Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	コンソールで発行されたSecret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | 	Value            |
 |---------|-------------------|
 | appKey  | 	コンソールで発行されたAppkey |
 | alarmId | 	照会する通知のID       |
 
-**[Response Body]**
+##### [Response Body]
 
 
 | Key                       | 	Type                                                                           | 	Description                 |
@@ -204,7 +209,8 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | events                    | 	[Event[]](#post-alarm-response-event)                                          | 	通知イベントリスト                 |
 | target                    | 	[Target](#post-alarm-response-target)                                          | 	対象リソース情報       |
 
-- Alarm <a id="post-alarm-response-alarm"></a>
+<a id="post-alarm-response-alarm"></a>
+##### Alarm 
 
 | Key                  | 	Type                                        | 	Description                                                                      |
 |----------------------|----------------------------------------------|-----------------------------------------------------------------------------------|
@@ -220,7 +226,8 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | operatorUuid         | String                                       | 最終修正したユーザーUUID                                                                   |
 | regDatetime          | Date                                         | 登録日時                                                                           |
 
-- AlarmRule <a id="post-alarm-response-alarm-rule"></a>
+<a id="post-alarm-response-alarm-rule"></a>
+##### AlarmRule 
 
 | Key                     | 	Type    | 	Description                                                                           |
 |-------------------------|----------|----------------------------------------------------------------------------------------|
@@ -230,7 +237,8 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | alarmRuleDescription    | String   | 通知ルールの説明                                                                             |
 | resourceTypes           | String[] | 通知ルールが適用される対象リソースタイプコードリスト<br/>空白の場合、全リソースタイプを対象とする<br/>Stringタイプリスト            |
 
-- AlarmTargetAlarmKey <a id="post-alarm-response-alarm-target-alarm-key"></a>
+<a id="post-alarm-response-alarm-target-alarm-key"></a>
+##### AlarmTargetAlarmKey 
 
 | Key            | 	Type      | 	Description |
 |----------------|------------|--------------|
@@ -238,8 +246,8 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | alarmGroupName | String     | 通知受信グループ名  |
 | alarmGroupDesc | String     | 通知受信グループの説明 |
 
-
-- AlarmTargetMemberProfile <a id="post-alarm-response-alarm-target-member-profile"></a>
+<a id="post-alarm-response-alarm-target-member-profile"></a>
+##### AlarmTargetMemberProfile 
 
 | Key             | 	Type      | 	Description                                       |
 |-----------------|------------|----------------------------------------------------|
@@ -250,7 +258,8 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | email           | String     | メンバーのメールアドレス                                           |
 | userId          | String     | メンバーID                                              |
 
-- AlarmTargetRole <a id="post-alarm-response-alarm-target-role"></a>
+<a id="post-alarm-response-alarm-target-role"></a>
+##### AlarmTargetRole 
 
 | Key           | 	Type      | 	Description |
 |---------------|------------|--------------|
@@ -259,7 +268,8 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | roleName      | String     | ロール名        |
 | description   | String     | ロールの説明      |
 
-- AlarmTarget <a id="post-alarm-response-alarm-target"></a>
+<a id="post-alarm-response-alarm-target"></a>
+##### AlarmTarget 
 
 | Key                     | 	Type        | 	Description                                                                                                                                                         |
 |-------------------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -270,30 +280,32 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | webhookUrl              | string       | WebフックURLアドレス |
 | webhookSecret           | string       | Webフック秘密鍵                                                                                                                                                       |
 
-- Event <a id="post-alarm-response-event"></a>
+<a id="post-alarm-response-event"></a>
+##### Event 
 
 | Key          | 	Type        | 	Description   |
 |--------------|--------------|----------------|
 | productId    | 	String      | 	商品ID         |
 | eventId      | 	String      | 	イベントID        |
 
-
-- Target <a id="post-alarm-response-target"></a>
+<a id="post-alarm-response-target"></a>
+##### Target 
 
 | Key            | 	Type                                                  | 	Description     |
 |----------------|--------------------------------------------------------|------------------|
 | resourceGroups | [ResourceGroup[]](#post-alarm-response-resource-group) | リソースグループリスト      |
 | resourceTags   | [ResourceTag[]](#post-alarm-response-resource-tag)     | リソースタグリスト      |
 
-
-- ResourceGroup <a id="post-alarm-response-resource-group"></a>
+<a id="post-alarm-response-resource-group"></a>
+##### ResourceGroup 
 
 | Key               | 	Type   | 	Description   |
 |-------------------|---------|----------------|
 | resourceGroupId   | String  | 	リソースグループIDリスト |
 | resourceGroupName | String  | リソースタグIDリスト |
 
-- ResourceTag <a id="post-alarm-response-resource-tag"></a>
+<a id="post-alarm-response-resource-tag"></a>
+##### ResourceTag 
 
 | Key        | 	Type                                                       | 	Description               |
 |------------|-------------------------------------------------------------|----------------------------|
@@ -305,7 +317,8 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | modDatetime    | Date                                                        | リソースタグ修正日時             |
 | resourceTagGroup    | [ResourceTagGroup](#post-alarm-response-resource-tag-group) | リソースタググループ                |
 
-- ResourceTagGroup <a id="post-alarm-response-resource-tag-group"></a>
+<a id="post-alarm-response-resource-tag-group"></a>
+##### ResourceTagGroup 
 
 | Key        | 	Type  | 	Description        |
 |------------|--------|---------------------|
@@ -419,7 +432,7 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 
 #### 1.3通知リスト照会
 
-**[基本情報]**
+##### [基本情報]
 
 | Method | 	URI                                                         |
 |--------|--------------------------------------------------------------|
@@ -433,21 +446,21 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 - リクエストに検索条件を指定して、目的の通知リストを照会できます。
 - ページングをサポートします。
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	コンソールで発行されたUser Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	コンソールで発行されたSecret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key    | 	Value             |
 |--------|--------------------|
 | appKey | 	コンソールで発行されたAppkey |
 
 
-**[Query Parameter]**
+##### [Query Parameter]
 
 | Key  | 	Value                                      | Required |
 |------|---------------------------------------------|----------|
@@ -455,7 +468,7 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | size | 	照会する通知数<br/>Default値: 10                | No       |
 | sort | ソート対象および方式<br/>Default値: modDatetime, DESC | No       |
 
-**[Request Body]**
+##### [Request Body]
 
 | Key                | 	Type    | Required | 	Description                                                                                                                     |
 |--------------------|----------|----------|----------------------------------------------------------------------------------------------------------------------------------|
@@ -494,15 +507,15 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 ```
 
 
-**[Response Body]**
+##### [Response Body]
 
 | Key        | 	Type                                 | Description |
 |------------|---------------------------------------|-------------|
 | alarms     | [Alarm[]](#list-alarm-response-alarm) | 通知リスト     |
 | totalItems | Long                                  | 全体数     |
 
-
-- Alarm <a id="list-alarm-response-alarm"></a>
+<a id="list-alarm-response-alarm"></a>
+##### Alarm 
 
 | Key             | 	Type                                        | 	Description                                                                      |
 |-----------------|----------------------------------------------|-----------------------------------------------------------------------------------|
@@ -518,7 +531,8 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | modDatetime     | Date                                         | 修正日時                                                                           |
 | regDatetime     | Date                                         | 登録日時                                                                           |
 
-- AlarmRule <a id ="list_alarm_response_alarm_rule"></a>
+<a id="list-alarm-response-alarm-rule"></a>
+##### AlarmRule 
 
 | Key                  | 	Type    | 	Description                                                                         |
 |----------------------|----------|--------------------------------------------------------------------------------------|
@@ -566,11 +580,11 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 
 #### 1.4.通知の修正
 
-**[基本情報]**
+##### [基本情報]
 
 | Method | 	URI                                                            |
 |--------|-----------------------------------------------------------------|
-| PUT    | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms/{alarmId} |
+| PUT    | 	/resource-watcher/v2.0/appkeys/{appKey}/event-alarms/{alarmId} |
 
 | 権限                           | 	
 |--------------------------------|
@@ -579,14 +593,14 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 登録された通知を修正します。
 - リクエストした内容を全て変更するため、**変更がない内容も既存の設定値を送信する必要があります**。
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	コンソールで発行されたUser Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	コンソールで発行されたSecret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value            |
 |---------|------------------|
@@ -594,13 +608,17 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | alarmId | 修正する通知のID       |
 
 
-**[Request Body]**
+##### [Request Body]
+
+* 参考: 1.1 通知を登録するの[Request Body](#post-alarm-request)と同じです。
+
+##### [Response Body]
 
 * 参考: [Common Response Body](#common-response-body)と同じです。
 
 #### 1.5. 通知の削除
 
-**[基本情報]**
+##### [基本情報]
 
 | Method | 	URI                                                            |
 |--------|-----------------------------------------------------------------|
@@ -612,14 +630,14 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 
 登録された通知を削除します。
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	コンソールで発行されたUser Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	コンソールで発行されたSecret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value              |
 |---------|--------------------|
@@ -627,7 +645,7 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 | alarmId | 削除する通知のID         |
 
 
-**[Response Body]**
+##### [Response Body]
 
 * 参考: [Common Response Body](#common-response-body)と同じです。
 
@@ -635,7 +653,7 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 #### 1.6. 複数の通知を削除
 
 
-**[基本情報]**
+##### [基本情報]
 
 | Method | 	URI                                                  |
 |--------|-------------------------------------------------------|
@@ -647,26 +665,26 @@ productId, eventId値は **APIガイド > 3.1 Eventリスト照会APIレスポ�
 
 登録された通知を複数削除します。
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	コンソールで発行されたUser Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	コンソールで発行されたSecret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value            |
 |---------|------------------|
 | appKey  | コンソールで発行されたAppkey |
 
 
-**[Query Parameter]**
+##### [Query Parameter]
 
 | Key      | Value                                     | Required |
 |----------|-------------------------------------------|----------|
 | alarmIds | 削除する通知IDのリスト<br/>必ず1つ以上の値を入力する必要があります。 | Yes      |
 
-**[Response Body]**
+##### [Response Body]
 
 * 参考: [Common Response Body](#common-response-body)と同じです。

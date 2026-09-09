@@ -36,7 +36,8 @@ For detailed response results, see the header item in the Response Body.
 |---------|-----------------------------------|-------------|
 | header  | [Header](#common-response-header) | [Response Header]       |
 
-- Header <a id="common-response-header"></a>
+<a id="common-response-header"></a>
+#### Header 
 
 | Key           | 	Type    | 	Description                             |
 |---------------|----------|------------------------------------------|
@@ -58,7 +59,7 @@ For detailed response results, see the header item in the Response Body.
 
 #### 1.1 Register notifications
 
-Basic Information
+##### [Basic Information]
 
 | Method | 	URI                                                  |
 |--------|-------------------------------------------------------|
@@ -78,14 +79,14 @@ You can set up notifications for events that occur on your resources. <br/>
 - Setting **Resource All** allows you to receive notifications for specific events regardless of the resource.
 - You can’t set **Event All** and **Resource All** at the same time.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                           |
 |----------------------------|----------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	User Access Key issued from the console   |
 | X-TC-AUTHENTICATION-SECRET | 	Secret Access Key issued from the console |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key    | 	Value                |
 |--------|-----------------------|
@@ -93,7 +94,7 @@ You can set up notifications for events that occur on your resources. <br/>
 
 
 <a id="post-alarm-request"></a>
-**[Request Body]**
+##### [Request Body]
 
 | Key                         | 	Type                                             | 	Required | 	Description                                         |
 |-----------------------------|---------------------------------------------------|-----------|------------------------------------------------------|
@@ -102,14 +103,16 @@ You can set up notifications for events that occur on your resources. <br/>
 | events                      | [Event[]](#post-alarm-request-event)              | No        | List of notification target events<br/> Unset if you want to be notified of all events as they occur. |
 | target                      | [Target](#post-alarm-request-target)              | No        | Information on target resource<br/> Unset if you want to receive events regardless of resources.       |
 
-- Alarm <a id="post-alarm-request-alarm"></a>
+<a id="post-alarm-request-alarm"></a>
+##### Alarm 
 
 | Key               | 	Type     | 	Required | 	Description                     |
 |-------------------|-----------|-----------|----------------------------------|
 | alarmName   | 	String   | 	Yes      | 	Notification name <br/> Up to 255 characters can be registered   |
 | description | 	String   | 	No       | 	Notification description <br/> Up to 1,000 characters can be registered |
 
-- AlarmTarget <a id="post-alarm-request-alarm-target"></a>
+<a id="post-alarm-request-alarm-target"></a>
+##### AlarmTarget 
 
 | Key                 | 	Type          | 	Required | 	Description                                                                                                                                                                                         |
 |---------------------|----------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -120,7 +123,8 @@ You can set up notifications for events that occur on your resources. <br/>
 | webhookUrl          | 	String        | 	No       | Webhook URL address<br/>http:// Or https://로 to get started.<br/> Enter when setting the notification destination type **WEBHOOK**                                                                                                               |
 | webhookSecret       | 	String        | 	No       | 	Webhook secret key<br/> Enter when setting the notification destination type **WEBHOOK**                                                                                                                                                 |
 
-- Event <a id="post-alarm-request-event"></a>
+<a id="post-alarm-request-event"></a>
+##### Event 
 
 | Key        | 	Type    | 	Required | 	Description |
 |------------|----------|-----------|--------------|
@@ -129,7 +133,8 @@ You can set up notifications for events that occur on your resources. <br/>
 
 For the productId and eventId values, see **API Guide > 3.1 Event list lookup API response values**.
 
-- Target <a id="post-alarm-request-target"></a>
+<a id="post-alarm-request-target"></a>
+##### Target 
 
 | Key              | 	Type         | 	Required | 	Description      |
 |------------------|---------------|-----------|-------------------|
@@ -170,13 +175,13 @@ For the productId and eventId values, see **API Guide > 3.1 Event list lookup AP
 }
 ```
 
-**[Response Body]**
+##### [Response Body]
 
-* Note: This is the same as [](#common-response-body)Common Response Body](#common-response-body).
+* Note: This is the same as [Common Response Body](#common-response-body).
 
 #### 1.2 View notifications
 
-Basic Information
+##### [Basic Information]
 
 | Method | 	URI                                                            |
 |--------|-----------------------------------------------------------------|
@@ -188,21 +193,21 @@ Basic Information
 
 Retrieves registered notifications.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	User Access Key issued from the console   |
 | X-TC-AUTHENTICATION-SECRET | 	Secret Access Key issued from the console |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | 	Value            |
 |---------|-------------------|
 | appKey  | 	Appkey issued from the console |
 | alarmId | 	ID of the notification to look up       |
 
-**[Response Body]**
+##### [Response Body]
 
 
 | Key                       | 	Type                                                                           | 	Description                 |
@@ -215,7 +220,8 @@ Retrieves registered notifications.
 | events                    | 	[Event[]](#post-alarm-response-event)                                          | 	Notification event list                   |
 | target                    | 	[Target](#post-alarm-response-target)                                          | 	Information on target resource         |
 
-- Alarm <a id="post-alarm-response-alarm"></a>
+<a id="post-alarm-response-alarm"></a>
+##### Alarm 
 
 | Key                  | 	Type                                        | 	Description                                                                      |
 |----------------------|----------------------------------------------|-----------------------------------------------------------------------------------|
@@ -231,7 +237,8 @@ Retrieves registered notifications.
 | operatorUuid         | String                                       | Last Modified User UUID                                                                   |
 | regDatetime          | Date                                         | Registered date and time                                                                             |
 
-- AlarmRule <a id="post-alarm-response-alarm-rule"></a>
+<a id="post-alarm-response-alarm-rule"></a>
+##### AlarmRule 
 
 | Key                     | 	Type    | 	Description                                                                           |
 |-------------------------|----------|----------------------------------------------------------------------------------------|
@@ -241,7 +248,8 @@ Retrieves registered notifications.
 | alarmRuleDescription    | String   | Notification rule descriptions                                                                               |
 | resourceTypes           | String[] | List of target resource type codes that the alert rule applies to<br/>An empty value targets the entire resource type<br/>List of String types              |
 
-- AlarmTargetAlarmKey <a id="post-alarm-response-alarm-target-alarm-key"></a>
+<a id="post-alarm-response-alarm-target-alarm-key"></a>
+##### AlarmTargetAlarmKey 
 
 | Key            | 	Type      | 	Description |
 |----------------|------------|--------------|
@@ -249,8 +257,8 @@ Retrieves registered notifications.
 | alarmGroupName | String     | Group name to receive notifications    |
 | alarmGroupDesc | String     | Notification receiver group descriptions  |
 
-
-- AlarmTargetMemberProfile <a id="post-alarm-response-alarm-target-member-profile"></a>
+<a id="post-alarm-response-alarm-target-member-profile"></a>
+##### AlarmTargetMemberProfile 
 
 | Key             | 	Type      | 	Description                                       |
 |-----------------|------------|----------------------------------------------------|
@@ -261,7 +269,8 @@ Retrieves registered notifications.
 | email           | String     | Member email                                             |
 | userId          | String     | Member ID                                              |
 
-- AlarmTargetRole <a id="post-alarm-response-alarm-target-role"></a>
+<a id="post-alarm-response-alarm-target-role"></a>
+##### AlarmTargetRole 
 
 | Key           | 	Type      | 	Description |
 |---------------|------------|--------------|
@@ -270,7 +279,8 @@ Retrieves registered notifications.
 | roleName      | String     | Role name          |
 | description   | String     | Role descriptions        |
 
-- AlarmTarget <a id="post-alarm-response-alarm-target"></a>
+<a id="post-alarm-response-alarm-target"></a>
+##### AlarmTarget 
 
 | Key                     | 	Type        | 	Description                                                                                                                                                         |
 |-------------------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -281,30 +291,32 @@ Retrieves registered notifications.
 | webhookUrl              | string       | Webhook URL address |
 | webhookSecret           | string       | Webhook secret key                                                                                                                                                         |
 
-- Event <a id="post-alarm-response-event"></a>
+<a id="post-alarm-response-event"></a>
+##### Event 
 
 | Key          | 	Type        | 	Description   |
 |--------------|--------------|----------------|
 | productId    | 	String      | 	Product ID         |
 | eventId      | 	String      | 	Event ID        |
 
-
-- Target <a id="post-alarm-response-target"></a>
+<a id="post-alarm-response-target"></a>
+##### Target 
 
 | Key            | 	Type                                                  | 	Description     |
 |----------------|--------------------------------------------------------|------------------|
 | resourceGroups | [ResourceGroup[]](#post-alarm-response-resource-group) | Resource Group List        |
 | resourceTags   | [ResourceTag[]](#post-alarm-response-resource-tag)     | Resource Tag List        |
 
-
-- ResourceGroup <a id="post-alarm-response-resource-group"></a>
+<a id="post-alarm-response-resource-group"></a>
+##### ResourceGroup 
 
 | Key               | 	Type   | 	Description   |
 |-------------------|---------|----------------|
 | resourceGroupId   | String  | 	List of resource group IDs  |
 | resourceGroupName | String  | List of resource tag IDs   |
 
-- ResourceTag <a id="post-alarm-response-resource-tag"></a>
+<a id="post-alarm-response-resource-tag"></a>
+##### ResourceTag 
 
 | Key        | 	Type                                                       | 	Description               |
 |------------|-------------------------------------------------------------|----------------------------|
@@ -316,7 +328,8 @@ Retrieves registered notifications.
 | modDatetime    | Date                                                        | Resource tag modification date               |
 | resourceTagGroup    | [ResourceTagGroup](#post-alarm-response-resource-tag-group) | Resource Tag Groups                  |
 
-- ResourceTagGroup <a id="post-alarm-response-resource-tag-group"></a>
+<a id="post-alarm-response-resource-tag-group"></a>
+##### ResourceTagGroup 
 
 | Key        | 	Type  | 	Description        |
 |------------|--------|---------------------|
@@ -430,7 +443,7 @@ Retrieves registered notifications.
 
 #### 1.3 Get a list of notifications
 
-Basic Information
+##### [Basic Information]
 
 | Method | 	URI                                                         |
 |--------|--------------------------------------------------------------|
@@ -444,21 +457,21 @@ Get a list of event notifications you've signed up for.
 - You can include search criteria in your request to get the list of notifications you want.
 - Supports paging.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	User Access Key issued from the console   |
 | X-TC-AUTHENTICATION-SECRET | 	Secret Access Key issued from the console |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key    | 	Value             |
 |--------|--------------------|
 | appKey | 	Appkey issued from the console |
 
 
-**[Query Parameter]**
+##### [Query Parameter]
 
 | Key  | 	Value                                      | Required |
 |------|---------------------------------------------|----------|
@@ -466,7 +479,7 @@ Get a list of event notifications you've signed up for.
 | size | 	Number of notifications to view<br/>Default value: 10                | No       |
 | sort | What and how to sort<br/>Default values: modDatetime, DESC | No       |
 
-**[Request Body]**
+##### [Request Body]
 
 | Key                | 	Type    | Required | 	Description                                                                                                                     |
 |--------------------|----------|----------|----------------------------------------------------------------------------------------------------------------------------------|
@@ -505,15 +518,15 @@ Get a list of event notifications you've signed up for.
 ```
 
 
-**[Response Body]**
+##### [Response Body]
 
 | Key        | 	Type                                 | Description |
 |------------|---------------------------------------|-------------|
 | alarms     | [Alarm](#list-alarm-response-alarm) | Notifications list       |
 | totalItems | Long                                  | Total number       |
 
-
-- Alarm <a id="list-alarm-response-alarm"></a>
+<a id="list-alarm-response-alarm"></a>
+##### Alarm 
 
 | Key             | 	Type                                        | 	Description                                                                      |
 |-----------------|----------------------------------------------|-----------------------------------------------------------------------------------|
@@ -529,7 +542,8 @@ Get a list of event notifications you've signed up for.
 | modDatetime     | Date                                         | Modification date                                                                             |
 | regDatetime     | Date                                         | Registered date and time                                                                             |
 
-- AlarmRule <a id ="list_alarm_response_alarm_rule"></a>
+<a id="list-alarm-response-alarm-rule"></a>
+##### AlarmRule 
 
 | Key                  | 	Type    | 	Description                                                                         |
 |----------------------|----------|--------------------------------------------------------------------------------------|
@@ -577,11 +591,11 @@ Get a list of event notifications you've signed up for.
 
 #### 1.4. Edit notifications
 
-Basic Information
+##### [Basic Information]
 
 | Method | 	URI                                                            |
 |--------|-----------------------------------------------------------------|
-| PUT    | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms/{alarmId} |
+| PUT    | 	/resource-watcher/v2.0/appkeys/{appKey}/event-alarms/{alarmId} |
 
 | Permission                             | 	
 |--------------------------------|
@@ -590,14 +604,14 @@ Basic Information
 Edit a registered alert.
 - Since we're changing everything you requested, we need **to transfer the existing setting values for the ones that don't change**.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	User Access Key issued from the console   |
 | X-TC-AUTHENTICATION-SECRET | 	Secret Access Key issued from the console |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value            |
 |---------|------------------|
@@ -605,13 +619,17 @@ Edit a registered alert.
 | alarmId | ID of the alert to modify       |
 
 
-**[Request Body]**
+##### [Request Body]
 
-* Note: This is the same as [](#common-response-body)Common Response Body](#common-response-body).
+* Note: This is the same as [Request Body](#post-alarm-request) in 1.1 Register notifications.
+
+##### [Response Body]
+
+* Note: This is the same as [Common Response Body](#common-response-body).
 
 #### 1.5. Delete a notification
 
-Basic Information
+##### [Basic Information]
 
 | Method | 	URI                                                            |
 |--------|-----------------------------------------------------------------|
@@ -623,14 +641,14 @@ Basic Information
 
 Delete a registered alert.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	User Access Key issued from the console   |
 | X-TC-AUTHENTICATION-SECRET | 	Secret Access Key issued from the console |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value              |
 |---------|--------------------|
@@ -638,15 +656,15 @@ Delete a registered alert.
 | alarmId | ID of the notification to delete         |
 
 
-**[Response Body]**
+##### [Response Body]
 
-* Note: This is the same as [](#common-response-body)Common Response Body](#common-response-body).
+* Note: This is the same as [Common Response Body](#common-response-body).
 
 
 #### 1.6. Delete a batch of notifications
 
 
-Basic Information
+##### [Basic Information]
 
 | Method | 	URI                                                  |
 |--------|-------------------------------------------------------|
@@ -658,26 +676,26 @@ Basic Information
 
 Delete multiple registered alerts.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	User Access Key issued from the console   |
 | X-TC-AUTHENTICATION-SECRET | 	Secret Access Key issued from the console |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value            |
 |---------|------------------|
 | appKey  | Appkey issued from the console |
 
 
-**[Query Parameter]**재
+##### [Query Parameter]
 
 | Key      | Value                                     | Required |
 |----------|-------------------------------------------|----------|
 | alarmIds | List of notification IDs to delete<br/>You must enter at least one value. | Yes      |
 
-**[Response Body]**
+##### [Response Body]
 
 * Note: This is the same as [Common Response Body](#common-response-body).

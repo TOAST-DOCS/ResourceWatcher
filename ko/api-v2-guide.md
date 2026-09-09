@@ -25,7 +25,8 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 |---------|-----------------------------------|-------------|
 | header  | [Header](#common-response-header) | 응답 헤더       |
 
-- Header <a id="common-response-header"></a>
+<a id="common-response-header"></a>
+#### Header 
 
 | Key           | 	Type    | 	Description                             |
 |---------------|----------|------------------------------------------|
@@ -47,7 +48,7 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 
 #### 1.1 알림 등록하기
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                  |
 |--------|-------------------------------------------------------|
@@ -67,14 +68,14 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 - **리소스 전체**로 설정하면 리소스에 관계없이 특정 이벤트에 대한 알림을 수신하도록 설정할 수 있습니다.
 - **이벤트 전체**와 **리소스 전체**는 동시에 설정할 수 없습니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                           |
 |----------------------------|----------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key    | 	Value                |
 |--------|-----------------------|
@@ -82,7 +83,7 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 
 
 <a id="post-alarm-request"></a>
-**[Request Body]**
+##### [Request Body]
 
 | Key                         | 	Type                                             | 	Required | 	Description                                         |
 |-----------------------------|---------------------------------------------------|-----------|------------------------------------------------------|
@@ -91,14 +92,16 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 | events                      | [Event[]](#post-alarm-request-event)              | No        | 알림 대상 이벤트 목록<br/> 발생하는 모든 이벤트에 대해 수신을 원할 경우 설정하지 않음. |
 | target                      | [Target](#post-alarm-request-target)              | No        | 대상 리소스 정보<br/> 리소스 관계없이 이벤트 수신을 원할 경우 설정하지 않음.       |
 
-- Alarm <a id="post-alarm-request-alarm"></a>
+<a id="post-alarm-request-alarm"></a>
+##### Alarm 
 
 | Key               | 	Type     | 	Required | 	Description                     |
 |-------------------|-----------|-----------|----------------------------------|
 | alarmName   | 	String   | 	Yes      | 	알림 이름 <br/> 최대 255자까지 등록 가능   |
 | description | 	String   | 	No       | 	알림 설명 <br/> 최대 1,000자까지 등록 가능 |
 
-- AlarmTarget <a id="post-alarm-request-alarm-target"></a>
+<a id="post-alarm-request-alarm-target"></a>
+##### AlarmTarget 
 
 | Key                 | 	Type          | 	Required | 	Description                                                                                                                                                                                         |
 |---------------------|----------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -109,7 +112,8 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 | webhookUrl          | 	String        | 	No       | 웹훅 URL 주소<br/>http:// 또는 https://로 시작해야 함.<br/> 알림 대상 타입 **WEBHOOK** 설정 시 입력                                                                                                              |
 | webhookSecret       | 	String        | 	No       | 	웹훅 비밀 키<br/> 알림 대상 타입 **WEBHOOK** 설정 시 입력                                                                                                                                                |
 
-- Event <a id="post-alarm-request-event"></a>
+<a id="post-alarm-request-event"></a>
+##### Event 
 
 | Key        | 	Type    | 	Required | 	Description |
 |------------|----------|-----------|--------------|
@@ -118,7 +122,8 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 
 productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 값**을 참고하세요.
 
-- Target <a id="post-alarm-request-target"></a>
+<a id="post-alarm-request-target"></a>
+##### Target 
 
 | Key              | 	Type         | 	Required | 	Description      |
 |------------------|---------------|-----------|-------------------|
@@ -159,13 +164,13 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 }
 ```
 
-**[Response Body]**
+##### [Response Body]
 
 * 참고 : [Common Response Body](#common-response-body)와 동일합니다.
 
 #### 1.2 알림 조회
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                            |
 |--------|-----------------------------------------------------------------|
@@ -177,21 +182,21 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 
 등록된 알림에 대해 조회합니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | 	Value            |
 |---------|-------------------|
 | appKey  | 	콘솔에서 발급받은 Appkey |
 | alarmId | 	조회할 알림의 ID       |
 
-**[Response Body]**
+##### [Response Body]
 
 
 | Key                       | 	Type                                                                           | 	Description                 |
@@ -204,7 +209,8 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | events                    | 	[Event[]](#post-alarm-response-event)                                          | 	알림 이벤트 목록                   |
 | target                    | 	[Target](#post-alarm-response-target)                                          | 	대상 리소스 정보         |
 
-- Alarm <a id="post-alarm-response-alarm"></a>
+<a id="post-alarm-response-alarm"></a>
+##### Alarm 
 
 | Key                  | 	Type                                        | 	Description                                                                      |
 |----------------------|----------------------------------------------|-----------------------------------------------------------------------------------|
@@ -220,7 +226,8 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | operatorUuid         | String                                       | 최종 수정한 사용자 UUID                                                                   |
 | regDatetime          | Date                                         | 등록 일시                                                                             |
 
-- AlarmRule <a id="post-alarm-response-alarm-rule"></a>
+<a id="post-alarm-response-alarm-rule"></a>
+##### AlarmRule 
 
 | Key                     | 	Type    | 	Description                                                                           |
 |-------------------------|----------|----------------------------------------------------------------------------------------|
@@ -230,7 +237,8 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | alarmRuleDescription    | String   | 알림 규칙 설명                                                                               |
 | resourceTypes           | String[] | 알림 규칙이 적용되는 대상 리소스 타입 코드 목록<br/>빈 값이면 전체 리소스 타입을 대상으로 함<br/>String 타입 리스트              |
 
-- AlarmTargetAlarmKey <a id="post-alarm-response-alarm-target-alarm-key"></a>
+<a id="post-alarm-response-alarm-target-alarm-key"></a>
+##### AlarmTargetAlarmKey 
 
 | Key            | 	Type      | 	Description |
 |----------------|------------|--------------|
@@ -238,8 +246,8 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | alarmGroupName | String     | 알림 수신 그룹명    |
 | alarmGroupDesc | String     | 알림 수신 그룹 설명  |
 
-
-- AlarmTargetMemberProfile <a id="post-alarm-response-alarm-target-member-profile"></a>
+<a id="post-alarm-response-alarm-target-member-profile"></a>
+##### AlarmTargetMemberProfile 
 
 | Key             | 	Type      | 	Description                                       |
 |-----------------|------------|----------------------------------------------------|
@@ -250,7 +258,8 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | email           | String     | 멤버 이메일                                             |
 | userId          | String     | 멤버 ID                                              |
 
-- AlarmTargetRole <a id="post-alarm-response-alarm-target-role"></a>
+<a id="post-alarm-response-alarm-target-role"></a>
+##### AlarmTargetRole 
 
 | Key           | 	Type      | 	Description |
 |---------------|------------|--------------|
@@ -259,7 +268,8 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | roleName      | String     | 역할명          |
 | description   | String     | 역할 설명        |
 
-- AlarmTarget <a id="post-alarm-response-alarm-target"></a>
+<a id="post-alarm-response-alarm-target"></a>
+##### AlarmTarget 
 
 | Key                     | 	Type        | 	Description                                                                                                                                                         |
 |-------------------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -270,30 +280,32 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | webhookUrl              | string       | 웹훅 URL 주소 |
 | webhookSecret           | string       | 웹훅 비밀 키                                                                                                                                                         |
 
-- Event <a id="post-alarm-response-event"></a>
+<a id="post-alarm-response-event"></a>
+##### Event 
 
 | Key          | 	Type        | 	Description   |
 |--------------|--------------|----------------|
 | productId    | 	String      | 	상품 ID         |
 | eventId      | 	String      | 	이벤트 ID        |
 
-
-- Target <a id="post-alarm-response-target"></a>
+<a id="post-alarm-response-target"></a>
+##### Target 
 
 | Key            | 	Type                                                  | 	Description     |
 |----------------|--------------------------------------------------------|------------------|
 | resourceGroups | [ResourceGroup[]](#post-alarm-response-resource-group) | 리소스 그룹 목록        |
 | resourceTags   | [ResourceTag[]](#post-alarm-response-resource-tag)     | 리소스 태그 목록        |
 
-
-- ResourceGroup <a id="post-alarm-response-resource-group"></a>
+<a id="post-alarm-response-resource-group"></a>
+##### ResourceGroup 
 
 | Key               | 	Type   | 	Description   |
 |-------------------|---------|----------------|
 | resourceGroupId   | String  | 	리소스 그룹 ID 목록  |
 | resourceGroupName | String  | 리소스 태그 ID 목록   |
 
-- ResourceTag <a id="post-alarm-response-resource-tag"></a>
+<a id="post-alarm-response-resource-tag"></a>
+##### ResourceTag 
 
 | Key        | 	Type                                                       | 	Description               |
 |------------|-------------------------------------------------------------|----------------------------|
@@ -305,7 +317,8 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | modDatetime    | Date                                                        | 리소스 태그 수정 일시               |
 | resourceTagGroup    | [ResourceTagGroup](#post-alarm-response-resource-tag-group) | 리소스 태그 그룹                  |
 
-- ResourceTagGroup <a id="post-alarm-response-resource-tag-group"></a>
+<a id="post-alarm-response-resource-tag-group"></a>
+##### ResourceTagGroup 
 
 | Key        | 	Type  | 	Description        |
 |------------|--------|---------------------|
@@ -419,7 +432,7 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 
 #### 1.3 알림 리스트 조회
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                         |
 |--------|--------------------------------------------------------------|
@@ -433,21 +446,21 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 - 요청에 검색 조건을 통해 원하는 알림 목록을 조회할 수 있습니다.
 - 페이징을 지원합니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key    | 	Value             |
 |--------|--------------------|
 | appKey | 	콘솔에서 발급받은 Appkey |
 
 
-**[Query Parameter]**
+##### [Query Parameter]
 
 | Key  | 	Value                                      | Required |
 |------|---------------------------------------------|----------|
@@ -455,7 +468,7 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | size | 	조회할 알림 개수<br/>Default 값: 10                | No       |
 | sort | 정렬 대상 및 방식<br/>Default 값: modDatetime, DESC | No       |
 
-**[Request Body]**
+##### [Request Body]
 
 | Key                | 	Type    | Required | 	Description                                                                                                                     |
 |--------------------|----------|----------|----------------------------------------------------------------------------------------------------------------------------------|
@@ -494,15 +507,15 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 ```
 
 
-**[Response Body]**
+##### [Response Body]
 
 | Key        | 	Type                                 | Description |
 |------------|---------------------------------------|-------------|
 | alarms     | [Alarm[]](#list-alarm-response-alarm) | 알림 목록       |
 | totalItems | Long                                  | 전체 개수       |
 
-
-- Alarm <a id="list-alarm-response-alarm"></a>
+<a id="list-alarm-response-alarm"></a>
+##### Alarm 
 
 | Key             | 	Type                                        | 	Description                                                                      |
 |-----------------|----------------------------------------------|-----------------------------------------------------------------------------------|
@@ -518,7 +531,8 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | modDatetime     | Date                                         | 수정 일시                                                                             |
 | regDatetime     | Date                                         | 등록 일시                                                                             |
 
-- AlarmRule <a id ="list_alarm_response_alarm_rule"></a>
+<a id="list-alarm-response-alarm-rule"></a>
+##### AlarmRule 
 
 | Key                  | 	Type    | 	Description                                                                         |
 |----------------------|----------|--------------------------------------------------------------------------------------|
@@ -566,11 +580,11 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 
 #### 1.4. 알림 수정
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                            |
 |--------|-----------------------------------------------------------------|
-| PUT    | 	/resource-watcher/v1.0/appkeys/{appKey}/event-alarms/{alarmId} |
+| PUT    | 	/resource-watcher/v2.0/appkeys/{appKey}/event-alarms/{alarmId} |
 
 | 권한                             | 	
 |--------------------------------|
@@ -579,14 +593,14 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 등록된 알림을 수정합니다.
 - 요청한 내용을 모두 변경하므로 **변경사항이 없는 내용도 기존 설정 값을 전송해야 합니다**.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value            |
 |---------|------------------|
@@ -594,13 +608,17 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | alarmId | 수정할 알림의 ID       |
 
 
-**[Request Body]**
+##### [Request Body]
+
+* 참고 : 1.1 알림 등록하기의 [Request Body](#post-alarm-request)와 동일합니다.
+
+##### [Response Body]
 
 * 참고 : [Common Response Body](#common-response-body)와 동일합니다.
 
 #### 1.5. 알림 삭제
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                            |
 |--------|-----------------------------------------------------------------|
@@ -612,14 +630,14 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 
 등록된 알림을 삭제합니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value              |
 |---------|--------------------|
@@ -627,7 +645,7 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 | alarmId | 삭제할 알림의 ID         |
 
 
-**[Response Body]**
+##### [Response Body]
 
 * 참고 : [Common Response Body](#common-response-body)와 동일합니다.
 
@@ -635,7 +653,7 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 #### 1.6. 알림 다건 삭제
 
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                  |
 |--------|-------------------------------------------------------|
@@ -647,26 +665,26 @@ productId, eventId 값은 **API 가이드 > 3.1 Event 목록 조회 API 응답 �
 
 등록된 알림을 여러 개 삭제합니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value            |
 |---------|------------------|
 | appKey  | 콘솔에서 발급받은 Appkey |
 
 
-**[Query Parameter]**
+##### [Query Parameter]
 
 | Key      | Value                                     | Required |
 |----------|-------------------------------------------|----------|
 | alarmIds | 삭제할 알림 ID의 목록<br/>반드시 1개 이상의 값을 입력해야 합니다. | Yes      |
 
-**[Response Body]**
+##### [Response Body]
 
 * 참고 : [Common Response Body](#common-response-body)와 동일합니다.

@@ -36,7 +36,8 @@ RESTful API를 사용하려면 Appkey가 필요합니다.<br/>
 |---------|-----------------------------------|-------------|
 | header  | [Header](#common-response-header) | 응답 헤더       |
 
-- Header <a id="common-response-header"></a>
+<a id="common-response-header"></a>
+#### Header 
 
 | Key           | 	Type    | 	Description                             |
 |---------------|----------|------------------------------------------|
@@ -58,7 +59,7 @@ RESTful API를 사용하려면 Appkey가 필요합니다.<br/>
 
 #### 1.1 Alarm 등록하기
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                  |
 |--------|-------------------------------------------------------|
@@ -78,14 +79,14 @@ RESTful API를 사용하려면 Appkey가 필요합니다.<br/>
 - `리소스 전체`로 설정하면 리소스에 관계없이 특정 이벤트에 대한 알림을 수신하도록 설정할 수 있습니다.
 - `이벤트 전체`와 `리소스 전체`는 동시에 설정할 수 없습니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                           |
 |----------------------------|----------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key      |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key    |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key    | 	Value                  |
 |--------|-------------------------|
@@ -93,7 +94,7 @@ RESTful API를 사용하려면 Appkey가 필요합니다.<br/>
 
 
 <a id="post-alarm-request"></a>
-**[Request Body]**
+##### [Request Body]
 
 | Key                         | 	Type                                             | 	Required | 	Description                                         |
 |-----------------------------|---------------------------------------------------|-----------|------------------------------------------------------|
@@ -102,14 +103,16 @@ RESTful API를 사용하려면 Appkey가 필요합니다.<br/>
 | events                      | [Event[]](#post-alarm-request-event)              | No        | 알림 대상 이벤트 목록<br/> 발생하는 모든 이벤트에 대해 수신을 원할 경우 설정하지 않음. |
 | target                      | [Target](#post-alarm-request-target)              | No        | 대상 리소스 정보<br/> 리소스 관계없이 이벤트를 수신할 경우 설정하지 않음.         |
 
-- Alarm <a id="post-alarm-request-alarm"></a>
+<a id="post-alarm-request-alarm"></a>
+##### Alarm 
 
 | Key               | 	Type     | 	Required | 	Description                     |
 |-------------------|-----------|-----------|----------------------------------|
 | alarmName   | 	String   | 	Yes      | 	알림 이름 <br/> 최대 255 글자까지 등록 가능   |
 | description | 	String   | 	No       | 	알림 설명 <br/> 최대 1,000 글자까지 등록 가능 |
 
-- AlarmTarget <a id="post-alarm-request-alarm-target"></a>
+<a id="post-alarm-request-alarm-target"></a>
+##### AlarmTarget 
 
 | Key                 | 	Type     | 	Required | 	Description                                                                                                                                                                                 |
 |---------------------|-----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -120,7 +123,8 @@ RESTful API를 사용하려면 Appkey가 필요합니다.<br/>
 | webhookUrl          | 	String   | 	No       | 	Webhook URL 주소<br/>http:// 또는 https://로 시작해야 함<br/> 알림 대상 타입 `WEBHOOK` 설정 시 입력                                                                                                              |
 | webhookSecret       | 	String   | 	No       | 	Webhook 비밀 키<br/> 알림 대상 타입 `WEBHOOK` 설정 시 입력                                                                                                                                                |
 
-- Event <a id="post-alarm-request-event"></a>
+<a id="post-alarm-request-event"></a>
+##### Event 
 
 | Key        | 	Type    | 	Required | 	Description |
 |------------|----------|-----------|--------------|
@@ -129,7 +133,8 @@ RESTful API를 사용하려면 Appkey가 필요합니다.<br/>
 
 productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-event-response-event) 을 참고하십시오.
 
-- Target <a id="post-alarm-request-target"></a>
+<a id="post-alarm-request-target"></a>
+##### Target 
 
 | Key              | 	Type         | 	Required | 	Description      |
 |------------------|---------------|-----------|-------------------|
@@ -171,7 +176,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 ```
 
 <a id="post-alarm-response"></a>
-**[Response Body]**
+##### [Response Body]
 
 | Key                       | 	Type                                                                           | 	Description                 |
 |---------------------------|---------------------------------------------------------------------------------|------------------------------|
@@ -183,7 +188,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | events                    | 	[Event[]](#post-alarm-response-event)                                          | 	알림 이벤트 목록                   |
 | target                    | 	[Target](#post-alarm-response-target)                                          | 	대상 리소스 정보         |
 
-- Alarm <a id="post-alarm-response-alarm"></a>
+<a id="post-alarm-response-alarm"></a>
+##### Alarm 
 
 | Key                  | 	Type                                        | 	Description                                                                      |
 |----------------------|----------------------------------------------|-----------------------------------------------------------------------------------|
@@ -199,7 +205,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | operatorUuid         | String                                       | 최종 수정한 사용자 UUID                                                                   |
 | regDatetime          | Date                                         | 등록 일시                                                                             |
 
-- AlarmRule <a id="post-alarm-response-alarm-rule"></a>
+<a id="post-alarm-response-alarm-rule"></a>
+##### AlarmRule 
 
 | Key                     | 	Type    | 	Description                                                                           |
 |-------------------------|----------|----------------------------------------------------------------------------------------|
@@ -209,7 +216,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | alarmRuleDescription    | String   | 알림 규칙 설명                                                                               |
 | resourceTypes           | String[] | 알림 규칙이 적용하는 대상 리소스 타입 코드 목록<br/>빈 값이면 전체 리소스 타입을 대상으로 함<br/>String 타입 리스트              |
 
-- AlarmTargetAlarmKey <a id="post-alarm-response-alarm-target-alarm-key"></a>
+<a id="post-alarm-response-alarm-target-alarm-key"></a>
+##### AlarmTargetAlarmKey 
 
 | Key            | 	Type      | 	Description   |
 |----------------|------------|----------------|
@@ -217,8 +225,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | alarmGroupName | String     | 알림 수신 그룹명     |
 | alarmGroupDesc | String     | 알림 수신 그룹 설명    |
 
-
-- AlarmTargetMemberProfile <a id="post-alarm-response-alarm-target-member-profile"></a>
+<a id="post-alarm-response-alarm-target-member-profile"></a>
+##### AlarmTargetMemberProfile 
 
 | Key             | 	Type      | 	Description                                       |
 |-----------------|------------|----------------------------------------------------|
@@ -229,7 +237,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | email           | String     | 멤버 Email                                           |
 | userId          | String     | 멤버 ID                                              |
 
-- AlarmTargetRole <a id="post-alarm-response-alarm-target-role"></a>
+<a id="post-alarm-response-alarm-target-role"></a>
+##### AlarmTargetRole 
 
 | Key           | 	Type      | 	Description |
 |---------------|------------|--------------|
@@ -238,7 +247,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | roleName      | String     | 역할명          |
 | description   | String     | 역할 설명        |
 
-- AlarmTarget <a id="post-alarm-response-alarm-target"></a>
+<a id="post-alarm-response-alarm-target"></a>
+##### AlarmTarget 
 
 | Key                     | 	Type        | 	Description                                                                                                                                                         |
 |-------------------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -249,30 +259,32 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | webhookUrl              | string       | Webhook URL 주소                                                                                                                                                       |
 | webhookSecret           | string       | Webhook 비밀 키                                                                                                                                                         |
 
-- Event <a id="post-alarm-response-event"></a>
+<a id="post-alarm-response-event"></a>
+##### Event 
 
 | Key          | 	Type        | 	Description   |
 |--------------|--------------|----------------|
 | productId    | 	String      | 	상품 ID         |
 | eventId      | 	String      | 	이벤트 ID        |
 
-
-- Target <a id="post-alarm-response-target"></a>
+<a id="post-alarm-response-target"></a>
+##### Target 
 
 | Key            | 	Type                                                  | 	Description     |
 |----------------|--------------------------------------------------------|------------------|
 | resourceGroups | [ResourceGroup[]](#post-alarm-response-resource-group) | 리소스 그룹 목록        |
 | resourceTags   | [ResourceTag[]](#post-alarm-response-resource-tag)     | 리소스 태그 목록        |
 
-
-- ResourceGroup <a id="post-alarm-response-resource-group"></a>
+<a id="post-alarm-response-resource-group"></a>
+##### ResourceGroup 
 
 | Key               | 	Type   | 	Description   |
 |-------------------|---------|----------------|
 | resourceGroupId   | String  | 	리소스 그룹 ID 목록  |
 | resourceGroupName | String  | 리소스 태그 ID 목록   |
 
-- ResourceTag <a id="post-alarm-response-resource-tag"></a>
+<a id="post-alarm-response-resource-tag"></a>
+##### ResourceTag 
 
 | Key               | 	Type       | 	Description   |
 |-------------------|-------------|----------------|
@@ -369,7 +381,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 #### 1.2 Event Alarm 조회
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                            |
 |--------|-----------------------------------------------------------------|
@@ -381,28 +393,28 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 등록된 알림에 대해 조회합니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | 	Value             |
 |---------|--------------------|
 | appKey  | 	콘솔에서 발급 받은 Appkey |
 | alarmId | 	조회할 알림의 ID        |
 
-**[Response Body]**
+##### [Response Body]
 
 * ``참고`` : 1.1) 이벤트 알림 생성의 [응답](#post-alarm-response)과 동일합니다.
 
 
 #### 1.3 Event Alarm 리스트 조회
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                         |
 |--------|--------------------------------------------------------------|
@@ -416,21 +428,21 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 - 요청에 검색 조건을 통해 원하는 알림 목록을 조회할 수 있습니다.
 - 페이징을 지원합니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key    | 	Value             |
 |--------|--------------------|
 | appKey | 	콘솔에서 발급 받은 Appkey |
 
 
-**[Query Parameter]**
+##### [Query Parameter]
 
 | Key  | 	Value                                      | Required |
 |------|---------------------------------------------|----------|
@@ -438,7 +450,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | size | 	조회할 알림 개수<br/>Default 값: 10                | No       |
 | sort | 정렬 대상 및 방식<br/>Default 값: modDatetime, DESC | No       |
 
-**[Request Body]**
+##### [Request Body]
 
 | Key                | 	Type    | Required | 	Description                                                                                                                     |
 |--------------------|----------|----------|----------------------------------------------------------------------------------------------------------------------------------|
@@ -477,15 +489,15 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 ```
 
 
-**[Response Body]**
+##### [Response Body]
 
 | Key        | 	Type                                 | Description |
 |------------|---------------------------------------|-------------|
 | alarms     | [Alarm[]](#list-alarm-response-alarm) | 알람 목록       |
 | totalItems | Long                                  | 전체 개수       |
 
-
-- Alarm <a id="list-alarm-response-alarm"></a>
+<a id="list-alarm-response-alarm"></a>
+##### Alarm 
 
 | Key             | 	Type                                        | 	Description                                                                      |
 |-----------------|----------------------------------------------|-----------------------------------------------------------------------------------|
@@ -501,7 +513,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | modDatetime     | Date                                         | 수정 일시                                                                             |
 | regDatetime     | Date                                         | 등록 일시                                                                             |
 
-- AlarmRule <a id ="list_alarm_response_alarm_rule"></a>
+<a id="list-alarm-response-alarm-rule"></a>
+##### AlarmRule 
 
 | Key                  | 	Type    | 	Description                                                                           |
 |----------------------|----------|----------------------------------------------------------------------------------------|
@@ -549,7 +562,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 #### 1.4. Event Alarm 수정
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                            |
 |--------|-----------------------------------------------------------------|
@@ -562,14 +575,14 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 등록된 알림을 수정합니다.
 - 요청한 내용을 모두 변경하므로 **변경사항이 없는 내용도 기존 설정 값을 전송해야 합니다**.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value             |
 |---------|-------------------|
@@ -577,13 +590,13 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | alarmId | 수정할 알림의 ID        |
 
 
-**[Request Body]**
+##### [Request Body]
 
 * ``참고`` : 1.1) 이벤트 알림 생성의 [Request Body](#post-alarm-request)와 동일합니다.
 
 #### 1.5. Event Alarm 삭제
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                         |
 |--------|--------------------------------------------------------------|
@@ -595,14 +608,14 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 등록된 알림을 삭제합니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value               |
 |---------|---------------------|
@@ -610,7 +623,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | alarmId | 삭제할 알림의 ID          |
 
 
-**[Response Body]**
+##### [Response Body]
 
 * ``참고`` : [Common Response Body](#common-response-body)와 동일합니다.
 
@@ -618,7 +631,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 #### 1.6. Event Alarm 다건 삭제
 
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                  |
 |--------|-------------------------------------------------------|
@@ -630,27 +643,27 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 등록된 알림을 여러 개 삭제합니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value             |
 |---------|-------------------|
 | appKey  | 콘솔에서 발급 받은 Appkey |
 
 
-**[Query Parameter]**
+##### [Query Parameter]
 
 | Key      | Value                                     | Required |
 |----------|-------------------------------------------|----------|
 | alarmIds | 삭제할 알림 ID의 목록<br/>반드시 1개 이상의 값을 입력해야 합니다. | Yes      |
 
-**[Response Body]**
+##### [Response Body]
 
 * ``참고`` : [Common Response Body](#common-response-body)와 동일합니다.
 
@@ -659,7 +672,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 #### 2.1. 알림 히스토리 조회
 
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                                                     |
 |--------|------------------------------------------------------------------------------------------|
@@ -671,14 +684,14 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 등록된 알림이 발송한 이력을 단건 조회합니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value             |
 |---------|-------------------|
@@ -687,7 +700,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | alarmHistoryId | 	조회할 알림 이력의 ID    |
 
 
-**[Response Body]**
+##### [Response Body]
 
 
 | Key          | 	Type                                                      | 	Description    |
@@ -696,7 +709,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | alarmHistory | 	[AlarmHistory](#get-alarm-history-response-alarm-history) | 	알람 이력          |
 | alarmRule    | 	[AlarmRule](#get-alarm-history-response-alarm-rule)       | 	Scope ID       |
 
-- Alarm <a id="get-alarm-history-response-alarm"></a>
+<a id="get-alarm-history-response-alarm"></a>
+##### Alarm 
 
 | Key         | Type   | 	Description |
 |-------------|--------|--------------|
@@ -704,7 +718,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | alarmName   | String | 	알림 이름       |
 | description | String | 알림 설명        |
 
-- AlarmHistory <a id="get-alarm-history-response-alarm-history"></a>
+<a id="get-alarm-history-response-alarm-history"></a>
+##### AlarmHistory 
 
 | Key                     | Type                                             | 	Description                                                                       |
 |-------------------------|--------------------------------------------------|------------------------------------------------------------------------------------|
@@ -713,7 +728,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | event                   | [Event](#get-alarm-history-response-event)       | 	이벤트 정보                                                                            |
 | alarmSendResultTypeCode | String                                           | 	알림 발송 결과<br/><br/><종류><br/>1. SUCCESS: 성공<br/>2. FAILURE: 실패<br/>3. SENDING: 전송 중 |
 
-- AlarmRule <a id="get-alarm-history-response-alarm-rule"></a>
+<a id="get-alarm-history-response-alarm-rule"></a>
+##### AlarmRule 
 
 | Key                  | Type     | 	Description  |
 |----------------------|----------|---------------|
@@ -721,7 +737,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | alarmRuleId          | String   | 알림 규칙 ID      |
 | alarmRuleName        | String   | 알림 규칙 이름      |
 
-- Resource <a id="get-alarm-history-response-resource"></a>
+<a id="get-alarm-history-response-resource"></a>
+##### Resource 
 
 | Key                      | Type   | 	Description                                                      |
 |--------------------------|--------|-------------------------------------------------------------------|
@@ -746,7 +763,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | modDatetime              | Date   | 	수정 일시                                                            |
 | delDatetime              | Date   | 	삭제 일시                                                            |
 
-- Event <a id="get-alarm-history-response-event"></a>
+<a id="get-alarm-history-response-event"></a>
+##### Event 
 
 | Key             | Type                                                    | 	Description      |
 |-----------------|---------------------------------------------------------|-------------------|
@@ -759,7 +777,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | eventDatetime   | String                                                  | 	이벤트 발생 시간        |
 | regDatetime     | Date                                                    | 	이벤트 등록 일시        |
 
-- EventUser <a id="get-alarm-history-response-event-user"></a>
+<a id="get-alarm-history-response-event-user"></a>
+##### EventUser 
 
 | Key       | Type     | 	Description        |
 |-----------|----------|---------------------|
@@ -768,14 +787,15 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | userIp    | 	String  | 	이벤트를 발생시킨 회원의 IP   |
 | userAgent | 	String  | 	이벤트를 발생시킨 회원의 에이전트 |
 
-- EventTarget <a id="get-alarm-history-response-event-target"></a>
+<a id="get-alarm-history-response-event-target"></a>
+##### EventTarget 
 
 | Key             | Type                                                        | 	Description     |
 |-----------------|-------------------------------------------------------------|------------------|
 | targetMembers   | [TargetMember[]](#get-alarm-history-response-target-member) | 	발생한 이벤트의 대상 회원  |
 
-
-- TargetMember <a id="get-alarm-history-response-target-member"></a>
+<a id="get-alarm-history-response-target-member"></a>
+##### TargetMember 
 
 | Key          | Type   | 	Description                     |
 |--------------|--------|----------------------------------|
@@ -859,7 +879,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 #### 2.2. 알림 히스토리 리스트 조회
 
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                                                    |
 |--------|-------------------------------------------------------------------------|
@@ -871,14 +891,14 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 등록된 알림이 발송한 이력을 모두 조회합니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                        |
 |----------------------------|-------------------------------|
 | X-TC-AUTHENTICATION-ID     | 	콘솔에서 발급 받은 User Access Key   |
 | X-TC-AUTHENTICATION-SECRET | 	콘솔에서 발급 받은 Secret Access Key |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value                    |
 |---------|--------------------------|
@@ -886,7 +906,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | alarmId        | 	히스토리를 조회할 알림의 ID        |
 
 
-**[Query Parameter]**
+##### [Query Parameter]
 
 | Key                      | Value                                                 | Required |
 |--------------------------|-------------------------------------------------------|----------|
@@ -903,14 +923,15 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | size                     | 조회할 알림 개수<br/>Default 값: 10                           | No       |
 | sort                     | 정렬 대상 및 방식                                            | No       |
 
-**[Response Body]**
+##### [Response Body]
 
 | Key            | 	Type                                                         | 	Description |
 |----------------|---------------------------------------------------------------|--------------|
 | alarmHistories | 	[AlarmHistory[]](#list-alarm-history-response-alarm-history) | 	알람 이력 목록    |
 | totalItems     | 	Long                                                         | 	전체 개수       |
 
-- AlarmHistory <a id="list-alarm-history-response-alarm-history"></a>
+<a id="list-alarm-history-response-alarm-history"></a>
+##### AlarmHistory 
 
 | Key                     | Type                                              | 	Description                                                                       |
 |-------------------------|---------------------------------------------------|------------------------------------------------------------------------------------|
@@ -919,7 +940,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | event                   | [Event](#list-alarm-history-response-event)       | 이벤트 정보                                                                             |
 | alarmSendResultTypeCode | String                                            | 	알림 발송 결과<br/><br/><종류><br/>1. SUCCESS: 성공<br/>2. FAILURE: 실패<br/>3. SENDING: 전송 중 |
 
-- Resource <a id="list-alarm-history-response-resource"></a>
+<a id="list-alarm-history-response-resource"></a>
+##### Resource 
 
 | Key                      | Type   | 	Description                                                      |
 |--------------------------|--------|-------------------------------------------------------------------|
@@ -944,7 +966,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | modDatetime              | Date   | 	수정 일시                                                            |
 | delDatetime              | Date   | 	삭제 일시                                                            |
 
-- Event <a id="list-alarm-history-response-event"></a>
+<a id="list-alarm-history-response-event"></a>
+##### Event 
 
 | Key             | Type                                                     | 	Description        |
 |-----------------|----------------------------------------------------------|---------------------|
@@ -957,7 +980,8 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | eventDatetime   | String                                                   | 	이벤트 발생 시간          |
 | regDatetime     | Date                                                     | 	이벤트 등록 일시          |
 
-- EventUser <a id="list-alarm-history-response-event-user"></a>
+<a id="list-alarm-history-response-event-user"></a>
+##### EventUser 
 
 | Key                 | Type   | Description        |
 |---------------------|--------|--------------------|
@@ -966,14 +990,15 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | userIp    | String | 이벤트를 발생시킨 회원의 IP   |
 | userAgent | String | 이벤트를 발생시킨 회원의 에이전트 |
 
-- EventTarget <a id="list-alarm-history-response-event-target"></a>
+<a id="list-alarm-history-response-event-target"></a>
+##### EventTarget 
 
 | Key             | Type                                                         | 	Description     |
 |-----------------|--------------------------------------------------------------|------------------|
 | targetMembers   | [TargetMember[]](#list-alarm-history-response-target-member) | 	발생한 이벤트의 대상 회원  |
 
-
-- TargetMember <a id="list-alarm-history-response-target-member"></a>
+<a id="list-alarm-history-response-target-member"></a>
+##### TargetMember 
 
 | Key          | Type   | 	Description                    |
 |--------------|--------|---------------------------------|
@@ -1050,7 +1075,7 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 
 #### 3.1. Event 목록 조회
 
-**[기본 정보]**
+##### [기본 정보]
 
 | Method | 	URI                                            |
 |--------|-------------------------------------------------|
@@ -1061,19 +1086,19 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 - 이벤트에 대한 검색 기능을 제공합니다.
 - 이벤트 이름 또는 상품 이름으로 검색 시 lang을 설정하여 설정된 값에 맞는 언어로 검색할 수 있습니다.
 
-**[Request Header]**
+##### [Request Header]
 
 | Key                        | 	Value                                                                   |
 |----------------------------|--------------------------------------------------------------------------|
 | lang                       | 	언어 코드<br/>검색 조건 및 응답 값은 언어 코드에 해당하는 값(ko, en, ja, zh)<br/>Default 값: ko |
 
-**[Path Variable]**
+##### [Path Variable]
 
 | Key     | Value                    |
 |---------|--------------------------|
 | appKey  | 콘솔에서 발급 받은 Appkey        | 
 
-**[Query Parameter]**
+##### [Query Parameter]
 
 | Key             | Value                                                   | Required |
 |-----------------|---------------------------------------------------------|----------|
@@ -1084,15 +1109,15 @@ productId, eventId 값은 [3.1 이벤트 목록 조회 API 응답값](#list-even
 | size            | 조회할 알림 개수<br/>Default 값: 10                             | No       |
 | sort            | 정렬 대상 및 방식<br/>Default 값: productName:ASC,eventName:ASC | No       |
 
-**[Response Body]**
+##### [Response Body]
 
 | Key        | 	Type                                  | 	Description |
 |------------|----------------------------------------|--------------|
 | events     | 	[Event[]](#list-event-response-event) | 	이벤트 목록      |
 | totalItems | 	Long                                  | 	전체 개수       |
 
-
-- Event <a id="list-event-response-event"></a>
+<a id="list-event-response-event"></a>
+##### Event 
 
 | Key         | 	Type   | 	Description |
 |-------------|---------|--------------|
