@@ -157,7 +157,7 @@ To create a resource group, on Search resource group screen, click **Create Reso
 | Display Selected Items | Displays the items that user specified in the selectable items. You can remove it from the selected item by pressing [X] button to the right of name. |
 | Display Selectable Items | Display List of items that can be set according to how the Resource is selected. **Resource types** and **resource tags** can be filtered by Search terms. |
 
-If you specify **Select Resources** method on **Create** tab, you can view the list of selected Resources on ** Preview Resource ** tab.
+If you specify **Select Resources** method on **Create** tab, you can view the list of selected Resources on **Preview Resource** tab.
 
 ![resourcewatcher_04](https://static.toastoven.net/prod_resource_watcher/img04_EN.png)
 
