@@ -117,7 +117,7 @@ You can set alarms for events that occur in a resource. <br/>
 |---------------------|-----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
 | alarmTargetTypeCode | String | Yes | Alarm target type <br/>1. `UUID`: Single Organization Member Target (NHN cloud member, IAM member)<br/>2. `ROLE`: Role targets (organizational roles, project role groups, project roles)<br/>3.  `ALARM_KEY`: Alarm receiving group target (organization alarm receiving group, project alarm receiving group)<br/>4. `WEBHOOK`: Webhook | 
 | alarmTarget | String | No | Alarm target information<br/><Setting values by type><br/> 1. UUID: `Member UUID` <br/>2. ROLE: `Role ID`(ex. ADMIN)<br/>3.  ALARM\_KEY: `alarm receiving group ID`<br/>4. WEBHOOK: `Do not enter`
-| e-mail Alarm | String | No | Whether received email or not<br/>1. `Y`: Mail Reception<br/>2. `N`: Mail not received <br/>Do not enter WEBHOOK, ALARM\_KEY | 
+| emailAlarm | String | No | Whether received email or not<br/>1. `Y`: Mail Reception<br/>2. `N`: Mail not received <br/>Do not enter WEBHOOK, ALARM\_KEY | 
 | smsAlarm | String | No | Whether received SMS or not<br/>1. `Y`: SMS Reception<br/>2. `N`: SMS not received<br/>Do not enter WEBHOOK, ALARM\_KEY | 
 | webhookUrl | String | No | Webhook URL address<br/>Have to start with http:// or https://<br/> Alarm target type`WEBHOOK` Enter when setting |
 | webhookSecret | String | No | WebhookSecret Key<br/> Alarm target type `WEBHOOK` Enter when setting |
@@ -1122,8 +1122,8 @@ Look up the list of events that can be set in alarm.
 
 | Key | Type | Description | 
 |------------|----------------------------------------|--------------| 
-| events | [Event[]](#list-event-response-event) | list of events | 
-| total Items | Long | total count |
+| events | [Event[]](#list-event-response-event) | Event list | 
+| totalItems | Long | Total count |
 
 <a id="list-event-response-event"></a>
 ##### Event 
