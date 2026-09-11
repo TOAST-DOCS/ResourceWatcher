@@ -315,7 +315,11 @@
 <a id="default-infrastructure-service-load-balancerdsr-infrastructureloadbalancerdsr"></a>
 #### ロードバランサー(DSR) (Infrastructure:LOADBALANCERDSR)
 
-<!-- TODO: translate body -->
+| イベント ID | イベント名 | イベントタイプ |
+|--- |--- |--- |
+|event_id.iaas.loadbalancer_dsr.create_end|ロードバランサー (DSR) 作成完了|リソース作成|
+|event_id.iaas.loadbalancer_dsr.update_end|ロードバランサー (DSR) 情報変更完了|リソース修正|
+|event_id.iaas.loadbalancer_dsr.delete_end|ロードバランサー (DSR) 削除完了|リソース削除|
 
 <a id="default-infrastructure-service-nas-volume-infrastructurenasstorage"></a>
 #### NASボリューム (Infrastructure:NAS.STORAGE)

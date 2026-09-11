@@ -315,7 +315,11 @@
 <a id="default-infrastructure-service-load-balancerdsr-infrastructureloadbalancerdsr"></a>
 #### Load Balancer(DSR) (Infrastructure:LOADBALANCERDSR)
 
-<!-- TODO: translate body -->
+| Event ID | Event Name | Event Type |
+|--- |--- |--- |
+|event_id.iaas.loadbalancer_dsr.create_end|Create Load Balancer (DSR) completed|Resource creation|
+|event_id.iaas.loadbalancer_dsr.update_end|Update Load Balancer (DSR) information completed|Resource modification|
+|event_id.iaas.loadbalancer_dsr.delete_end|Delete Load Balancer (DSR) completed|Resource deletion|
 
 <a id="default-infrastructure-service-nas-volume-infrastructurenasstorage"></a>
 #### NAS Volume (Infrastructure:NAS.STORAGE)
