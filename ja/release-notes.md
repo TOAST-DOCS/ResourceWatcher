@@ -6,12 +6,10 @@
 <a id="november-26-2024"></a>
 ### 2024. 11. 26. { #november-26-2024 }
 
-<!-- TODO: translate body -->
-
 <a id="november-26-2024-feature-updates"></a>
 #### 機能改善
 
-<!-- TODO: translate body -->
+- [Console] リソースタグの key 1 個あたりに作成できる value の数の上限を 50 個から 2000 個に引き上げました。
 
 <a id="july-23-2024"></a>
 ### 2024. 07. 23. { #july-23-2024 }
