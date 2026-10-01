@@ -1,0 +1,6 @@
+# .docs-workflow — 문서 파이프라인 설정
+# 주석에는 제외 사유와 담당자를 남겨 주세요.
+# resource-type-guide 제외 사유: 등록 시 번역을 같이 등록함. (오민탁)
+
+ignore:
+  - ko/resource-type-guide*.md
