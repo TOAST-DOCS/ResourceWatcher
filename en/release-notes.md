@@ -6,12 +6,10 @@
 <a id="november-26-2024"></a>
 ### November 26, 2024 { #november-26-2024 }
 
-<!-- TODO: translate body -->
-
 <a id="november-26-2024-feature-updates"></a>
 #### Feature Updates
 
-<!-- TODO: translate body -->
+- [Console] Increased the limit on the number of values that can be created per resource tag key from 50 to 2,000.
 
 <a id="july-23-2024"></a>
 ### July 23, 2024 { #july-23-2024 }
