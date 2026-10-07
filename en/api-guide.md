@@ -113,14 +113,14 @@ You can set alarms for events that occur in a resource. <br/>
 <a id="post-alarm-request-alarm-target"></a>
 ##### AlarmTarget 
 
-| Key | Type | Required | Description | 
-|---------------------|-----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
-| alarmTargetTypeCode | String | Yes | Alarm target type <br/>1. `UUID`: Single Organization Member Target (NHN cloud member, IAM member)<br/>2. `ROLE`: Role targets (organizational roles, project role groups, project roles)<br/>3.  `ALARM_KEY`: Alarm receiving group target (organization alarm receiving group, project alarm receiving group)<br/>4. `WEBHOOK`: Webhook | 
-| alarmTarget | String | No | Alarm target information<br/><Setting values by type><br/> 1. UUID: `Member UUID` <br/>2. ROLE: `Role ID`(ex. ADMIN)<br/>3.  ALARM\_KEY: `alarm receiving group ID`<br/>4. WEBHOOK: `Do not enter`
-| e-mail Alarm | String | No | Whether received email or not<br/>1. `Y`: Mail Reception<br/>2. `N`: Mail not received <br/>Do not enter WEBHOOK, ALARM\_KEY | 
-| smsAlarm | String | No | Whether received SMS or not<br/>1. `Y`: SMS Reception<br/>2. `N`: SMS not received<br/>Do not enter WEBHOOK, ALARM\_KEY | 
-| webhookUrl | String | No | Webhook URL address<br/>Have to start with http:// or https://<br/> Alarm target type`WEBHOOK` Enter when setting |
-| webhookSecret | String | No | WebhookSecret Key<br/> Alarm target type `WEBHOOK` Enter when setting |
+| Key                 | 	Type     | 	Required | 	Description                                                                                                                                                                                 |
+|---------------------|-----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| alarmTargetTypeCode | 	String   | 	Yes      | Notification target type <br/>1. `UUID`: For a single organization member (NHN Cloud member, IAM member)<br/>2. `ROLE`: Role targets (organization role, project role group, project role)<br/>3. `ALARM_KEY`: Notification Recipient Group target (organization notification recipient group, project notification recipient group)<br/>4. `WEBHOOK`: Webhook |
+| alarmTarget         | 	String   | 	No       | 	Notification target information<br/><Setting values by type><br/> 1. UUID: `Member UUID` <br/>2. ROLE: `Role ID`(ex. ADMIN)<br/>3. ALARM\_KEY: `Notification Recipient Group ID`<br/>4. WEBHOOK: `Do not enter`                                                 |
+| emailAlarm          | 	String   | 	No       | 	Whether to receive emails<br/>1. `Y`: Receive emails<br/>2. `N`: Not receive emails<br/>Do not enter for WEBHOOK, ALARM\_KEY.                                                                                                      |
+| smsAlarm            | 	String   | 	No       | 	Whether to receive SMS<br/>1. `Y`: Receive SMS<br/>2. `N`: Not receiving SMS<br/>Do not enter for WEBHOOK, ALARM\_KEY.                                                                                                      |
+| webhookUrl          | 	String   | 	No       | 	Webhook URL address<br/>Must start with http:// or https://<br/> Enter when setting the notification destination type `WEBHOOK`                                                                                                              |
+| webhookSecret       | 	String   | 	No       | 	Webhook secret key<br/> Enter when setting the notification destination type `WEBHOOK`                                                                                                                                                |
 
 <a id="post-alarm-request-event"></a>
 ##### Event 
@@ -1120,10 +1120,10 @@ Look up the list of events that can be set in alarm.
 
 ##### [Response Body]
 
-| Key | Type | Description | 
-|------------|----------------------------------------|--------------| 
-| events | [Event[]](#list-event-response-event) | list of events | 
-| total Items | Long | total count |
+| Key | Type | Description |
+|------------|----------------------------------------|--------------|
+| events | [Event[]](#list-event-response-event) | Event list |
+| totalItems | Long | Total count |
 
 <a id="list-event-response-event"></a>
 ##### Event 
